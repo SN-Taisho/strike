@@ -12,6 +12,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//  Landing page
 Route::get('/', function () {
     return view('landing');
+});
+
+Route::get('/home', function () {
+    return view('landing');
+});
+
+// Events
+Route::get('/events', function () {
+    return view('events/events');
+});
+
+//  Information Pages
+Route::get('/about-us', function () {
+    return view('info-pages/about-us');
+});
+
+Route::get('/coaches', function () {
+    return view('info-pages/coaches');
+});
+
+Route::get('/important-policies', function () {
+    return view('info-pages/important-policies');
+});
+
+Route::get('/contact-us', function () {
+    return view('info-pages/contact-us');
 });
