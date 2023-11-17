@@ -5,12 +5,12 @@
 /*----------  Fonts  ----------*/
 @font-face {
     font-family: "Oswald";
-    src: url(/assets/fonts/Oswald.ttf) format("truetype");
+    src: url(/assets/fonts/Oswald-variable.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Montserrat";
-    src: url(/assets/fonts/Montserrat.ttf) format("truetype");
+    src: url(/assets/fonts/Montserrat-variable.ttf) format("truetype");
 }
 
 /*----------  Root  ----------*/
@@ -20,7 +20,7 @@
     --secondary: #fc782d;
 
     --white: #ffffff;
-    --softwhite: #EDEEE9;
+    --softwhite: #edeee9;
     --shadow: #0e0e0e95;
 
     --bgDark: #0e0e0e;
@@ -72,6 +72,9 @@ main {
 .align-start {
     align-items: flex-start;
     display: flex;
+}
+.border-round {
+    border-radius: 10px;
 }
 .border-smooth {
     border-radius: 5px;
@@ -313,7 +316,7 @@ nav#navbar {
 }
 
 .dropdown:hover .dropdown-content {
-    top: 45px;
+    top: 46px;
 }
 /*=====  End of Header  ======*/
 
@@ -347,7 +350,7 @@ footer {
 
 #footer-contact {
     text-align: right;
-    width: 235px;
+    width: 250px;
 }
 
 .footer-links h4 {
@@ -363,6 +366,7 @@ footer {
     color: var(--white);
     display: block;
     font-size: var(--fSize2);
+    font-weight: bold;
     padding: 5px 7px;
     text-decoration: none;
 }
@@ -376,6 +380,7 @@ footer {
     display: block;
     font-size: var(--fSize2);
     padding: 5px 7px;
+    font-weight: bold;
 }
 
 #footer-socials h4 {
@@ -421,6 +426,7 @@ footer {
 #landing-content h1 {
     color: var(--white);
     font-size: var(--fSize6);
+    font-weight: bold;
 }
 #landing-content h1 span {
     color: var(--primary);
@@ -441,11 +447,6 @@ footer {
     color: var(--secondary);
     cursor: pointer;
     display: inline-block;
-    font-family: var(--sFont);
-    font-size: inherit;
-    font-size: var(--fSize2);
-    font-weight: bold;
-    letter-spacing: 1px;
     margin: 0;
     outline: none;
     overflow: hidden;
@@ -454,6 +455,10 @@ footer {
 }
 
 #learn-more span {
+    font-family: var(--sFont);
+    font-size: var(--fSize2);
+    font-weight: bold;
+    letter-spacing: 3px;
     position: relative;
     transition: color 0.4s;
     z-index: 10;
@@ -496,8 +501,9 @@ h2.section-heading {
     color: var(--bgDark);
     font-family: var(--pFont);
     font-size: var(--fSize5);
+    font-weight: bold;
     letter-spacing: 2px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     text-transform: capitalize;
 }
@@ -546,11 +552,13 @@ h2.section-heading {
 
 .featured-programme a {
     background-color: var(--secondary);
-    outline: 3px solid transparent;
     border-radius: 5px;
     color: var(--white);
     display: block;
+    font-weight: bold;
+    letter-spacing: 1px;
     margin: 1rem auto 0.5rem;
+    outline: 3px solid transparent;
     padding: 0.5rem 1rem;
     width: fit-content;
 }
@@ -621,6 +629,7 @@ section#featured-testimonials {
 .testimonials-card p {
     color: var(--softwhite);
     font-size: var(--fSize2);
+    font-weight: bold;
     line-height: 1.7rem;
     margin-bottom: 1rem;
 }
@@ -680,7 +689,9 @@ section#featured-testimonials {
 
 .info-section > div h3 {
     color: var(--bgDark);
+    font-family: var(--sFont);
     font-size: var(--fSize3);
+    font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
@@ -689,13 +700,16 @@ section#featured-testimonials {
     line-height: calc(var(--fSize2) * 1.5);
     margin-bottom: 1rem;
 }
+
 .i-section-right p.callout {
     background-color: var(--bgDark);
     border-radius: 5px;
-    color: var(--primary);
+    color: var(--secondary);
     display: block;
-    font-size: var(--fSize4);
-    padding: 1rem;
+    font-size: var(--fSize3);
+    font-weight: bold;
+    line-height: calc(var(--fSize3) * 1.5);
+    padding: 0.5rem 1rem;
     width: fit-content;
 }
 .i-section-right div.certification {
@@ -722,7 +736,7 @@ section#featured-testimonials {
 .i-section-right ul {
     padding-left: 1.5rem;
 }
-.i-section-right ul>:last-child {
+.i-section-right ul > :last-child {
     margin-bottom: 0rem;
 }
 
@@ -736,7 +750,7 @@ section#featured-testimonials {
     width: clamp(300px, 90%, 720px);
 }
 
-.i-section-right>:last-child {
+.i-section-right > :last-child {
     margin-bottom: 0rem;
 }
 
@@ -747,7 +761,7 @@ section#featured-testimonials {
 }
 
 /*----------  Contact Us Socials  ----------*/
-#contact-us-socials img{
+#contact-us-socials img {
     width: 64px;
 }
 #contact-us-socials {
@@ -816,7 +830,7 @@ section#coaches-section {
 
 .coach-details {
     background-color: var(--bgMedium);
-    border-radius:  0px 0px 10px 10px;
+    border-radius: 0px 0px 10px 10px;
     box-sizing: border-box;
     height: fit-content;
     padding: 2rem 1rem 1rem;
@@ -850,8 +864,7 @@ section#coaches-section {
   =            Community Pages            =
   =============================================*/
 
-  
-  /*----------  Banner  ----------*/
+/*----------  Banner  ----------*/
 .community-banner {
     background-color: var(--bgMedium);
     height: 600px;
@@ -870,9 +883,7 @@ section#coaches-section {
     z-index: 2;
 }
 .banner-img-container > div {
-    background: linear-gradient(
-        90deg, transparent 90%, var(--bgMedium) 100%
-    );
+    background: linear-gradient(90deg, transparent 90%, var(--bgMedium) 100%);
     display: block;
     height: 100%;
     position: absolute;
@@ -908,9 +919,11 @@ section#coaches-section {
 
 .banner-content p {
     color: var(--white);
-    font-size: var(--fSize2);
     font-family: var(--sFont);
+    font-size: var(--fSize2);
+    font-weight: bold;
     line-height: calc(var(--fSize2) * 1.5);
+    letter-spacing: 1px;
 }
 
 .banner-shape {
@@ -925,7 +938,99 @@ section#coaches-section {
     z-index: 5;
 }
 
-/*----------  Content  ----------*/
+/*----------  Search bar  ----------*/
+.search-form {
+    margin: 2rem 1rem;
+    width: 90%;
+}
+
+.search-form input {
+    background-color: var(--bgMedium);
+    border: none;
+    box-sizing: border-box;
+    color: var(--white);
+    font-size: var(--fSize2);
+    height: 3.5rem;
+    line-height: calc(var(--fSize2) * 1.5);
+    outline: 3px solid transparent;
+    padding: 0.7rem 1rem;
+    width: clamp(300px, 100%, 600px);
+}
+
+.search-form button {
+    background-color: var(--secondary);
+    border: none;
+    box-sizing: border-box;
+    color: var(--bgMedium);
+    cursor: pointer;
+    height: 3.5rem;
+    margin-left: -55px;
+    padding: 3px 12px;
+}
+
+.search-form button:hover {
+    color: var(--white);
+}
+.search-form input:focus {
+    outline-color: var(--secondary);
+    outline-offset: 5px;
+}
+
+/*----------  Community Content  ----------*/
+.community-content > div.width-limiter {
+    padding: 0rem 2rem 3rem;
+    gap: 1rem;
+    row-gap: 2rem;
+}
+
+
+/*----------  Events Card  ----------*/
+.event-card {
+    background-color: var(--bgMedium);
+    height: 480px;
+    width: 325px;
+}
+
+.event-card div {
+    padding: 0.25rem 1rem;
+    overflow: hidden;
+}
+
+.event-card img {
+    border-radius: 2px 2px 0px 0px;
+    height: 250px;
+    object-fit: cover;
+    width: inherit;
+}
+
+.event-card h3 {
+    color: var(--primary);
+    font-size: var(--fSize3);
+    letter-spacing: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: inherit;
+}
+
+.event-card span {
+    color: var(--secondary);
+    font-size: var(--fSize1);
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: inherit;
+}
+
+.event-card p {
+    margin-top: 0.5rem;
+    color: var(--softwhite);
+    font-size: var(--fSize2);
+    text-overflow: clip;
+    height: 150px;
+    text-align: justify;
+}
 
 
 /*=====  End of Community Pages  ======*/
@@ -979,7 +1084,7 @@ section#coaches-section {
         grid-template-columns: 100%;
     }
 
-    .i-section-right> :first-child {
+    .i-section-right > :first-child {
         margin-top: 0.5rem;
     }
 }
@@ -993,8 +1098,7 @@ section#coaches-section {
         font-size: var(--fSize2);
     }
 
-    
-    .community-banner>div {
+    .community-banner > div {
         flex-direction: column-reverse;
     }
     .banner-content {
@@ -1008,13 +1112,19 @@ section#coaches-section {
         position: relative;
         width: 100%;
     }
-    .banner-img-container>div {
+    .banner-img-container > div {
         background: linear-gradient(
-        180deg, transparent 90%, var(--bgMedium) 100%
-    );
+            180deg,
+            transparent 90%,
+            var(--bgMedium) 100%
+        );
     }
     .banner-img {
         width: 100%;
+    }
+
+    .search-form {
+        margin: 2rem auto;
     }
 }
 

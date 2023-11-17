@@ -40,12 +40,12 @@
                     <div class="justify-center">
                         <li>
                             <a href="/facebook">
-                                <img src="{{ asset('assets/icons/facebook-icon.png') }}" alt="facebook.png" width="48" />
+                                <img src="{{ asset('assets/icons/facebook-icon.png') }}" alt="facebook.png" width="48" title="Facebook"/>
                             </a>
                         </li>
                         <li>
                             <a href="/instagram">
-                                <img src="{{ asset('assets/icons/instagram-icon.png') }}" alt="instagram.png" width="48" />
+                                <img src="{{ asset('assets/icons/instagram-icon.png') }}" alt="instagram.png" width="48"  title="Instagram"/>
                             </a>
                         </li>
                     </div>
