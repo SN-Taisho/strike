@@ -4,7 +4,7 @@
     <section class="community-banner">
         <div class="width-limiter">
             <div class="banner-content">
-                <h1>Events</h1>
+                <h1>Gallery</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deserunt harum laborum
                     repellat
                     rem expedita eaque. Porro, cum quia esse pariatur velit maxime quaerat amet? Laborum alias
@@ -33,23 +33,10 @@
 
     <section class="community-content">
         <div class="width-limiter justify-evenly flex-wrap">
-
-            @for ($i = 0; $i < 12; $i++)
-                <a class="event-card border-sharp text-deco-none" href="/event-details">
-                    <img src="https://placehold.co/350x250/webp" alt="Event Photo">
-
-                    <div>
-                        <h3 class="pFont">Lorem Ipsum Dolor</h3>
-                        <span class="sFont">Lorem 17, 2023 - Lorem Ipsum</span>
-
-                        <p class="sFont">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
-                            bibendum laoreet. Proin
-                            gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic
-                            tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
-                            laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales
-                            pulvinar sic tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-
+        
+            @for ($i = 0; $i < 9; $i++)
+                <a href="/images" class="image-item border-smooth">
+                    <img src="https://placehold.co/1280x720/webp" alt="Gallery item" class="trans-ease-in-out" />
                 </a>
             @endfor
 

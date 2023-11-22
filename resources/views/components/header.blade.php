@@ -139,7 +139,7 @@
                             <a href="/events">Events</a>
                         </li>
                         <li>
-                            <a href="/Gallery">Gallery</a>
+                            <a href="/gallery">Gallery</a>
                         </li>
                         <li>
                             <a href="/resources">Resources</a>

@@ -21,10 +21,28 @@ Route::get('/home', function () {
     return view('landing');
 });
 
+
 // Events
 Route::get('/events', function () {
     return view('events/events');
 });
+
+Route::get('/event-details', function () {
+    return view('events/event-details');
+});
+
+
+//  Gallery
+Route::get('/gallery', function () {
+    return view('gallery/gallery');
+});
+
+
+//  Testimonials
+Route::get('/testimonials', function () {
+    return view('testimonials/testimonials');
+});
+
 
 //  Information Pages
 Route::get('/about-us', function () {

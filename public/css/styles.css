@@ -608,7 +608,7 @@ section#featured-testimonials {
     gap: 1rem;
     padding: 1rem;
     position: relative;
-    width: clamp(325px, 80%, 450px);
+    width: clamp(320px, 80%, 420px);
 }
 
 .testimonials-card .profile {
@@ -986,8 +986,10 @@ section#coaches-section {
 
 /*----------  Events Card  ----------*/
 .event-card {
+    display: block;
     background-color: var(--bgMedium);
     height: 480px;
+    overflow: hidden;
     width: 325px;
 }
 
@@ -997,7 +999,6 @@ section#coaches-section {
 }
 
 .event-card img {
-    border-radius: 2px 2px 0px 0px;
     height: 250px;
     object-fit: cover;
     width: inherit;
@@ -1032,6 +1033,70 @@ section#coaches-section {
     text-align: justify;
 }
 
+
+/* Article page*/
+.banner-image {
+    height: clamp(300px, 60vw, 720px);
+}
+
+article.article {
+    background-color: var(--bgMedium);
+    padding: 1rem 0rem 2rem;
+}
+
+.article h1 {
+    color: var(--primary);
+    font-size: var(--fSize6);
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem 0rem;
+}
+.article span {
+    color: var(--secondary);
+    font-size: var(--fSize3);
+    padding: 0.5rem 1rem;
+}
+
+.article p {
+    color: var(--softwhite);
+    font-size: var(--fSize2);
+    line-height: calc(var(--fSize2) * 1.5);
+    padding: 0.5rem 1rem;
+}
+
+.article a {
+    color: var(--secondary);
+    font-size: var(--fSize2);
+    line-height: calc(var(--fSize2) * 1.5);
+    padding: 0.5rem 1rem;
+}
+
+.article ul {
+    color: var(--softwhite);
+    font-size: var(--fSize2);
+    padding: 0.5rem 2rem;
+}
+.article li {
+    padding: 4px 0rem;
+}
+
+
+/* Gallery */
+.image-item {
+    display: block;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    width: 420px;
+}
+
+.image-item img {
+    object-fit: cover;
+    height: 101%;
+    width: inherit;
+}
+
+.image-item:hover img {
+    transform: scale(1.05);
+}
 
 /*=====  End of Community Pages  ======*/
 
@@ -1160,6 +1225,10 @@ section#coaches-section {
     #footer-contact {
         width: clamp(235px, 80%, 400px);
     }
+
+    .article p {
+        text-align: justify;
+    }
 }
 
 @media only screen and (max-width: 380px) {
@@ -1181,6 +1250,10 @@ section#coaches-section {
     }
     .testimonials-card p {
         text-align: center;
+    }
+
+    .article h1 {
+        font-size: var(--fSize5);
     }
 }
 
