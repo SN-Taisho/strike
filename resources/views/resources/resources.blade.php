@@ -1,10 +1,10 @@
-@include('components.header', ['title' => 'Gallery'])
+@include('components.header', ['title' => 'Resources'])
 
 <main>
     <section class="community-banner">
         <div class="width-limiter">
             <div class="banner-content">
-                <h1>Gallery</h1>
+                <h1>Resources</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deserunt harum laborum
                     repellat
                     rem expedita eaque. Porro, cum quia esse pariatur velit maxime quaerat amet? Laborum alias
@@ -33,11 +33,8 @@
 
     <section class="community-content">
         <div class="width-limiter justify-evenly flex-wrap">
-        
+
             @for ($i = 0; $i < 9; $i++)
-                <a href="/images" class="image-item border-smooth">
-                    <img src="https://placehold.co/1280x720/webp" alt="Gallery item" class="trans-ease-in-out" />
-                </a>
             @endfor
 
         </div>

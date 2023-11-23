@@ -22,6 +22,12 @@ Route::get('/home', function () {
 });
 
 
+//  Programmes
+Route::get('/programmes', function () {
+    return view('programmes/programmes');
+});
+
+
 // Events
 Route::get('/events', function () {
     return view('events/events');
@@ -37,6 +43,11 @@ Route::get('/gallery', function () {
     return view('gallery/gallery');
 });
 
+
+//  Resources
+Route::get('/resources', function () {
+    return view('resources/resources');
+});
 
 //  Testimonials
 Route::get('/testimonials', function () {
