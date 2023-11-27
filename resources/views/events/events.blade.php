@@ -42,12 +42,7 @@
                         <h3 class="pFont">Lorem Ipsum Dolor</h3>
                         <span class="sFont">Lorem 17, 2023 - Lorem Ipsum</span>
 
-                        <p class="sFont">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
-                            bibendum laoreet. Proin
-                            gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic
-                            tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
-                            laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales
-                            pulvinar sic tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="sFont">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique laboriosam voluptatem id qui. Corrupti quaerat inventore quisquam est unde debitis. Sunt vel voluptate amet id rem, deleniti recusandae est tenetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum doloribus reiciendis dignissimos quia perferendis mollitia repudiandae nulla, numquam odit tempore praesentium, magnam ut expedita quos autem molestiae natus animi deleniti!</p>
                     </div>
 
                 </a>

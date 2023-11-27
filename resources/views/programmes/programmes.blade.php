@@ -44,7 +44,7 @@
                         @for ($i = 1; $i < 9 + 1; $i++)
                             <tr>
                                 <td>text {{ $i }}</td>
-                                <td>text {{ $i }}</td>
+                                <td>text {{ $i }} Lorem ipsum dolor sit</td>
                             </tr>
                         @endfor
                     </tbody>

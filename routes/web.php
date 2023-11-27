@@ -27,6 +27,10 @@ Route::get('/programmes', function () {
     return view('programmes/programmes');
 });
 
+Route::get('/programme-details', function () {
+    return view('programmes/programme-details');
+});
+
 
 // Events
 Route::get('/events', function () {

@@ -691,8 +691,10 @@ section#featured-testimonials {
 
 .programme-card .content {
     box-sizing: border-box;
-    display: block;
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
     overflow: hidden;
     padding: 1rem;
     width: 100%;
@@ -720,6 +722,11 @@ section#featured-testimonials {
     font-family: var(--sFont);
     font-size: var(--fSize2);
     margin: 8px 0px;
+    max-height: 95px;
+    overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        display: -webkit-box;
 }
 
 .programme-links {
@@ -783,6 +790,119 @@ section#featured-testimonials {
     font-size: var(--fSize2);
     padding: 0.5rem 1rem;
 }
+
+/* Programme Details */
+main.soft {
+    background-color: var(--softwhite);
+}
+
+/* Details Header */
+.details-header {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    padding: 3rem 2rem;
+    flex-wrap: wrap;
+}
+.details-header img {
+    height: clamp(250px, 80%, 300px);
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+    width: clamp(250px, 80%, 300px);
+}
+
+.dh-content {
+    flex-grow: 1;
+    max-width: 600px;
+    width: clamp(450px, 45%, 600px);
+}
+
+.dh-content .heading {
+    color: var(--primary);
+    font-size: var(--fSize6);
+    letter-spacing: 1px;
+}
+.dh-content p {
+    font-size: var(--fSize2);
+    line-height: calc(var(--fSize2) * 1.5);
+    color: var(--bgDark);
+    font-weight: bold;
+    text-align: justify;
+}
+
+.dh-btn {
+    color: var(--bgDark);
+    margin: 2rem auto 1rem;
+    text-align: center;
+    width: 325px;
+}
+.dh-btn button {
+    background-color: var(--secondary);
+    border-radius: 15px;
+    border: none;
+    color: var(--softwhite);
+    cursor: pointer;
+    display: block;
+    font-size: var(--fSize4);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0rem auto 0.5rem;
+    outline: 3px solid transparent;
+    padding: 1rem 3rem;
+}
+.dh-btn button:hover {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
+}
+
+/* Details Content */
+.details-content {
+    height: fit-content;
+
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 70% 25%;
+    justify-content: space-evenly;
+}
+
+.details-content section {
+    background-color: var(--bgLight);
+    height: fit-content;
+    padding: 3rem 2rem;
+}
+.details-content section h2 {
+    color: var(--bgDark);
+    font-size: var(--fSize5);
+}
+.details-content section h3 {
+    color: var(--bgDark);
+    font-size: var(--fSize4);
+}
+.details-content section p {
+    color: var(--bgDark);
+    font-size: var(--fSize2);
+    line-height: calc(var(--fSize2) * 1.5);
+    margin-bottom: 1.5rem;
+}
+
+.details-content .tags {
+    background-color: var(--bgLight);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    height: fit-content;
+    justify-content: center;
+    padding: 2rem;
+}
+.details-content .tags li {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    height: fit-content;
+    width: clamp(300px, 90%, 450px);
+}
+
 /*=====  End of Programmes  ======*/
 
 
@@ -1142,6 +1262,7 @@ section#coaches-section {
 }
 
 .event-card img {
+    border-radius: 2px 2px 0px 0px;
     height: 250px;
     object-fit: cover;
     width: inherit;
@@ -1168,11 +1289,14 @@ section#coaches-section {
 }
 
 .event-card p {
-    margin-top: 0.5rem;
     color: var(--softwhite);
     font-size: var(--fSize2);
-    text-overflow: clip;
     height: 150px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 8;
+        display: -webkit-box;
     text-align: justify;
 }
 
@@ -1303,6 +1427,28 @@ article.article {
     }
 }
 
+@media only screen and (max-width: 988px) {
+    .details-content {
+        grid-template-columns: 100%;
+    }
+    .details-content .tags {
+        order: -1;
+        flex-direction: row;
+    }
+    .details-content .tags li {
+        width: 200px;
+        height: fit-content;
+    }
+
+}
+
+
+@media only screen and (max-width: 830px) {
+    .dh-content {
+        width: 90%;
+        max-width: none;
+    }
+}
 @media only screen and (max-width: 800px) {
     #landing-content h1 {
         color: var(--white);
@@ -1416,6 +1562,10 @@ article.article {
 
     .programme-links {
         justify-content: space-evenly;
+    }
+
+    .details-header {
+    padding: 2rem 1rem;
     }
 }
 
