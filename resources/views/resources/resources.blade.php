@@ -5,10 +5,9 @@
         <div class="width-limiter">
             <div class="banner-content">
                 <h1>Resources</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deserunt harum laborum
-                    repellat
-                    rem expedita eaque. Porro, cum quia esse pariatur velit maxime quaerat amet? Laborum alias
-                    cupiditate placeat incidunt.</p>
+                <p>Whether you're a beginner or a seasoned bowler, our resources page is your one-stop shop for all
+                    things bowling. Explore a wealth of information, including tips and techniques, rules and etiquette,
+                    and insights from bowling experts.</p>
             </div>
             <div class="banner-shape"></div>
             <div class="banner-img-container">
@@ -32,9 +31,11 @@
     </div>
 
     <section class="community-content">
+        <h2 class="section-heading">Working Progress</h2>
         <div class="width-limiter justify-evenly flex-wrap">
 
             @for ($i = 0; $i < 9; $i++)
+                {{-- <iframe width="560" height="315" src="https://www.youtube.com/embed/jNQXAC9IVRw?si=sdTHWiGwZ8MOg1Z5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> --}}
             @endfor
 
         </div>

@@ -48,11 +48,12 @@
     </section>
 
     <section id="featured-events">
-        <h2 class="section-heading alt">Events</h2>
+        <h2 class="section-heading alt">Featured Events</h2>
         <div class="width-limiter justify-center align-center flex-wrap">
             @for ($i = 0; $i < 4; $i++)
                 <a href="/events" class="featured-events-link trans-ease-in-out">
                     <img src="https://placehold.co/1280x720.webp" alt="event.webp" width="700" />
+                    <h3 class="pFont">Lorem ipsum dolor</h3>
                 </a>
             @endfor
         </div>

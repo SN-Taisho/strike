@@ -28,7 +28,7 @@
     --bgLight: #fafafafa;
 
     --success: ;
-    --danger: ;
+    --danger: #e43030;
 
     /* Fonts */
     --pFont: "Oswald", Verdana;
@@ -580,11 +580,27 @@ section#featured-events {
 
 .featured-events-link {
     display: block;
+    position: relative;
     width: clamp(330px, 80%, 600px);
 }
 .featured-events-link img {
     border-radius: 2px;
     object-fit: cover;
+    width: 100%;
+}
+.featured-events-link h3 {
+    background-color: var(--bgDark);
+    bottom: 0px;
+    box-sizing: border-box;
+    color: var(--primary);
+    display: block;
+    font-size: var(--fSize4);
+    letter-spacing: 1px;
+    overflow: hidden;
+    padding: 0.5rem;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     width: 100%;
 }
 .featured-events-link:hover {
@@ -864,6 +880,7 @@ main.soft {
     gap: 2rem;
     grid-template-columns: 70% 25%;
     justify-content: space-evenly;
+    padding: 0rem 0.5rem;
 }
 
 .details-content section {
@@ -1247,8 +1264,8 @@ section#coaches-section {
 }
 
 
-/*----------  Events Card  ----------*/
-.event-card {
+/*----------  Article Card  ----------*/
+.article-card {
     display: block;
     background-color: var(--bgMedium);
     height: 480px;
@@ -1256,19 +1273,19 @@ section#coaches-section {
     width: 325px;
 }
 
-.event-card div {
+.article-card div {
     padding: 0.25rem 1rem;
     overflow: hidden;
 }
 
-.event-card img {
+.article-card img {
     border-radius: 2px 2px 0px 0px;
     height: 250px;
     object-fit: cover;
     width: inherit;
 }
 
-.event-card h3 {
+.article-card h3 {
     color: var(--primary);
     font-size: var(--fSize3);
     letter-spacing: 1px;
@@ -1278,7 +1295,7 @@ section#coaches-section {
     width: inherit;
 }
 
-.event-card span {
+.article-card span {
     color: var(--secondary);
     font-size: var(--fSize1);
     font-weight: bold;
@@ -1288,7 +1305,7 @@ section#coaches-section {
     width: inherit;
 }
 
-.event-card p {
+.article-card p {
     color: var(--softwhite);
     font-size: var(--fSize2);
     height: 150px;
@@ -1366,7 +1383,53 @@ article.article {
     transform: scale(1.05);
 }
 
+
+/*  Case Study*/
+.case-study-card {
+    background-color: var(--bgMedium);
+    width: 325px;
+    height: 400px;
+}
+
 /*=====  End of Community Pages  ======*/
+
+
+/*=============================================
+=            Error Handling            =
+=============================================*/
+.error-block {
+    background-color: var(--bgMedium);
+    gap: 1rem;
+    height: fit-content;
+    margin: 5rem auto;
+    min-height: 400px;
+    padding: 2rem;
+    width: clamp(300px, 80%, 720px);
+}
+.error-block svg {
+    color: var(--danger);
+    margin-bottom: -1rem;
+}
+.error-block h1 {
+    color: var(--danger);
+    font-size: var(--fSize5);
+    line-height: calc(var(--fSize5) * 1.5);
+}
+.error-block p {
+    color: var(--softwhite);
+    font-size: var(--fSize2);
+    line-height: calc(var(--fSize2) * 1.5);
+}
+.error-block a {
+    background-color: var(--secondary);
+    color: var(--bgLight);
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 0.7rem 1rem;
+}
+
+/*=====  End of Error Handling  ======*/
+
 
 /*=============================================
   =            Breakpoints            =
@@ -1441,7 +1504,6 @@ article.article {
     }
 
 }
-
 
 @media only screen and (max-width: 830px) {
     .dh-content {

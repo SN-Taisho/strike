@@ -5,10 +5,9 @@
         <div class="width-limiter">
             <div class="banner-content">
                 <h1>Gallery</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deserunt harum laborum
-                    repellat
-                    rem expedita eaque. Porro, cum quia esse pariatur velit maxime quaerat amet? Laborum alias
-                    cupiditate placeat incidunt.</p>
+                <p>Relive the excitement of your bowling adventures as you browse through our captivating collection of
+                    photos. Capture the thrill of strikes and spares, the camaraderie of team spirit, and the joy of
+                    shared experiences.</p>
             </div>
             <div class="banner-shape"></div>
             <div class="banner-img-container">
@@ -33,7 +32,7 @@
 
     <section class="community-content">
         <div class="width-limiter justify-evenly flex-wrap">
-        
+
             @for ($i = 0; $i < 9; $i++)
                 <a href="/images" class="image-item border-smooth">
                     <img src="https://placehold.co/1280x720/webp" alt="Gallery item" class="trans-ease-in-out" />

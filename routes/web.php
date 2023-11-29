@@ -57,6 +57,9 @@ Route::get('/resources', function () {
 Route::get('/testimonials', function () {
     return view('testimonials/testimonials');
 });
+Route::get('/case-study', function () {
+    return view('testimonials/case-study');
+});
 
 
 //  Information Pages
@@ -74,4 +77,8 @@ Route::get('/important-policies', function () {
 
 Route::get('/contact-us', function () {
     return view('info-pages/contact-us');
+});
+
+Route::get('/calendar', function () {
+    return view('info-pages/calendar');
 });

@@ -5,10 +5,7 @@
         <div class="width-limiter">
             <div class="banner-content">
                 <h1>Events</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deserunt harum laborum
-                    repellat
-                    rem expedita eaque. Porro, cum quia esse pariatur velit maxime quaerat amet? Laborum alias
-                    cupiditate placeat incidunt.</p>
+                <p>From cosmic bowling to family fun nights and competitive tournaments, our calendar is packed with fun for all ages.</p>
             </div>
             <div class="banner-shape"></div>
             <div class="banner-img-container">
@@ -35,7 +32,7 @@
         <div class="width-limiter justify-evenly flex-wrap">
 
             @for ($i = 0; $i < 12; $i++)
-                <a class="event-card border-sharp text-deco-none" href="/event-details">
+                <a class="article-card border-sharp text-deco-none" href="/event-details">
                     <img src="https://placehold.co/350x250/webp" alt="Event Photo">
 
                     <div>

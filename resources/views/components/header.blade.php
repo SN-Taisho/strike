@@ -96,6 +96,9 @@
                 <a href="/events">Events</a>
             </li>
             <li>
+                <a href="/calendar">Calendar</a>
+            </li>
+            <li>
                 <a href="/gallery">Gallery</a>
             </li>
             <li>
@@ -137,6 +140,9 @@
                     <ul class="dropdown-content">
                         <li>
                             <a href="/events">Events</a>
+                        </li>
+                        <li>
+                            <a href="/calendar">Calendar</a>
                         </li>
                         <li>
                             <a href="/gallery">Gallery</a>
