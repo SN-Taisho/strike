@@ -1328,6 +1328,10 @@ article.article {
     padding: 1rem 0rem 2rem;
 }
 
+.article .width-limiter {
+    max-width: 1024px;
+}
+
 .article h1 {
     color: var(--primary);
     font-size: var(--fSize6);

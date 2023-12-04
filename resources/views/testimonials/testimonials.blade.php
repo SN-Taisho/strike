@@ -73,7 +73,7 @@
 
                 <div>
                     <h3 class="pFont">Lorem Ipsum Dolor</h3>
-                    <span>Lorem Ipsum Dolor</span>
+                    <span class="sFont">Lorem Ipsum Dolor</span>
 
                     <p class="sFont">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique laboriosam voluptatem id qui. Corrupti quaerat inventore quisquam est unde debitis. Sunt vel voluptate amet id rem, deleniti recusandae est tenetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum doloribus reiciendis dignissimos quia perferendis mollitia repudiandae nulla, numquam odit tempore praesentium, magnam ut expedita quos autem molestiae natus animi deleniti!</p>
                 </div>
