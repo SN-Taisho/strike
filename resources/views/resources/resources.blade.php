@@ -35,7 +35,11 @@
         <div class="width-limiter justify-evenly flex-wrap">
 
             @for ($i = 0; $i < 9; $i++)
-                {{-- <iframe width="560" height="315" src="https://www.youtube.com/embed/jNQXAC9IVRw?si=sdTHWiGwZ8MOg1Z5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> --}}
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/ScMzIvxBSi4?si=7k6SNhdgGJlACdNw" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             @endfor
 
         </div>

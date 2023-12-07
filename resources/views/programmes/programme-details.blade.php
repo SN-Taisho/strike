@@ -14,7 +14,7 @@
         </div>
 
         <div class="dh-btn">
-            <button class="sFont trans-ease-in-out">Enroll Now!</button>
+            <button class="sFont trans-ease-in-out" onclick="window.location.href='/enroll'"">Enroll Now!</button>
             <span class="sFont"><svg width="16" height="16" fill="none" stroke="currentColor"
                     stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">

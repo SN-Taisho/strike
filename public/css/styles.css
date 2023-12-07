@@ -54,8 +54,12 @@ html {
     padding: 0px;
 }
 
+body {
+    background: var(--bgLight);
+}
+
 main {
-    min-height: min(100vh, 900px);
+    min-height: min(100svh, 900px);
 }
 
 /*=============================================
@@ -87,8 +91,8 @@ main {
     justify-content: center;
 }
 .divider {
-    border-color: var(--paragraph);
-    margin: var(--tiny) auto;
+    border-color: var(--bgMedium);
+    margin: var(--fSize2) auto;
     width: 95%;
 }
 .flex {
@@ -506,6 +510,7 @@ section#featured-programmes {
     margin-bottom: 1.5rem;
     text-align: center;
     text-transform: capitalize;
+    padding: 0rem 1rem;
 }
 .section-heading.alt {
     color: var(--bgLight);
@@ -1399,6 +1404,319 @@ article.article {
 
 
 /*=============================================
+=            Forms            =
+=============================================*/
+.submit-btn {
+    background-color: var(--primary);
+    border-radius: 15px;
+    border: none;
+    color: var(--softwhite);
+    cursor: pointer;
+    display: block;
+    font-size: var(--fSize3);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 1rem auto 1rem;
+    outline: 3px solid transparent;
+    padding: 1rem 2rem;
+}
+.submit-btn:hover {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+#enroll-form {
+    background-color: var(--softwhite);
+    margin-bottom: 3rem;
+    padding: 2rem 0rem;
+}
+form .section-subheading{
+    color: var(--bgDark);
+    font-family: var(--pFont);
+    font-size: var(--fSize4);
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    padding: 0rem 2rem;
+}
+.form-section {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+    padding: 1rem 2rem;
+}
+
+.form-section p {
+    color: var(--bgDark);
+    font-family: var(--sFont);
+    font-size: var(--fSize2);
+    width: clamp(200px, 60%, 300px);
+}
+.form-section p.long {
+    width: 100%;
+}
+/* Input */
+.input-group {
+    position: relative;
+   }
+   .input-group > div {
+    display: flex;
+   }
+
+   .input {
+    background: none;
+    border-radius: 10px;
+    border: solid 3px var(--bgMedium);
+    color: var(--bgDark);
+    font-size: 1rem;
+    padding: 1rem;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+    width: 240px;
+   }
+   .input-group.short input[type="text"] {
+    width: 120px;
+   }
+
+   .label {
+    color: var(--bgMedium);
+    font-family: var(--sFont);
+    font-size: var(--fSize2);
+    font-weight: bold;
+    left: 15px;
+    pointer-events: none;
+    position: absolute;
+    transform: translateY(1.15rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+   }
+   
+   .input:focus, input[type="text"]:valid {
+    border: 3px solid var(--primary);
+    outline: none;
+   }
+   
+   .input:focus ~ label, input[type="text"]:valid ~ label {
+    background-color: var(--softwhite);
+    color: var(--secondary);
+    padding: 8px;
+    transform: translateY(-50%) scale(0.9);
+   }
+
+/* Textarea */
+textarea.input {
+box-sizing: border-box;
+resize: none;
+width: 300px;
+}
+
+/* File Input */
+.input-group.file {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    height: fit-content;
+    justify-content: space-between;
+    width: clamp(300px, 80%, 500px);
+}
+.input-group.file input {
+    cursor: pointer;
+}
+.filelabel {
+    color: var(--bgMedium);
+    font-family: var(--sFont);
+    font-size: var(--fSize2);
+    font-weight: bold;
+    max-width: 250px;
+    position: relative;
+    min-width: 150px;
+}
+
+/* Radio input */
+.radio-title {
+    font-size: var(--fSize3);
+    font-weight: bold;
+    font-family: var(--pFont);
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.radio-vertical {
+    background-color: var(--softwhite);
+    border-radius: 10px;
+    border: 3px solid var(--bgMedium);
+    color: var(--bgDark);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--sFont);
+    padding: 1rem 1.2rem 0.5rem 1rem;
+  }
+  
+  .radio-button {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .radio-button input[type="radio"] {
+    display: none;
+  }
+  
+  .radio-circle {
+    border-radius: 50%;
+    border: 2px solid #aaa;
+    height: 20px;
+    margin-right: 10px;
+    position: relative;
+    width: 20px;
+  }
+  
+  .radio-circle::before {
+    background-color: var(--bgLight);
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 12px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.2s ease-in-out;
+    width: 12px;
+  }
+  
+  .radio-button input[type="radio"]:checked + .radio-circle::before {
+    background-color: var(--primary);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .radio-label {
+    font-size: var(--fSize2);
+    font-weight: bold;
+  }
+  
+  .radio-button:hover .radio-circle {
+    border-color: #555;
+  }
+  
+  .radio-button:hover input[type="radio"]:checked + .radio-circle::before {
+    background-color: #555;
+  }
+  
+  /* Radio Horizontal */
+  .radio-horizontal div {
+    border-radius: 10px;
+    border: 3px solid var(--bgMedium);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+    padding: 0.7rem;
+    align-items: center;
+  }
+  
+  .radio-horizontal input[type="radio"] {
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  
+  .radio-horizontal input[type="radio"]:checked + span {
+    background-color: var(--primary);
+    color: var(--bgLight);
+    z-index: 1;
+  }
+  
+  .radio-horizontal label.guide span {
+    background-color: var(--secondary);
+    color: var(--bgLight);
+    font-weight: bold;
+  }
+
+ .radio-horizontal label span {
+    background-color: var(--bgLight);
+    color: var(--bgMedium);
+    cursor: pointer;
+    display: block;
+    font-family: var(--sFont);
+    font-size: var(--fSize2);
+    padding: 0.7rem 1rem;
+    position: relative;
+    text-align: center;
+    transition: background-color .5s ease;
+  }
+  
+  .radio-horizontal label:first-child span {
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .radio-horizontal label:last-child span {
+    border-radius: 0 5px 5px 0;
+  }
+  
+  /* Checkbox */
+  .check-box-container {
+    border-radius: 10px;
+    border: 3px solid var(--bgMedium);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.7rem;
+  }
+
+  .cyberpunk-checkbox {
+    appearance: none;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 3px solid var(--bgMedium);
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s ease-in-out;  
+    width: 20px;
+}
+
+.cyberpunk-checkbox:before {
+    background-color: var(--primary);
+    border-radius: 3px;
+    content: "";
+    display: block;
+    height: 10px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.3s ease-in-out;
+    width: 10px;
+}
+
+.cyberpunk-checkbox:checked {
+    border: 3px solid var(--primary);
+}
+.cyberpunk-checkbox:checked:before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.cyberpunk-checkbox-label {
+    align-items: center;
+    color: var(--bgDark);
+    cursor: pointer;
+    display: flex;
+    font-family: var(--sFont);
+    font-size: var(--fSize2);
+    user-select: none;
+}
+/*=====  End of Forms  ======*/
+
+
+/*=============================================
 =            Error Handling            =
 =============================================*/
 .error-block {
@@ -1599,6 +1917,20 @@ article.article {
     .article p {
         text-align: justify;
     }
+    
+    .radio-horizontal#skill-level div {
+        flex-direction: column;
+    }
+    .radio-horizontal#skill-level label {
+        width: 100%;
+    }
+    .radio-horizontal label:first-child span {
+        border-radius: 5px 5px 0 0;
+      }
+      
+      .radio-horizontal label:last-child span {
+        border-radius: 0 0 5px 5px;
+      }
 }
 
 @media only screen and (max-width: 380px) {

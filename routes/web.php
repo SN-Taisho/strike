@@ -31,6 +31,10 @@ Route::get('/programme-details', function () {
     return view('programmes/programme-details');
 });
 
+Route::get('/enroll', function () {
+    return view('enroll');
+});
+
 
 // Events
 Route::get('/events', function () {
