@@ -9,17 +9,15 @@
 
             <div class="programmes flex-col">
 
-                @for ($i = 0; $i < 3; $i++)
+                @foreach ($programmes as $programme)
                     <div class="programme-card">
 
-                        <div class="img-wrapper"><img src="https://placehold.co/350x350/webp" alt="Programme image"></div>
+                        <div class="img-wrapper"><img src="{{ $programme['image'] }}" alt="Programme image"></div>
 
                         <div class="content">
-                            <h2 class="card-heading">Programme Title Lorem ipsum</h2>
-                            <span>Age Range</span>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed consectetur quia inventore
-                                modi optio praesentium repellat nisi architecto quas. Quis tempore dolorem sed mollitia
-                                adipisci, iste exercitationem vitae at rem.</p>
+                            <h2 class="card-heading">{{ $programme['title'] }}</h2>
+                            <span style="font-weight: bold; letter-spacing: 1px;">{{ $programme['agerange'] }} | {{ $programme['suitable'] }}</span>
+                            <p>{{ $programme['desc'] }}</p>
                             <div class="programme-links sFont">
                                 <a href="/enroll" class="alt">Enroll</a>
                                 <a href="/programme-details">View Programme</a>
@@ -27,7 +25,7 @@
                         </div>
 
                     </div>
-                @endfor
+                @endforeach
 
             </div>
 

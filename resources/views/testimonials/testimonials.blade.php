@@ -5,12 +5,15 @@
         <div class="width-limiter">
             <div class="banner-content">
                 <h1>Testimonials &<br>Case Study</h1>
-                <p>Explore our collection of testimonials and case studies to witness the transformative impact of our work. Discover how we've helped individuals and businesses achieve remarkable outcomes, fueled by innovation and a commitment to excellence.</p>
+                <p>Explore our collection of testimonials and case studies to witness the transformative impact of our
+                    work. Discover how we've helped individuals and businesses achieve remarkable outcomes, fueled by
+                    innovation and a commitment to excellence.</p>
             </div>
             <div class="banner-shape"></div>
             <div class="banner-img-container">
                 <div></div>
-                <img src="https://placehold.co/1920x1080.webp" alt="Banner image">
+                <img src="https://res.cloudinary.com/test-strike/image/upload/v1702013066/Success/kalle-stillersson-cYkmWlq_vYM-unsplash_z3zn9k.jpg"
+                    alt="Banner image">
             </div>
         </div>
     </section>
@@ -33,10 +36,11 @@
         <h2 class="section-heading">Quotes from our community</h2>
         <div class="width-limiter justify-evenly flex-wrap">
 
-            @for ($i = 0; $i < 9; $i++)
+            @foreach ($testimonials as $testimonial)
                 <div class="testimonials-card flex-col sFont" key={i}>
                     <div class="profile">
-                        <img src="https://placehold.co/100x100.webp" alt="testimonial profile" />
+                        <img src="{{ $testimonial['image'] }}" alt="testimonial profile" width="100"
+                            height="100" />
                         <h3 class="pFont">Lorem Ipsom dolor</h3>
                         <p>Lorem Ipsum</p>
                     </div>
@@ -56,7 +60,7 @@
                             clipRule="evenodd" />
                     </svg>
                 </div>
-            @endfor
+            @endforeach
 
         </div>
     </section>
@@ -67,18 +71,23 @@
         <h2 class="section-heading">Success stories</h2>
         <div class="width-limiter justify-evenly flex-wrap">
 
-            @for ($i = 0; $i < 4; $i++)
-            <a class="article-card border-sharp text-deco-none" href="/case-study">
-                <img src="https://placehold.co/350x250/webp" alt="Event Photo">
+            @foreach ($success as $case)
+                <a class="article-card border-sharp text-deco-none" href="/case-study">
+                    <img src="{{ $case['image'] }}" alt="Event Photo">
 
-                <div>
-                    <h3 class="pFont">Lorem Ipsum Dolor</h3>
-                    <span class="sFont">Lorem Ipsum Dolor</span>
+                    <div>
+                        <h3 class="pFont">Lorem Ipsum Dolor</h3>
+                        <span class="sFont">Lorem Ipsum Dolor</span>
 
-                    <p class="sFont">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique laboriosam voluptatem id qui. Corrupti quaerat inventore quisquam est unde debitis. Sunt vel voluptate amet id rem, deleniti recusandae est tenetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum doloribus reiciendis dignissimos quia perferendis mollitia repudiandae nulla, numquam odit tempore praesentium, magnam ut expedita quos autem molestiae natus animi deleniti!</p>
-                </div>
-            </a>
-            @endfor
+                        <p class="sFont">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique laboriosam
+                            voluptatem id qui. Corrupti quaerat inventore quisquam est unde debitis. Sunt vel voluptate
+                            amet id rem, deleniti recusandae est tenetur. Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Cum doloribus reiciendis dignissimos quia perferendis mollitia repudiandae
+                            nulla, numquam odit tempore praesentium, magnam ut expedita quos autem molestiae natus animi
+                            deleniti!</p>
+                    </div>
+                </a>
+            @endforeach
 
         </div>
     </section>

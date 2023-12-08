@@ -2,7 +2,7 @@
 
 <main>
     <div class="banner-image width-limiter">
-        <img src="https://placehold.co/1440x920" alt="Event banner"
+        <img src="https://res.cloudinary.com/test-strike/image/upload/v1702010311/Events/persnickety-prints-rrHl2zGZ9E4-unsplash_qcpfo1.jpg" alt="Event banner"
             style="height: inherit; width: 100%; object-fit: cover;">
     </div>
 

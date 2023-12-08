@@ -10,7 +10,7 @@
             <div class="banner-shape"></div>
             <div class="banner-img-container">
                 <div></div>
-                <img src="https://placehold.co/1920x1080.webp" alt="Banner image">
+                <img src="https://res.cloudinary.com/test-strike/image/upload/v1702010311/Events/persnickety-prints-rrHl2zGZ9E4-unsplash_qcpfo1.jpg" alt="Banner image">
             </div>
         </div>
     </section>
@@ -31,19 +31,19 @@
     <section class="community-content">
         <div class="width-limiter justify-evenly flex-wrap">
 
-            @for ($i = 0; $i < 12; $i++)
+            @foreach ($events as $event)
                 <a class="article-card border-sharp text-deco-none" href="/event-details">
-                    <img src="https://placehold.co/350x250/webp" alt="Event Photo">
+                    <img src="{{ $event['image'] }}" alt="Event Photo">
 
                     <div>
                         <h3 class="pFont">Lorem Ipsum Dolor</h3>
-                        <span class="sFont">Lorem 17, 2023 - Lorem Ipsum</span>
+                        <span class="sFont">Lorem 8, 2023 - Lorem Ipsum</span>
 
                         <p class="sFont">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique laboriosam voluptatem id qui. Corrupti quaerat inventore quisquam est unde debitis. Sunt vel voluptate amet id rem, deleniti recusandae est tenetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum doloribus reiciendis dignissimos quia perferendis mollitia repudiandae nulla, numquam odit tempore praesentium, magnam ut expedita quos autem molestiae natus animi deleniti!</p>
                     </div>
 
                 </a>
-            @endfor
+            @endforeach
 
         </div>
     </section>

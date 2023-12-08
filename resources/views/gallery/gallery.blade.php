@@ -12,7 +12,7 @@
             <div class="banner-shape"></div>
             <div class="banner-img-container">
                 <div></div>
-                <img src="https://placehold.co/1920x1080.webp" alt="Banner image">
+                <img src="https://res.cloudinary.com/test-strike/image/upload/v1702012776/Gallery/karla-rivera-yFBdywTfwaQ-unsplash_cidb1p.jpg" alt="Banner image">
             </div>
         </div>
     </section>
@@ -33,11 +33,11 @@
     <section class="community-content">
         <div class="width-limiter justify-evenly flex-wrap">
 
-            @for ($i = 0; $i < 9; $i++)
-                <a href="/images" class="image-item border-smooth">
-                    <img src="https://placehold.co/1280x720/webp" alt="Gallery item" class="trans-ease-in-out" />
+            @foreach ($gallery as $image)
+                <a href="/image-view" class="image-item border-smooth">
+                    <img src="{{ $image['image'] }}" alt="Gallery item" class="trans-ease-in-out" />
                 </a>
-            @endfor
+            @endforeach
 
         </div>
     </section>

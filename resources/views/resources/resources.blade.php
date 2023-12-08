@@ -12,7 +12,7 @@
             <div class="banner-shape"></div>
             <div class="banner-img-container">
                 <div></div>
-                <img src="https://placehold.co/1920x1080.webp" alt="Banner image">
+                <img src="https://res.cloudinary.com/test-strike/image/upload/v1702012942/Resources/premium_photo-1681489669846-33d1_zhj73h.webp" alt="Banner image">
             </div>
         </div>
     </section>

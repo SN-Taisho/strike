@@ -590,6 +590,7 @@ section#featured-events {
 }
 .featured-events-link img {
     border-radius: 2px;
+    height: clamp(200px, 40dvw, 400px);
     object-fit: cover;
     width: 100%;
 }
@@ -640,7 +641,9 @@ section#featured-testimonials {
 .testimonials-card .profile img {
     border-radius: 100%;
     float: left;
+    height: 100px;
     margin-right: 1rem;
+    width: 100px;
 }
 .testimonials-card h3 {
     color: var(--white);
@@ -659,7 +662,7 @@ section#featured-testimonials {
     color: var(--secondary);
     position: absolute;
     right: 1rem;
-    opacity: 0.8;
+    opacity: 0.5;
     top: 0.5rem;
 }
 /*=====  End of Lnading page  ======*/
@@ -923,6 +926,11 @@ main.soft {
     gap: 0.5rem;
     height: fit-content;
     width: clamp(300px, 90%, 450px);
+}
+.details-content .tags p {
+    color: var(--bgDark);
+    font-family: var(--sFont);
+    font-size: var(--fSize2);
 }
 
 /*=====  End of Programmes  ======*/
@@ -1392,6 +1400,11 @@ article.article {
     transform: scale(1.05);
 }
 
+.image-view {
+    display: block;
+    margin: 5rem auto;
+    width: 70%;
+}
 
 /*  Case Study*/
 .case-study-card {
@@ -1490,12 +1503,12 @@ form .section-subheading{
     transition: 150ms cubic-bezier(0.4,0,0.2,1);
    }
    
-   .input:focus, input[type="text"]:valid {
+   .input:focus, .input[type="text"]:valid {
     border: 3px solid var(--primary);
     outline: none;
    }
    
-   .input:focus ~ label, input[type="text"]:valid ~ label {
+   .input:focus ~ .input label, .input[type="text"]:valid ~ .input label {
     background-color: var(--softwhite);
     color: var(--secondary);
     padding: 8px;

@@ -57,7 +57,7 @@
 <body>
     <header>
         <div class="width-limiter align-center justify-between">
-            <a href="/home"><img src="{{ asset('assets/images/logo-alt.png') }}" alt="Logo.png" height="80" /></a>
+            <a href="/"><img src="{{ asset('assets/images/logo-alt.png') }}" alt="Logo.png" height="80" /></a>
 
             <div class="align-center">
                 <a class="itps-link text-deco-none pFont border-smooth trans-ease-out" href="/itps">
@@ -78,7 +78,7 @@
     <nav id="nav-menu" class="sFont">
         <ul class="list-style-none">
             <li>
-                <a href="/home">Home</a>
+                <a href="/">Home</a>
             </li>
             <li>
                 <a href="/about-us">About Us</a>
@@ -121,7 +121,7 @@
         <div class="width-limiter">
             <ul id="navbar-list" class="justify-center list-style-none trans-ease-out">
                 <li>
-                    <a href="/home">Home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
                     <a href="/programmes">Programmes</a>
