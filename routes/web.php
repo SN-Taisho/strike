@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Spatie\FlareClient\View;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -118,7 +120,7 @@ Route::get('/programmes', function () {
         'programmes/programmes',
         ['programmes' => $arr]
     );
-});
+})->name('programme.index');
 
 Route::get('/programme-details', function () {
     return view('programmes/programme-details');
@@ -199,7 +201,7 @@ Route::get('/gallery', function () {
         ['gallery' => $gallery]
     );
 });
-Route::get('/image-view', function() {
+Route::get('/image-view', function () {
     return view('gallery/view');
 });
 
@@ -286,4 +288,88 @@ Route::get('/contact-us', function () {
 
 Route::get('/calendar', function () {
     return view('info-pages/calendar');
+});
+
+
+//  Marketplace
+Route::get('/products', function () {
+    return View('marketplace/products');
+});
+Route::get('/product-details', function () {
+    return View('marketplace/product-details');
+});
+
+
+//  Administrators
+Route::get('/unauthorized', function () {
+    return View('errors/unauthorized');
+});
+
+Route::get('/dashboard', function () {
+    return view('admin/dashboard');
+});
+
+Route::get('/landing-editor', function () {
+    $arr = [
+        [
+            "title" => "Foundation",
+            "desc" => "The STRIKE 1 programme is designed to establish the foundation bowling skills including proper finishing position, approach and basic release. At the same time, the students will be introduced to basic code of conduct and bowling etiquette in a fun and interactive environment.",
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702006800/Programmes/fvt6wn495ijmzcwxop5n.webp"
+        ],
+        [
+            "title" => "Performance",
+            "desc" => "The STRIKE 2 programme is an enhancement of the foundation bowling skills taught during STRIKE 1. New founndation skills like timing, footwork, free swing, power step and a smoother release will be taught. The kids will continue to be exposed to the correct values of sportsmanship and learn the joys of making new friends in a fun and natural way.",
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702018976/Programmes/2_p2tfcd.webp"
+        ],
+        [
+            "title" => "Center of Excellence",
+            "desc" => "STRIKE Academy is endorsed by the Singapore Bowling Federation to conduct COE classes. Knowing the importance of establishing good bowling foundation in young bowlers, STRIKE is happy and honoured to be recognised and entrusted with the responsibilty.",
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702018959/Programmes/tinywow_3_42493501_lqkwax.webp"
+        ]
+    ];
+
+    $gallery = [
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/korean_exchange_2018_uzniyv.jpg",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009266/Events/u22one_ca7avl.png",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/75553007_3075258059169919_6957732511396921344_n_omfcvd.jpg",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/285044597_5810654732296891_407084135500207517_n_euosbb.jpg",
+        ],
+    ];
+
+    $testimonials = [
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702011837/Testimonials/tinywow_79350280_3137254119636979_4560698172439003136_n_1__42492023_wxp3sd.webp",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702011836/Testimonials/tinywow_179166983_4549252985103745_3418069252889582571_n_1__42491869_psanmv.webp",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702011835/Testimonials/jeremy-kwok-BTYyOhExaHA-unsplash_1_mtkczf.webp",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702011834/Testimonials/375260947_797851579014197_1843889591040674101_n_z0uksc.webp",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702011833/Testimonials/350644698_781488820023895_6700239987926652771_n_1_qskogi.webp",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702011825/Testimonials/296612625_468131725319519_266821404830095123_n_1_d3tk8n.webp",
+        ],
+    ];
+
+    return view(
+        'admin/landing-editor',
+        [
+            'programmes' => $arr,
+            'gallery' => $gallery,
+            'testimonials' => $testimonials
+        ]
+    );
 });

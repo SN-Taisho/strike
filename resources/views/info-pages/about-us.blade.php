@@ -1,4 +1,6 @@
-@include('components.header', ['title' => 'About Us'])
+@include('components.head', ['title' => 'About Us'])
+
+@include('components.header')
 
 <main>
     <section class="info-section">

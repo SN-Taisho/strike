@@ -1,4 +1,6 @@
-@include('components.header', ['title' => 'Bowling Coaches'])
+@include('components.head', ['title' => 'Bowling Coaches'])
+
+@include('components.header')
 
 <main>
     <section class="info-section">

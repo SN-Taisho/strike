@@ -1,4 +1,6 @@
-@include('components.header', ['title' => 'Page not found'])
+@include('components.head', ['title' => 'Page not found'])
+
+@include('components.header')
 
 <main>
 
@@ -11,9 +13,10 @@
             <path d="M15.5 15.5s-1-2-3.5-2-3.5 2-3.5 2"></path>
         </svg>
         <h1 class="pFont text-align-center">Oops! Looks like this page doesn't exist or is currently unavailable</h1>
-        <p class="text-align-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor praesentium, odio
-            consectetur iusto nobis ut sequi eum tempora quas exercitationem sed aspernatur molestias, quasi doloremque
-            amet nemo saepe tempore at?</p>
+        <p class="text-align-center">The page you’re looking for has taken a vacation to the great virtual beyond, or
+            maybe it never existed in the first place. Don’t fret, intrepid adventurer! Head back to our homepage with
+            the button below, or let your inner detective loose and search for what you desire using the handy bar
+            above. Happy exploring!</p>
         <a href="/home" class="border-smooth text-deco-none">Return Home</a>
     </section>
 

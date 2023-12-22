@@ -1,4 +1,6 @@
-@include('components.header', ['title' => 'Enroll'])
+@include('components.head', ['title' => 'Enroll'])
+
+@include('components.header')
 
 <main>
 

@@ -1,4 +1,6 @@
-@include('components.header', ['title' => 'Testimonials'])
+@include('components.head', ['title' => 'Testimonials'])
+
+@include('components.header')
 
 <main>
     <section class="community-banner">

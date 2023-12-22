@@ -1,4 +1,6 @@
-@include('components.header', ['title' => 'Event Details'])
+@include('components.head', ['title' => 'Event Details'])
+
+@include('components.header')
 
 <main>
     <div class="banner-image width-limiter">

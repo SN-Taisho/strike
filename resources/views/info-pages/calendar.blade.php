@@ -1,4 +1,6 @@
-@include('components.header', ['title' => 'Calendar'])
+@include('components.head', ['title' => 'Calendar'])
+
+@include('components.header')
 
 <main>
     <section class="info-section">

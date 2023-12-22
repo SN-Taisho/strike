@@ -1,4 +1,6 @@
-@include('components.header', ['title' => 'Case Study'])
+@include('components.head', ['title' => 'Case Study'])
+
+@include('components.header')
 
 <main>
     

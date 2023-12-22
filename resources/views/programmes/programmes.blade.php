@@ -1,4 +1,6 @@
-@include('components.header', ['title' => 'Programmes'])
+@include('components.head', ['title' => 'Programmes'])
+
+@include('components.header')
 
 <main>
 
@@ -16,7 +18,8 @@
 
                         <div class="content">
                             <h2 class="card-heading">{{ $programme['title'] }}</h2>
-                            <span style="font-weight: bold; letter-spacing: 1px;">{{ $programme['agerange'] }} | {{ $programme['suitable'] }}</span>
+                            <span style="font-weight: bold; letter-spacing: 1px;">{{ $programme['agerange'] }} |
+                                {{ $programme['suitable'] }}</span>
                             <p>{{ $programme['desc'] }}</p>
                             <div class="programme-links sFont">
                                 <a href="/enroll" class="alt">Enroll</a>

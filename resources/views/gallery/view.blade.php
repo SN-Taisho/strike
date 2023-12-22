@@ -1,4 +1,6 @@
-@include('components.header', ['title' => 'Gallery'])
+@include('components.head', ['title' => 'Gallery'])
+
+@include('components.header')
 
 <main>
         <img src="https://res.cloudinary.com/test-strike/image/upload/v1702012776/Gallery/karla-rivera-yFBdywTfwaQ-unsplash_cidb1p.jpg"

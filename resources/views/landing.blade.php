@@ -1,4 +1,6 @@
-@include('components.header', ['title' => 'Home'])
+@include('components.head', ['title' => 'Home'])
+
+@include('components.header')
 
 <main>
     <div id="landing-banner" class="flex">
@@ -65,7 +67,7 @@
             @foreach ($testimonials as $testimony)
                 <div class="testimonials-card flex-col sFont" key={i}>
                     <div class="profile">
-                        <img src="{{ $testimony['image'] }}" alt="testimonial profile" />
+                        <img src="{{ $testimony['image'] }}" alt="testimonial profile" width="100" height="100"/>
                         <h3 class="pFont">Lorem Ipsom dolor</h3>
                         <p>Lorem Ipsum</p>
                     </div>

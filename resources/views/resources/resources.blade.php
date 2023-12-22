@@ -1,4 +1,6 @@
-@include('components.header', ['title' => 'Resources'])
+@include('components.head', ['title' => 'Resources'])
+
+@include('components.header')
 
 <main>
     <section class="community-banner">
@@ -12,7 +14,8 @@
             <div class="banner-shape"></div>
             <div class="banner-img-container">
                 <div></div>
-                <img src="https://res.cloudinary.com/test-strike/image/upload/v1702012942/Resources/premium_photo-1681489669846-33d1_zhj73h.webp" alt="Banner image">
+                <img src="https://res.cloudinary.com/test-strike/image/upload/v1702012942/Resources/premium_photo-1681489669846-33d1_zhj73h.webp"
+                    alt="Banner image">
             </div>
         </div>
     </section>
@@ -31,7 +34,7 @@
     </div>
 
     <section class="community-content">
-        <h2 class="section-heading">Working Progress</h2>
+        <h2 class="section-heading">Youtube Tutorials</h2>
         <div class="width-limiter justify-evenly flex-wrap">
 
             @for ($i = 0; $i < 9; $i++)

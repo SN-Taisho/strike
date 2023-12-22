@@ -34,8 +34,8 @@
         <a href="/"><img src="{{ asset('assets/images/logo-alt.png') }}" alt="Logo.png" height="80" /></a>
 
         <div class="align-center">
-            <a class="itps-link text-deco-none pFont border-smooth trans-ease-out" href="/itps">
-                ITPS Portal
+            <a class="itps-link text-deco-none pFont border-smooth trans-ease-out" href="/dashboard">
+                Dashboard
             </a>
             <button id="nav-menu-toggle" onClick="toggleSideMenu()">
                 <svg width="32" height="32" fill="none" stroke="currentColor" strokeLinecap="round"
@@ -52,40 +52,40 @@
 <nav id="nav-menu" class="sFont">
     <ul class="list-style-none">
         <li>
-            <a href="/">Home</a>
+            <a href="/landing-editor">Landing</a>
         </li>
         <li>
-            <a href="/about-us">About Us</a>
+            <a href="/about-us-editor">About Us</a>
         </li>
         <li>
-            <a href="/coaches">Our Coaches</a>
+            <a href="/coaches-editor">Our Coaches</a>
         </li>
         <li>
-            <a href="/programmes">Programmes</a>
+            <a href="/programmes-editor">Programmes</a>
         </li>
         <li>
             <a href="/marketplace">Marketplace</a>
         </li>
         <li>
-            <a href="/events">Events</a>
+            <a href="/events-editor">Events</a>
         </li>
         <li>
-            <a href="/calendar">Calendar</a>
+            <a href="/calendar-editor">Calendar</a>
         </li>
         <li>
-            <a href="/gallery">Gallery</a>
+            <a href="/gallery-editor">Gallery</a>
         </li>
         <li>
-            <a href="/resources">Resources</a>
+            <a href="/resources-editor">Resources</a>
         </li>
         <li>
-            <a href="/testimonials">Testimonials</a>
+            <a href="/testimonials-editor">Testimonials</a>
         </li>
         <li>
-            <a href="/important-policies">Important Policies</a>
+            <a href="/important-policies-editor">Important Policies</a>
         </li>
         <li>
-            <a href="/contact-us">Contact Us</a>
+            <a href="/contact-us-editor">Contact Us</a>
         </li>
     </ul>
 </nav>
@@ -95,10 +95,10 @@
     <div class="width-limiter">
         <ul id="navbar-list" class="justify-center list-style-none trans-ease-out">
             <li>
-                <a href="/">Home</a>
+                <a href="/landing-editor">Landing</a>
             </li>
             <li>
-                <a href="/programmes">Programmes</a>
+                <a href="/programmes-editor">Programmes</a>
             </li>
             <li>
                 <a href="/marketplace">Marketplace</a>
@@ -113,19 +113,19 @@
                 </a>
                 <ul class="dropdown-content">
                     <li>
-                        <a href="/events">Events</a>
+                        <a href="/events-editor">Events</a>
                     </li>
                     <li>
-                        <a href="/calendar">Calendar</a>
+                        <a href="/calendar-editor">Calendar</a>
                     </li>
                     <li>
-                        <a href="/gallery">Gallery</a>
+                        <a href="/gallery-editor">Gallery</a>
                     </li>
                     <li>
-                        <a href="/resources">Resources</a>
+                        <a href="/resources-editor">Resources</a>
                     </li>
                     <li>
-                        <a href="/testimonials">Testimonials & Case Studies</a>
+                        <a href="/testimonials"-editor>Testimonials & Case Studies</a>
                     </li>
                 </ul>
             </li>
@@ -139,16 +139,16 @@
                 </a>
                 <ul class="dropdown-content">
                     <li>
-                        <a href="/about-us">About Us</a>
+                        <a href="/about-us-editor">About Us</a>
                     </li>
                     <li>
-                        <a href="/coaches">Our Coaches</a>
+                        <a href="/coaches-editor">Our Coaches</a>
                     </li>
                     <li>
-                        <a href="/important-policies">Important Policies</a>
+                        <a href="/important-policies-editor">Important Policies</a>
                     </li>
                     <li>
-                        <a href="/contact-us">Contact Us</a>
+                        <a href="/contact-us-editor">Contact Us</a>
                     </li>
                 </ul>
             </li>

@@ -1,4 +1,6 @@
-@include('components.header', ['title' => 'Programme Details'])
+@include('components.head', ['title' => 'Programme Details'])
+
+@include('components.header')
 
 <main class="soft">
 
