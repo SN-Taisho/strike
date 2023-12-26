@@ -22,6 +22,34 @@
             </div>
         </section>
 
+        <section class="form-section">
+            <div class="input-group file">
+                <label class="filelabel">Landing Banner</label>
+                <input required="" type="file" name="Landing Banner" class="input">
+            </div>
+        </section>
+
+        <div id="landing-banner" class="flex">
+            <img src="{{ asset('assets/images/landing.jpg') }}" alt="landing-banner.png" />
+            <div class="width-limiter flex">
+                <div id="landing-content">
+                    <h1 class="pFont">
+                        Don't call it a Dream, <br />
+                        <span>Call it a Plan.</span>
+                    </h1>
+                    <p class="sFont">
+                        STRIKE believe sports provide a great platform to develop desirable character traits.
+                        STRIKE&apos;s progressive pedagogy harness the experience of parents with successful
+                        children, coaches with proven track records, innovation provided by evolving technologies,
+                        and consultation with domain experts.
+                    </p>
+                    <button id="learn-more">
+                        <span>Learn More</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <hr class="divider">
 
         <section class="form-section">
@@ -82,9 +110,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @for ($i = 1; $i < 11; $i++)
+                    @for ($i = 0; $i < 10; $i++)
                         <tr>
-                            <td data-label="No.">{{ $i }}</td>
+                            <td data-label="No.">{{ $i + 1}}</td>
                             <td data-label="Event">Event Name</td>
                             <td data-label="Date">Lorem, 20, 2023</td>
                             <td data-label="Location">Lorem Ipsum Dolor</td>
@@ -128,9 +156,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @for ($i = 1; $i < 11; $i++)
+                    @for ($i = 0; $i < 10; $i++)
                         <tr>
-                            <td data-label="No.">{{ $i }}</td>
+                            <td data-label="No.">{{ $i + 1 }}</td>
                             <td data-label="Name">Event Name</td>
                             <td data-label="Position">Lorem Ipsum Dolor</td>
                             <td data-label="Testimony">Lorem Ipsum Dolor</td>
@@ -181,7 +209,7 @@
 
         <div class="justify-evenly flex-wrap">
             <button type="submit" class="cancel-btn trans-ease-in-out">Cancel</button>
-        <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
+            <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
     </form>
 

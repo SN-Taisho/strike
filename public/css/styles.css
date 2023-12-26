@@ -1547,7 +1547,7 @@ textarea.input {
     flex-wrap: wrap;
     gap: 0.5rem;
     height: fit-content;
-    justify-content: space-between;
+    justify-content: space-around;
     width: clamp(300px, 80%, 500px);
 }
 .input-group.file input {
@@ -1561,6 +1561,7 @@ textarea.input {
     max-width: 250px;
     position: relative;
     min-width: 150px;
+    text-align: center;
 }
 
 /* Radio input */
@@ -1842,18 +1843,48 @@ textarea.input {
     border: 2px solid var(--primary);
     color: var(--primary);
 }
-/*----------  Products page  ----------*/
-
 /*=====  End of Markerplace  ======*/
 
+
 /*=============================================
-=            Section comment block            =
+=            Edit Pages            =
 =============================================*/
 .edit-form {
-    padding: 2rem 1rem;
+    padding: 2rem 0rem;
 }
 
-/*=====  End of Section comment block  ======*/
+/*----------  Action Buttons  ----------*/
+.action-btn {
+    border-radius: 10px;
+    border: 5px solid var(--bgMedium);
+    color: var(--bgDark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: var(--sFont);
+    font-size: var(--fSize2);
+    padding: 0.7rem;
+    transition: ease-out 0.3s;
+  }
+  .action-btn.icon {
+    padding: 0.5rem;
+  }
+
+  .action-btn:hover {
+    border-color: var(--white);
+  }
+
+  .action-btn.edit {
+    background-color: var(--secondary);
+    color: var(--bgDark);
+  }
+  .action-btn.delete {
+    background-color: var(--danger);
+    color: var(--bgLight);
+  }
+
+/*=====  End of SEdit Pages block  ======*/
+
 
 /*=============================================
 =            Error Handling            =

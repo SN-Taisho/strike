@@ -34,7 +34,7 @@
 
             <div class="schedule">
                 <table>
-                    <caption class="section-heading">Schedule</caption>
+                    <caption class="section-heading">Upcomeming Events</caption>
                     <thead class="pFont">
                         <tr>
                             <th>Date</th>

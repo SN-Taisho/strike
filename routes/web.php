@@ -373,3 +373,47 @@ Route::get('/landing-editor', function () {
         ]
     );
 });
+
+//  Programmes Selector
+Route::get('/programmes-selection', function () {
+
+    $arr = [
+        [
+            "title" => "Foundation",
+            "agerange" => "7-16 years old",
+            "suitable" => "Beginners",
+            "desc" => "The STRIKE 1 programme is designed to establish the foundation bowling skills including proper finishing position, approach and basic release. At the same time, the students will be introduced to basic code of conduct and bowling etiquette in a fun and interactive environment.",
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702006800/Programmes/fvt6wn495ijmzcwxop5n.webp"
+        ],
+        [
+            "title" => "Performance",
+            "agerange" => "7-16 years old",
+            "suitable" => "Advanced",
+            "desc" => "The STRIKE 2 programme is an enhancement of the foundation bowling skills taught during STRIKE 1. New founndation skills like timing, footwork, free swing, power step and a smoother release will be taught. The kids will continue to be exposed to the correct values of sportsmanship and learn the joys of making new friends in a fun and natural way.",
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702018976/Programmes/2_p2tfcd.webp"
+        ],
+        [
+            "title" => "Center of Excellence",
+            "agerange" => "7-16 years old and also young adults",
+            "suitable" => "Aspiring National Bowlers",
+            "desc" => "STRIKE Academy is endorsed by the Singapore Bowling Federation to conduct COE classes. Knowing the importance of establishing good bowling foundation in young bowlers, STRIKE is happy and honoured to be recognised and entrusted with the responsibilty.",
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702018959/Programmes/tinywow_3_42493501_lqkwax.webp"
+        ],
+        [
+            "title" => "Virtual Coaching",
+            "agerange" => "7-16 years old",
+            "suitable" => "Beginners",
+            "desc" => "At STRIKE, we make use of motion analysis software to analyze a bowler’s physical game. With the ability to freeze frames and run videos in slow motion, we are able to identify any fault within his game. The ability to visually analyze his game from the front, side and back views gives additional information on his game play, consistency on targets, release and footwork.",
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702018959/Programmes/tinywow_4_42493609_r0vb49.webp"
+        ]
+    ];
+
+    return view(
+        'admin/programmes/programmes-selection',
+        ['programmes' => $arr]
+    );
+})->name('programmes-selection.index');
+
+Route::get('/edit-programme-details', function () {
+    return view('admin/programmes/programme-details-editor');
+});

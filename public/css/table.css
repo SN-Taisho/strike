@@ -147,6 +147,11 @@
     }
 }
 
+@media screen and (min-width:901px) {
+  .res-table.wide td {
+    max-width: 350px;
+  }
+}
 @media screen and (max-width: 900px) {
 	.res-table.wide {
     border: 0;
@@ -221,6 +226,11 @@
   }
 }
 
+@media screen and (min-width:601px) {
+  .res-table.small td {
+    max-width: 350px;
+  }
+}
 @media screen and (max-width: 600px) {
   .res-table.small {
     border: 0;

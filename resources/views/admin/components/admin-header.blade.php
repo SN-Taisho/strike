@@ -61,7 +61,7 @@
             <a href="/coaches-editor">Our Coaches</a>
         </li>
         <li>
-            <a href="/programmes-editor">Programmes</a>
+            <a href="/programmes-selection">Programmes</a>
         </li>
         <li>
             <a href="/marketplace">Marketplace</a>
@@ -98,7 +98,7 @@
                 <a href="/landing-editor">Landing</a>
             </li>
             <li>
-                <a href="/programmes-editor">Programmes</a>
+                <a href="/programmes-selection">Programmes</a>
             </li>
             <li>
                 <a href="/marketplace">Marketplace</a>
