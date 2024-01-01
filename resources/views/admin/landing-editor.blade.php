@@ -7,37 +7,41 @@
     <form class="edit-form width-limiter">
         <h3 class="section-heading">Landing Editor</h3>
 
-        <section class="form-section">
-            <div class="input-group">
-                <input required="true" type="text" name="landing" autocomplete="off" class="input">
-                <label class="label">Landing Heading</label>
+        <section class="form-section flex-col">
+            <p>Landing Heading</p>
+            <div class="input-group fill">
+                <textarea required="" type="text" name="landing_heading" autocomplete="off" id="landingHeadingInput" class="input"
+                    rows="3"></textarea>
+                <label class="label">Write Here</label>
             </div>
         </section>
 
         <section class="form-section flex-col">
             <p>Landing Paragraph</p>
-            <div class="input-group">
-                <textarea required="" type="text" name="average_desc" autocomplete="off" class="input" rows="5"></textarea>
-                <label class="label">Average and Difficulties</label>
+            <div class="input-group fill">
+                <textarea required="" type="text" name="landing_paragraph" autocomplete="off" id="landingParagraphInput"
+                    class="input" rows="5"></textarea>
+                <label class="label">Write Here</label>
             </div>
         </section>
 
         <section class="form-section">
             <div class="input-group file">
                 <label class="filelabel">Landing Banner</label>
-                <input required="" type="file" name="Landing Banner" class="input">
+                <input required="" type="file" name="Landing Banner" accept="image/png, image/jpeg, image/webp"
+                    class="input" id="landingBannerInput">
             </div>
         </section>
 
         <div id="landing-banner" class="flex">
-            <img src="{{ asset('assets/images/landing.jpg') }}" alt="landing-banner.png" />
+            <img id="landingBannerImage" src="{{ asset('assets/images/landing.jpg') }}" alt="landing-banner.png" />
             <div class="width-limiter flex">
                 <div id="landing-content">
-                    <h1 class="pFont">
+                    <h1 id="landingHeading" class="pFont">
                         Don't call it a Dream, <br />
                         <span>Call it a Plan.</span>
                     </h1>
-                    <p class="sFont">
+                    <p id="landingParagraph" class="sFont">
                         STRIKE believe sports provide a great platform to develop desirable character traits.
                         STRIKE&apos;s progressive pedagogy harness the experience of parents with successful
                         children, coaches with proven track records, innovation provided by evolving technologies,
@@ -49,6 +53,33 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            const landingHeadingInput = document.getElementById('landingHeadingInput');
+            const landingParagraphInput = document.getElementById('landingParagraphInput');
+            const landingHeading = document.querySelector('#landingHeading');
+            const landingParagraph = document.querySelector('#landingParagraph');
+            const landingBannerInput = document.getElementById('landingBannerInput');
+            const landingBannerImage = document.getElementById('landingBannerImage');
+
+            // Single event listener for both heading and paragraph inputs
+            document.addEventListener('input', (event) => {
+                if (event.target === landingHeadingInput) {
+                    const text = event.target.value;
+                    const parts = text.split(',');
+                    landingHeading.innerHTML = `${parts[0]}<br /><span>${parts[1] || ''}</span>`;
+                } else if (event.target === landingParagraphInput) {
+                    landingParagraph.textContent = event.target.value;
+                }
+            });
+
+            landingBannerInput.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.onload = () => landingBannerImage.src = reader.result;
+                reader.readAsDataURL(file);
+            });
+        </script>
 
         <hr class="divider">
 
@@ -112,7 +143,7 @@
                 <tbody>
                     @for ($i = 0; $i < 10; $i++)
                         <tr>
-                            <td data-label="No.">{{ $i + 1}}</td>
+                            <td data-label="No.">{{ $i + 1 }}</td>
                             <td data-label="Event">Event Name</td>
                             <td data-label="Date">Lorem, 20, 2023</td>
                             <td data-label="Location">Lorem Ipsum Dolor</td>
@@ -208,7 +239,7 @@
         </section>
 
         <div class="justify-evenly flex-wrap">
-            <button type="submit" class="cancel-btn trans-ease-in-out">Cancel</button>
+            <button type="button" class="cancel-btn trans-ease-in-out" onclick="window.location.href='/landing-editor'">Cancel</button>
             <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
     </form>

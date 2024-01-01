@@ -1,11 +1,11 @@
-@include('admin.components.admin-head', ['title' => 'Programme Details Editor'])
+@include('admin.components.admin-head', ['title' => 'Add Programme'])
 
 @include('admin.components.admin-header')
 
 <main style="background-color: var(--softwhite);">
 
     <form class="edit-form width-limiter" style="max-width: 720px">
-        <h1 class="section-heading">Edit Programme Details</h1>
+        <h1 class="section-heading">Add New Programme</h1>
 
         <section class="form-section">
             <div class="input-group">
@@ -26,14 +26,13 @@
         <section class="form-section">
             <div class="input-group file">
                 <label class="filelabel">Programme Image (1:1)</label>
-                <input required="" type="file" name="programme_image" autocomplete="off" id="imageInput" class="input">
+                <input required="" type="file" name="programme_image" autocomplete="off" id="imageInput"
+                    class="input">
             </div>
         </section>
 
         <div class="details-header width-limiter">
-            <img id="image1"
-                src="https://res.cloudinary.com/test-strike/image/upload/v1702006800/Programmes/fvt6wn495ijmzcwxop5n.webp"
-                alt="Programme image">
+            <img id="image1" src="https://placehold.co/300x300/webp">
         </div>
 
         <section class="form-section">
@@ -89,9 +88,7 @@
     <h2 class="section-heading">Page Preview</h2>
 
     <div class="details-header width-limiter">
-        <img id="image2"
-            src="https://res.cloudinary.com/test-strike/image/upload/v1702006800/Programmes/fvt6wn495ijmzcwxop5n.webp"
-            alt="Programme image">
+        <img id="image2" src="https://placehold.co/300x300/webp">
 
         <div class="dh-content">
             <h1 id="title" class="heading pFont">Programme Name</h1>

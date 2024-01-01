@@ -63,10 +63,19 @@
 	text-decoration: underline;
 }
 
+/* Table Text */
+.limit-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  display: -webkit-box;
+}
+
 /* Table Photo */
 .table-photo .image-wrapper {
-	height: 75px;
-	width: 75px;
+	height: 150px;
+	width: 150px;
 }
 
 .table-photo .image-wrapper img {
@@ -147,12 +156,12 @@
     }
 }
 
-@media screen and (min-width:901px) {
+@media screen and (min-width:1025px) {
   .res-table.wide td {
     max-width: 350px;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1024px) {
 	.res-table.wide {
     border: 0;
   }

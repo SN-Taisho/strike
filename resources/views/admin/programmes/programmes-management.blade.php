@@ -1,4 +1,4 @@
-@include('admin.components.admin-head', ['title' => 'Programme Selection'])
+@include('admin.components.admin-head', ['title' => 'Programme Management'])
 
 @include('admin.components.admin-header')
 
@@ -6,6 +6,8 @@
 
     <form class="edit-form width-limiter">
         <h3 class="section-heading">Programme Selection</h3>
+
+        <a href="/add-programme" class="action-btn alt text-deco-none" style="margin: auto;">Add New Programme</a>
 
         <div class="table-limiter">
             <table class="res-table wide limited" style="max-width: 1440px;">
@@ -29,12 +31,15 @@
                             <td data-label="No.">{{ $i + 1 }}</td>
                             <td data-label="Programme">{{ $programme['title'] }}</td>
                             <td data-label="Age Range">{{ $programme['agerange'] }}</td>
-                            <td data-label="Description">{{ $programme['desc'] }}</td>
+                            <td data-label="Description">
+                                <p class="limit-text">{{ $programme['desc'] }}
+                                </p>
+                            </td>
                             <td class="actions" data-label="Action">
                                 <div class="check-box-container">
                                     <label class="cyberpunk-checkbox-label" style="color: var(--secondary)">
                                         <input type="checkbox" class="cyberpunk-checkbox">
-                                        Feature</label>
+                                        Show</label>
                                 </div>
                                 <button type="button" class="action-btn edit icon"
                                     onclick="window.location.href='/edit-programme-details'"><svg width="24"
@@ -117,7 +122,7 @@
         </section>
 
         <div class="justify-evenly flex-wrap">
-            <button type="submit" class="cancel-btn trans-ease-in-out">Cancel</button>
+            <button type="button" class="cancel-btn trans-ease-in-out" onclick="window.location.href='/programmes-management'">Cancel</button>
             <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
     </form>

@@ -1520,7 +1520,8 @@ form .section-subheading {
 }
 
 .input:focus,
-input.input[type="text"]:valid {
+input.input[type="text"]:valid,
+textarea.input[type="text"]:valid  {
     border: 3px solid var(--primary);
     outline: none;
 }
@@ -1534,6 +1535,21 @@ input.input[type="text"]:valid ~ label {
 }
 
 /* Textarea */
+.input-group.fill {
+    width: clamp(250px, 95%, 720px);
+}
+.input-group.fill .input {
+    width: 100%;
+}
+
+.input:focus ~ label,
+textarea.input[type="text"]:valid ~ label {
+    background-color: var(--softwhite);
+    color: var(--secondary);
+    padding: 8px;
+    transform: translateY(-50%) scale(0.9);
+}
+
 textarea.input {
     box-sizing: border-box;
     resize: none;
@@ -1541,6 +1557,11 @@ textarea.input {
 }
 
 /* File Input */
+input.input[type="file"]:valid {
+    border: 3px solid var(--primary);
+    outline: none;
+}
+
 .input-group.file {
     align-items: center;
     display: flex;
@@ -1699,6 +1720,7 @@ textarea.input {
     flex-wrap: wrap;
     gap: 1rem;
     padding: 0.7rem;
+    transition: all 0.3s ease-out;
 }
 
 .cyberpunk-checkbox {
@@ -1711,8 +1733,12 @@ textarea.input {
     height: 20px;
     margin-right: 10px;
     position: relative;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-out;
     width: 20px;
+}
+
+.check-box-container:hover {
+    border: 3px solid var(--bgLight);
 }
 
 .cyberpunk-checkbox:before {
@@ -1855,16 +1881,18 @@ textarea.input {
 
 /*----------  Action Buttons  ----------*/
 .action-btn {
+    align-items: center;
     border-radius: 10px;
     border: 5px solid var(--bgMedium);
     color: var(--bgDark);
     cursor: pointer;
     display: flex;
-    align-items: center;
     font-family: var(--sFont);
     font-size: var(--fSize2);
+    font-weight: bold;
     padding: 0.7rem;
     transition: ease-out 0.3s;
+    width: fit-content;
   }
   .action-btn.icon {
     padding: 0.5rem;
@@ -1872,6 +1900,17 @@ textarea.input {
 
   .action-btn:hover {
     border-color: var(--white);
+  }
+
+  .action-btn.alt {
+    background-color: var(--primary);
+    color: var(--bgLight);
+
+  }
+  .action-btn.alt:hover {
+    background-color: transparent;
+    border: 5px solid var(--primary);
+    color: var(--primary);
   }
 
   .action-btn.edit {

@@ -374,8 +374,8 @@ Route::get('/landing-editor', function () {
     );
 });
 
-//  Programmes Selector
-Route::get('/programmes-selection', function () {
+//  Programmes Management
+Route::get('/programmes-management', function () {
 
     $arr = [
         [
@@ -409,11 +409,107 @@ Route::get('/programmes-selection', function () {
     ];
 
     return view(
-        'admin/programmes/programmes-selection',
+        'admin/programmes/programmes-management',
         ['programmes' => $arr]
     );
-})->name('programmes-selection.index');
+})->name('programmes-management.index');
+
+Route::get('/add-programme', function () {
+    return view('admin/programmes/add-programme');
+})->name('add-programme.index');
 
 Route::get('/edit-programme-details', function () {
     return view('admin/programmes/programme-details-editor');
-});
+})->name('programme-details-editor.index');
+
+// Events Management
+Route::get('/events-management', function () {
+
+    $events = [
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009266/Events/u22one_ca7avl.png",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009266/Events/screenshot_2023-02-27_at_2.06.34_pm_fy8v5q.png",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009265/Events/anya_sio_wk40m7.png",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009265/Events/350622704_569405701975836_7192318548279517516_n_ps9xzo.jpg",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/korean_exchange_2018_uzniyv.jpg",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/75553007_3075258059169919_6957732511396921344_n_omfcvd.jpg",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/285044597_5810654732296891_407084135500207517_n_euosbb.jpg",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/402043857_849728990493122_7694688429340728986_n_1_n7hzvv.jpg"
+        ]
+    ];
+
+    return view('admin/events/events-management', ['events' => $events]);
+})->name('events-management.index');
+
+Route::get('/add-event', function () {
+    return view('admin/events/add-event');
+})->name('add-event.index');
+
+Route::get('event-details-editor', function() {
+    return view('admin/events/event-details-editor');
+})->name('event-details-editor.index');
+
+// Calendar Editor
+Route::get('/calendar-editor', function () {
+    return view('admin/calendar/calendar-editor');
+})->name('calendar-editor.index');
+
+Route::get('/add-calendar-event', function () {
+    return view('admin/calendar/add-calendar-event');
+})->name('add-calendar-event.index');
+
+Route::get('/calendar-event-editor', function () {
+    return view('admin/calendar/calendar-event-editor');
+})->name('calendar-event-editor.index');
+
+// Gallery Management
+Route::get('/gallery-management', function () {
+
+    $gallery = [
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/korean_exchange_2018_uzniyv.jpg",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009266/Events/screenshot_2023-02-27_at_2.06.34_pm_fy8v5q.png",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009265/Events/anya_sio_wk40m7.png",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009266/Events/u22one_ca7avl.png",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/75553007_3075258059169919_6957732511396921344_n_omfcvd.jpg",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/285044597_5810654732296891_407084135500207517_n_euosbb.jpg",
+        ],
+    ];
+
+    return view(
+        'admin/gallery/gallery-management',
+        ['gallery' => $gallery]
+    );
+})->name('gallery-management.index');
+
+Route::get('/add-photo', function () {
+    return view('admin/gallery/add-photo');
+})->name('add-photo.index');
+
+Route::get('/photo-editor', function () {
+    return view('admin/gallery/photo-editor');
+})->name('photo-editor.index');

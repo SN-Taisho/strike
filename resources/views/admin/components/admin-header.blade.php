@@ -61,25 +61,25 @@
             <a href="/coaches-editor">Our Coaches</a>
         </li>
         <li>
-            <a href="/programmes-selection">Programmes</a>
+            <a href="/programmes-management">Programmes</a>
         </li>
         <li>
             <a href="/marketplace">Marketplace</a>
         </li>
         <li>
-            <a href="/events-editor">Events</a>
+            <a href="/events-management">Events</a>
         </li>
         <li>
             <a href="/calendar-editor">Calendar</a>
         </li>
         <li>
-            <a href="/gallery-editor">Gallery</a>
+            <a href="/gallery-management">Gallery</a>
         </li>
         <li>
-            <a href="/resources-editor">Resources</a>
+            <a href="/resources-management">Resources</a>
         </li>
         <li>
-            <a href="/testimonials-editor">Testimonials</a>
+            <a href="/testimonials-management">Testimonials</a>
         </li>
         <li>
             <a href="/important-policies-editor">Important Policies</a>
@@ -98,7 +98,7 @@
                 <a href="/landing-editor">Landing</a>
             </li>
             <li>
-                <a href="/programmes-selection">Programmes</a>
+                <a href="/programmes-management">Programmes</a>
             </li>
             <li>
                 <a href="/marketplace">Marketplace</a>
@@ -113,16 +113,16 @@
                 </a>
                 <ul class="dropdown-content">
                     <li>
-                        <a href="/events-editor">Events</a>
+                        <a href="/events-management">Events</a>
                     </li>
                     <li>
                         <a href="/calendar-editor">Calendar</a>
                     </li>
                     <li>
-                        <a href="/gallery-editor">Gallery</a>
+                        <a href="/gallery-management">Gallery</a>
                     </li>
                     <li>
-                        <a href="/resources-editor">Resources</a>
+                        <a href="/resources-management">Resources</a>
                     </li>
                     <li>
                         <a href="/testimonials"-editor>Testimonials & Case Studies</a>
