@@ -18,7 +18,7 @@
     <section class="info-section">
         <div class="width-limiter">
             <div class="i-section-left">
-                <h2>Attendace and Replacement Classes</h2>
+                <h2>Attendance and Replacement Classes</h2>
             </div>
 
             <div class="i-section-right">

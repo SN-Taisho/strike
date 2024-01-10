@@ -51,42 +51,17 @@
 
 <nav id="nav-menu" class="sFont">
     <ul class="list-style-none">
-        <li>
-            <a href="/">Home</a>
-        </li>
-        <li>
-            <a href="/about-us">About Us</a>
-        </li>
-        <li>
-            <a href="/coaches">Our Coaches</a>
-        </li>
-        <li>
-            <a href="/programmes">Programmes</a>
-        </li>
-        <li>
-            <a href="/marketplace">Marketplace</a>
-        </li>
-        <li>
-            <a href="/events">Events</a>
-        </li>
-        <li>
-            <a href="/calendar">Calendar</a>
-        </li>
-        <li>
-            <a href="/gallery">Gallery</a>
-        </li>
-        <li>
-            <a href="/resources">Resources</a>
-        </li>
-        <li>
-            <a href="/testimonials">Testimonials</a>
-        </li>
-        <li>
-            <a href="/important-policies">Important Policies</a>
-        </li>
-        <li>
-            <a href="/contact-us">Contact Us</a>
-        </li>
+        <li><a href="/">Home</a> </li>
+        <li><a href="/about-us">About Us</a> </li>
+        <li><a href="/programmes">Programmes</a></li>
+        <li><a href="/coaches">Our Coaches</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/calendar">Calendar</a> </li>
+        <li><a href="/bowlers-achievement">Bowlers Achievement</a></li>
+        <li><a href="/marketplace">Marketplace</a></li>
+        <li><a href="/testimonials">Testimonials</a>
+        <li><a href="/important-policies">Important Policies</a></li>
+        <li><a href="/contact-us">Contact Us</a></li>
     </ul>
 </nav>
 
@@ -101,11 +76,14 @@
                 <a href="/programmes">Programmes</a>
             </li>
             <li>
-                <a href="/marketplace">Marketplace</a>
+                <a href="/events">Events</a>
+            </li>
+            <li>
+                <a href="/calendar">Calendar</a>
             </li>
             <li class="dropdown">
                 <a href="javascript:void(0);">
-                    Community
+                    Resources
                     <svg width="32" height="32" fill="none" stroke="currentColor" stroke-linejoin="round"
                         stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="m18 9.5-6 6-6-6h12Z"></path>
@@ -113,19 +91,13 @@
                 </a>
                 <ul class="dropdown-content">
                     <li>
-                        <a href="/events">Events</a>
+                        <a href="/bowlers-achievement">Bowerlers Achievement</a>
                     </li>
                     <li>
-                        <a href="/calendar">Calendar</a>
+                        <a href="/marketplace">Marketplace</a>
                     </li>
                     <li>
-                        <a href="/gallery">Gallery</a>
-                    </li>
-                    <li>
-                        <a href="/resources">Resources</a>
-                    </li>
-                    <li>
-                        <a href="/testimonials">Testimonials & Case Studies</a>
+                        <a href="/testimonials">Testimonials</a>
                     </li>
                 </ul>
             </li>

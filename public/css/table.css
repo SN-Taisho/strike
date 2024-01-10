@@ -160,6 +160,10 @@
   .res-table.wide td {
     max-width: 350px;
   }
+
+  .res-table.wide .table-photo .image-wrapper {
+    margin: auto;
+  }
 }
 @media screen and (max-width: 1024px) {
 	.res-table.wide {

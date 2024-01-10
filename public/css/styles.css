@@ -499,12 +499,7 @@ footer {
     transform: translate3d(100%, 0, 0);
 }
 
-/*----------  Featured Programmes  ----------*/
-section#featured-programmes {
-    background-color: var(--bgLight);
-    padding: 2rem 1rem;
-}
-
+/*----------  Landing Section Heading  ----------*/
 .section-heading {
     color: var(--bgDark);
     font-family: var(--pFont);
@@ -520,60 +515,31 @@ section#featured-programmes {
     color: var(--bgLight);
 }
 
-#featured-programmes .width-limiter {
-    height: fit-content;
-    gap: 2rem;
+
+/*----------  STRIKE Stats  ----------*/
+#stats {
+    background-color: var(--bgLight);
 }
 
-.featured-programme {
-    background-color: var(--bgMedium);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 400px;
+#stats .stat-card {
+    height: 250px;
+    width: 250px;
 }
-
-.featured-programme img {
-    width: 100%;
-}
-
-.featured-programme > div {
-    padding: 1rem;
-}
-
-.featured-programme h3 {
+#stats h3 {
+    font-size: var(--fSize5);
+    text-transform: uppercase;
     color: var(--primary);
-    font-size: var(--fSize4);
-    letter-spacing: 2px;
+    text-shadow: 5px 5px 7px #89c53c95;
 }
-
-.featured-programme div.text-wrapper {
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.featured-programme p {
-    color: var(--white);
-    display: inline;
-    font-size: var(--fSize2);
-    line-height: 1.5rem;
-    margin-top: 0.5rem;
-}
-
-.featured-programme a {
-    background-color: var(--secondary);
-    border-radius: 5px;
-    color: var(--bgMedium);
-    display: block;
+#stats p {
+    font-size: var(--fSize3);
     font-weight: bold;
-    letter-spacing: 1px;
-    margin: 1rem auto 0.5rem;
-    outline: 3px solid transparent;
-    padding: 0.5rem 1rem;
-    width: fit-content;
+    text-transform: uppercase;
+    color: var(--bgMedium);
 }
-.featured-programme a:hover {
-    outline: 2px solid var(--secondary);
-    outline-offset: 4px;
+#stats svg {
+    color: var(--primary);
+    filter: drop-shadow(5px 5px 7px #89c53c95);
 }
 
 /*----------  Featured Events  ----------*/
@@ -582,15 +548,10 @@ section#featured-events {
     padding: 2rem 1rem;
 }
 
-#featured-events .width-limiter {
-    gap: 1rem;
-    padding: 1rem;
-}
-
 .featured-events-link {
     display: block;
     position: relative;
-    width: clamp(330px, 80%, 600px);
+    width: clamp(250px, 70dvw, 700px);
 }
 .featured-events-link img {
     border-radius: 2px;
@@ -621,11 +582,6 @@ section#featured-events {
 section#featured-testimonials {
     background-color: var(--bgLight);
     padding: 2rem 1rem;
-}
-
-#featured-testimonials .width-limiter {
-    gap: 1rem;
-    row-gap: 2rem;
 }
 
 .testimonials-card {
@@ -670,6 +626,64 @@ section#featured-testimonials {
     opacity: 0.5;
     top: 0.5rem;
 }
+
+
+/*----------  Carousel  ----------*/
+ .carousel {
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-inner {
+    width: fit-content;
+}
+
+.carousel-item {
+    display: none;
+    margin: auto;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.prev,
+.next {
+    border-radius: 3px;
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.6s ease;
+    user-select: none;
+    width: auto;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: #89c53c80;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1
+    }
+}
+
 /*=====  End of Lnading page  ======*/
 
 /*=============================================
@@ -958,6 +972,7 @@ main.soft {
 
 .i-section-left {
     display: flex;
+    flex-direction: column;
     font-family: var(--pFont);
     letter-spacing: 2px;
 }
@@ -994,20 +1009,29 @@ main.soft {
 .i-section-right p {
     font-size: var(--fSize2);
     line-height: calc(var(--fSize2) * 1.5);
-    margin-bottom: 1rem;
 }
 
-.i-section-right p.callout {
-    background-color: var(--bgDark);
+.i-section-right .callout {
+    align-items: center;
+    background-color: var(--bgMedium);
     border-radius: 5px;
-    color: var(--secondary);
-    display: block;
+    color: var(--primary);
+    display: flex;
+    flex-wrap: wrap;
     font-size: var(--fSize3);
     font-weight: bold;
+    gap: 1rem;
     line-height: calc(var(--fSize3) * 1.5);
+    margin-bottom: 1rem;
     padding: 0.5rem 1rem;
     width: fit-content;
 }
+.i-section-right a {
+    align-items: center;
+    color: var(--secondary);
+    display: flex;
+}
+
 .i-section-right div.certification {
     background-color: var(--bgLight);
     border-radius: 5px;
@@ -1056,7 +1080,104 @@ main.soft {
     width: 100%;
 }
 
-/*----------  Contact Us Socials  ----------*/
+.callout#whatsapp {
+    background-color: var(--bgMedium);
+    color: #40c351;
+}
+
+.callout.hover:hover {
+    transform: scale(1.05);
+}
+
+/*----------  Contact Us  ----------*/
+.inquire-btn {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-family: var(--sFont);
+    font-size: inherit;
+    letter-spacing: 2px;
+    outline: none;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.inquire-btn {
+    width: 14.5rem;
+    height: auto;
+}
+
+.inquire-btn .circle {
+    background: var(--secondary);
+    border-radius: 1.625rem;
+    display: block;
+    height: 3rem;
+    margin: 0;
+    position: relative;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    width: 3rem;
+}
+
+.inquire-btn .circle .icon {
+    background: #fff;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+.inquire-btn .circle .icon.arrow {
+    background: none;
+    height: 0.125rem;
+    left: 0.625rem;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    width: 1.125rem;
+}
+
+.inquire-btn .circle .icon.arrow::before {
+    border-right: 0.125rem solid #fff;
+    border-top: 0.125rem solid #fff;
+    content: "";
+    height: 0.625rem;
+    position: absolute;
+    right: 0.0625rem;
+    top: -0.29rem;
+    transform: rotate(45deg);
+    width: 0.625rem;
+}
+
+.inquire-btn .button-text {
+    bottom: 0;
+    color: var(--bgDark);
+    font-weight: 700;
+    left: 0;
+    line-height: 1.6;
+    margin: 0 0 0 1.85rem;
+    padding: 0.75rem 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+button:hover .circle {
+    width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+    color: #fff;
+}
+
 #contact-us-socials img {
     width: 64px;
 }
@@ -1332,6 +1453,11 @@ section#coaches-section {
     text-align: justify;
 }
 
+.article-card ul li{
+    color: var(--bgLight);
+    padding: 0rem 0.5rem;
+}
+
 /* Article page*/
 .banner-image {
     height: clamp(300px, 60vw, 720px);
@@ -1521,7 +1647,7 @@ form .section-subheading {
 
 .input:focus,
 input.input[type="text"]:valid,
-textarea.input[type="text"]:valid  {
+textarea.input[type="text"]:valid {
     border: 3px solid var(--primary);
     outline: none;
 }
@@ -1871,7 +1997,6 @@ input.input[type="file"]:valid {
 }
 /*=====  End of Markerplace  ======*/
 
-
 /*=============================================
 =            Edit Pages            =
 =============================================*/
@@ -1893,37 +2018,35 @@ input.input[type="file"]:valid {
     padding: 0.7rem;
     transition: ease-out 0.3s;
     width: fit-content;
-  }
-  .action-btn.icon {
+}
+.action-btn.icon {
     padding: 0.5rem;
-  }
+}
 
-  .action-btn:hover {
+.action-btn:hover {
     border-color: var(--white);
-  }
+}
 
-  .action-btn.alt {
+.action-btn.alt {
     background-color: var(--primary);
     color: var(--bgLight);
-
-  }
-  .action-btn.alt:hover {
+}
+.action-btn.alt:hover {
     background-color: transparent;
     border: 5px solid var(--primary);
     color: var(--primary);
-  }
+}
 
-  .action-btn.edit {
+.action-btn.edit {
     background-color: var(--secondary);
     color: var(--bgDark);
-  }
-  .action-btn.delete {
+}
+.action-btn.delete {
     background-color: var(--danger);
     color: var(--bgLight);
-  }
+}
 
 /*=====  End of SEdit Pages block  ======*/
-
 
 /*=============================================
 =            Error Handling            =
@@ -2183,7 +2306,11 @@ input.input[type="file"]:valid {
 
 @media only screen and (max-width: 350px) {
     header img {
-        height: 40px;
+        height: 30px;
+    }
+    #landing-content p {
+        font-size: var(--fSize1);
+        line-height: 1.5rem;
     }
 }
 

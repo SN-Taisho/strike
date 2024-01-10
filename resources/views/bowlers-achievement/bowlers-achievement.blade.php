@@ -1,4 +1,4 @@
-@include('components.head', ['title' => 'Gallery'])
+@include('components.head', ['title' => 'Bowlers Achievement'])
 
 @include('components.header')
 
@@ -6,15 +6,15 @@
     <section class="community-banner">
         <div class="width-limiter">
             <div class="banner-content">
-                <h1>Gallery</h1>
-                <p>Relive the excitement of your bowling adventures as you browse through our captivating collection of
-                    photos. Capture the thrill of strikes and spares, the camaraderie of team spirit, and the joy of
-                    shared experiences.</p>
+                <h1>Bowlers Achievement</h1>
+                <p>Celebrate champions forged in fire, track
+                    rivalries, and relive epic throws. This is where legends rise, one pin at a time.</p>
             </div>
             <div class="banner-shape"></div>
             <div class="banner-img-container">
                 <div></div>
-                <img src="https://res.cloudinary.com/test-strike/image/upload/v1702012776/Gallery/karla-rivera-yFBdywTfwaQ-unsplash_cidb1p.jpg" alt="Banner image">
+                <img src="https://images.squarespace-cdn.com/content/v1/5b67aa09f8370a88da5aadeb/1537222299164-W5S365ZL9G62VLWCKWGX/League+Bowling+and+Tournament"
+                    alt="Banner image">
             </div>
         </div>
     </section>
@@ -35,9 +35,22 @@
     <section class="community-content">
         <div class="width-limiter justify-evenly flex-wrap">
 
-            @foreach ($gallery as $image)
-                <a href="/image-view" class="image-item border-smooth">
-                    <img src="{{ $image['image'] }}" alt="Gallery item" class="trans-ease-in-out" />
+            @foreach ($achievements as $achievement)
+                <a class="article-card border-sharp text-deco-none" href="/bowlers-achievement-details" style="height: fit-content; padding-bottom: 0.5rem">
+                    <img src="{{ $achievement['image'] }}" alt="Event Photo">
+
+                    <div>
+                        <h3 class="pFont">Tournament Name</h3>
+                        <span class="sFont">Tournament Category</span>
+
+                        <ul class="sFont list-style-none">
+                            <li>1st Name</li>
+                            <li>2nd Name</li>
+                            <li>3rd Name</li>
+                            <li>4th Name</li>
+                        </ul>
+                    </div>
+
                 </a>
             @endforeach
 

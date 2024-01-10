@@ -10,7 +10,7 @@
             </div>
 
             <div class="i-section-right">
-                <p>At STRIKE Bowling Academy, we are committed to providing our students with the best possible coaching
+                <p style="margin-bottom: 1rem;">At STRIKE Bowling Academy, we are committed to providing our students with the best possible coaching
                     experience. Our team of experienced and qualified coaches is passionate about bowling and dedicated
                     to helping our students reach their full potential. Whether you are a beginner or a seasoned bowler,
                     our coaches will provide you with the personalized instruction you need to improve your game. We are
@@ -24,7 +24,8 @@
                         height="48" />
                     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Ministry_of_Education_%28Singapore%29_logo.svg/1200px-Ministry_of_Education_%28Singapore%29_logo.svg.png"
                         alt="Icon" height="48" />
-                    <img src="https://neuentity.com/wp-content/uploads/2023/08/logo-red-cross.png" alt="Icon" height="48" />
+                    <img src="https://neuentity.com/wp-content/uploads/2023/08/logo-red-cross.png" alt="Icon"
+                        height="48" />
                 </div>
             </div>
         </div>
@@ -42,8 +43,21 @@
                         <p>Coach Position</p>
                     </div>
 
+                    <div class="c-push"></div>
+
                     <div class="coach-details">
                         <ul>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
                             <li>Lorem</li>
                             <li>Lorem</li>
                             <li>Lorem</li>
@@ -68,6 +82,17 @@
 
                     <div class="coach-details">
                         <ul>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
+                            <li>Lorem</li>
                             <li>Lorem</li>
                             <li>Lorem</li>
                             <li>Lorem</li>

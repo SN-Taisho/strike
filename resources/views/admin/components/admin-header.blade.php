@@ -31,7 +31,7 @@
 
 <header>
     <div class="width-limiter align-center justify-between">
-        <a href="/"><img src="{{ asset('assets/images/logo-alt.png') }}" alt="Logo.png" height="80" /></a>
+        <a href="/dashboard"><img src="{{ asset('assets/images/logo-alt.png') }}" alt="Logo.png" height="80" /></a>
 
         <div class="align-center">
             <a class="itps-link text-deco-none pFont border-smooth trans-ease-out" href="/dashboard">
@@ -58,13 +58,10 @@
             <a href="/about-us-editor">About Us</a>
         </li>
         <li>
-            <a href="/coaches-editor">Our Coaches</a>
-        </li>
-        <li>
             <a href="/programmes-management">Programmes</a>
         </li>
         <li>
-            <a href="/marketplace">Marketplace</a>
+            <a href="/coaches-management">Our Coaches</a>
         </li>
         <li>
             <a href="/events-management">Events</a>
@@ -73,10 +70,10 @@
             <a href="/calendar-editor">Calendar</a>
         </li>
         <li>
-            <a href="/gallery-management">Gallery</a>
+            <a href="/bowlers-achievement-management">Bowlers Achievement</a>
         </li>
         <li>
-            <a href="/resources-management">Resources</a>
+            <a href="/marketplace">Marketplace</a>
         </li>
         <li>
             <a href="/testimonials-management">Testimonials</a>
@@ -95,17 +92,20 @@
     <div class="width-limiter">
         <ul id="navbar-list" class="justify-center list-style-none trans-ease-out">
             <li>
-                <a href="/landing-editor">Landing</a>
+                <a href="/landing-editor">Home</a>
             </li>
             <li>
                 <a href="/programmes-management">Programmes</a>
             </li>
             <li>
-                <a href="/marketplace">Marketplace</a>
+                <a href="/events-management">Events</a>
+            </li>
+            <li>
+                <a href="/calendar-editor">Calendar</a>
             </li>
             <li class="dropdown">
                 <a href="javascript:void(0);">
-                    Community
+                    Resources
                     <svg width="32" height="32" fill="none" stroke="currentColor" stroke-linejoin="round"
                         stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="m18 9.5-6 6-6-6h12Z"></path>
@@ -113,19 +113,13 @@
                 </a>
                 <ul class="dropdown-content">
                     <li>
-                        <a href="/events-management">Events</a>
+                        <a href="/bowlers-achievement-management">Bowler's Achievement</a>
                     </li>
                     <li>
-                        <a href="/calendar-editor">Calendar</a>
+                        <a href="/marketplace">Marketplace</a>
                     </li>
                     <li>
-                        <a href="/gallery-management">Gallery</a>
-                    </li>
-                    <li>
-                        <a href="/resources-management">Resources</a>
-                    </li>
-                    <li>
-                        <a href="/testimonials"-editor>Testimonials & Case Studies</a>
+                        <a href="/testimonials-management">Testimonials</a>
                     </li>
                 </ul>
             </li>
@@ -142,7 +136,7 @@
                         <a href="/about-us-editor">About Us</a>
                     </li>
                     <li>
-                        <a href="/coaches-editor">Our Coaches</a>
+                        <a href="/coaches-management">Our Coaches</a>
                     </li>
                     <li>
                         <a href="/important-policies-editor">Important Policies</a>

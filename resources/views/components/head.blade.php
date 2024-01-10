@@ -19,6 +19,8 @@
         content=" how to become a pro bowler, tournament preparation, mental game for bowling, high score bowling, bowling equipment for advanced players">
     <meta name="keywords"
         content="fun bowling, social bowling, competitive bowling, bowling for health, bowling for fitness, bowling for stress relief, bowling team building">
+    <meta name="keywords"
+        content="bowling academy singapore, bowling lessons singapore, beginner bowling singapore, professional bowling singapore, bowling coach singapore, bowling for kids singapore, bowling birthday party singapore, strike the pins singapore, bowl like a pro singapore">
 
     <!-- <title>
 @isset($title)

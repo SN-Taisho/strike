@@ -57,7 +57,7 @@
             </div>
 
             <div class="i-section-right">
-                <img src="{{ asset('assets/images/Strike.png') }}" alt="Strike">
+                <img class="border-smooth" src="{{ asset('assets/images/Strike.png') }}" alt="Strike">
                 <p>To impart life skills to the young so they may realize their maximum potential through the pursuit of
                     bowling excellence in a fun-loving environment.</p>
             </div>

@@ -22,13 +22,9 @@
                 </thead>
                 <tbody>
 
-                    @php
-                        $i = 0;
-                    @endphp
-
                     @foreach ($programmes as $programme)
                         <tr>
-                            <td data-label="No.">{{ $i + 1 }}</td>
+                            <td data-label="No.">{{ $loop->index + 1 }}</td>
                             <td data-label="Programme">{{ $programme['title'] }}</td>
                             <td data-label="Age Range">{{ $programme['agerange'] }}</td>
                             <td data-label="Description">
@@ -62,9 +58,6 @@
                                     </svg>&nbsp;Delete</button>
                             </td>
                         </tr>
-                        @php
-                            $i++;
-                        @endphp
                     @endforeach
                 </tbody>
             </table>

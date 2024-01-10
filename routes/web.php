@@ -17,30 +17,21 @@ use Spatie\FlareClient\View;
 //  Landing page
 Route::get('/', function () {
 
-    $arr = [
-        [
-            "title" => "Foundation",
-            "desc" => "The STRIKE 1 programme is designed to establish the foundation bowling skills including proper finishing position, approach and basic release. At the same time, the students will be introduced to basic code of conduct and bowling etiquette in a fun and interactive environment.",
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702006800/Programmes/fvt6wn495ijmzcwxop5n.webp"
-        ],
-        [
-            "title" => "Performance",
-            "desc" => "The STRIKE 2 programme is an enhancement of the foundation bowling skills taught during STRIKE 1. New founndation skills like timing, footwork, free swing, power step and a smoother release will be taught. The kids will continue to be exposed to the correct values of sportsmanship and learn the joys of making new friends in a fun and natural way.",
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702018976/Programmes/2_p2tfcd.webp"
-        ],
-        [
-            "title" => "Center of Excellence",
-            "desc" => "STRIKE Academy is endorsed by the Singapore Bowling Federation to conduct COE classes. Knowing the importance of establishing good bowling foundation in young bowlers, STRIKE is happy and honoured to be recognised and entrusted with the responsibilty.",
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702018959/Programmes/tinywow_3_42493501_lqkwax.webp"
-        ]
-    ];
-
-    $gallery = [
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/korean_exchange_2018_uzniyv.jpg",
-        ],
+    $events = [
         [
             "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009266/Events/u22one_ca7avl.png",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009266/Events/screenshot_2023-02-27_at_2.06.34_pm_fy8v5q.png",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009265/Events/anya_sio_wk40m7.png",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009265/Events/350622704_569405701975836_7192318548279517516_n_ps9xzo.jpg",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/korean_exchange_2018_uzniyv.jpg",
         ],
         [
             "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/75553007_3075258059169919_6957732511396921344_n_omfcvd.jpg",
@@ -48,6 +39,9 @@ Route::get('/', function () {
         [
             "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/285044597_5810654732296891_407084135500207517_n_euosbb.jpg",
         ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/402043857_849728990493122_7694688429340728986_n_1_n7hzvv.jpg"
+        ]
     ];
 
     $testimonials = [
@@ -74,8 +68,7 @@ Route::get('/', function () {
     return view(
         'landing',
         [
-            'programmes' => $arr,
-            'gallery' => $gallery,
+             'events' => $events,
             'testimonials' => $testimonials
         ]
     );
@@ -172,44 +165,6 @@ Route::get('/event-details', function () {
 });
 
 
-//  Gallery
-Route::get('/gallery', function () {
-
-    $gallery = [
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/korean_exchange_2018_uzniyv.jpg",
-        ],
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009266/Events/screenshot_2023-02-27_at_2.06.34_pm_fy8v5q.png",
-        ],
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009265/Events/anya_sio_wk40m7.png",
-        ],
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009266/Events/u22one_ca7avl.png",
-        ],
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/75553007_3075258059169919_6957732511396921344_n_omfcvd.jpg",
-        ],
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/285044597_5810654732296891_407084135500207517_n_euosbb.jpg",
-        ],
-    ];
-
-    return view(
-        'gallery/gallery',
-        ['gallery' => $gallery]
-    );
-});
-Route::get('/image-view', function () {
-    return view('gallery/view');
-});
-
-//  Resources
-Route::get('/resources', function () {
-    return view('resources/resources');
-});
-
 //  Testimonials
 Route::get('/testimonials', function () {
 
@@ -269,6 +224,34 @@ Route::get('/case-study', function () {
 });
 
 
+//  Bowlwer Achievements
+Route::get('/bowlers-achievement', function () {
+
+    $achievements = [
+        [
+            'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012409/Success/tinywow_350836209_969512447531209_9199530780059439315_n_42492430_e7bmue.webp",
+        ],
+        [
+            'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012409/Success/tinywow_352566663_736265191839503_2841598766576262019_n_42492471_otgrft.webp",
+        ],
+        [
+            'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012408/Success/tinywow_317091173_574277038038320_421155333759101358_n_42492195_fjbaqg.webp",
+        ],
+        [
+            'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012408/Success/tinywow_333582917_581848167198369_4679074505696420480_n_42492330_rxfqdb.webp",
+        ],
+    ];
+
+    return view(
+        'bowlers-achievement/bowlers-achievement',
+        ['achievements' => $achievements]
+    );
+});
+
+Route::get('/bowlers-achievement-details', function() {
+    return view('bowlers-achievement/bowlers-achievement-details');
+});
+
 //  Information Pages
 Route::get('/about-us', function () {
     return view('info-pages/about-us');
@@ -310,30 +293,22 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/landing-editor', function () {
-    $arr = [
-        [
-            "title" => "Foundation",
-            "desc" => "The STRIKE 1 programme is designed to establish the foundation bowling skills including proper finishing position, approach and basic release. At the same time, the students will be introduced to basic code of conduct and bowling etiquette in a fun and interactive environment.",
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702006800/Programmes/fvt6wn495ijmzcwxop5n.webp"
-        ],
-        [
-            "title" => "Performance",
-            "desc" => "The STRIKE 2 programme is an enhancement of the foundation bowling skills taught during STRIKE 1. New founndation skills like timing, footwork, free swing, power step and a smoother release will be taught. The kids will continue to be exposed to the correct values of sportsmanship and learn the joys of making new friends in a fun and natural way.",
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702018976/Programmes/2_p2tfcd.webp"
-        ],
-        [
-            "title" => "Center of Excellence",
-            "desc" => "STRIKE Academy is endorsed by the Singapore Bowling Federation to conduct COE classes. Knowing the importance of establishing good bowling foundation in young bowlers, STRIKE is happy and honoured to be recognised and entrusted with the responsibilty.",
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702018959/Programmes/tinywow_3_42493501_lqkwax.webp"
-        ]
-    ];
 
-    $gallery = [
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/korean_exchange_2018_uzniyv.jpg",
-        ],
+    $events = [
         [
             "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009266/Events/u22one_ca7avl.png",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009266/Events/screenshot_2023-02-27_at_2.06.34_pm_fy8v5q.png",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009265/Events/anya_sio_wk40m7.png",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009265/Events/350622704_569405701975836_7192318548279517516_n_ps9xzo.jpg",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/korean_exchange_2018_uzniyv.jpg",
         ],
         [
             "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/75553007_3075258059169919_6957732511396921344_n_omfcvd.jpg",
@@ -341,6 +316,9 @@ Route::get('/landing-editor', function () {
         [
             "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/285044597_5810654732296891_407084135500207517_n_euosbb.jpg",
         ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/402043857_849728990493122_7694688429340728986_n_1_n7hzvv.jpg"
+        ]
     ];
 
     $testimonials = [
@@ -367,12 +345,12 @@ Route::get('/landing-editor', function () {
     return view(
         'admin/landing-editor',
         [
-            'programmes' => $arr,
-            'gallery' => $gallery,
+            'events' => $events,
             'testimonials' => $testimonials
         ]
     );
 });
+
 
 //  Programmes Management
 Route::get('/programmes-management', function () {
@@ -422,6 +400,7 @@ Route::get('/edit-programme-details', function () {
     return view('admin/programmes/programme-details-editor');
 })->name('programme-details-editor.index');
 
+
 // Events Management
 Route::get('/events-management', function () {
 
@@ -459,9 +438,10 @@ Route::get('/add-event', function () {
     return view('admin/events/add-event');
 })->name('add-event.index');
 
-Route::get('event-details-editor', function() {
+Route::get('event-details-editor', function () {
     return view('admin/events/event-details-editor');
 })->name('event-details-editor.index');
+
 
 // Calendar Editor
 Route::get('/calendar-editor', function () {
@@ -476,40 +456,24 @@ Route::get('/calendar-event-editor', function () {
     return view('admin/calendar/calendar-event-editor');
 })->name('calendar-event-editor.index');
 
-// Gallery Management
-Route::get('/gallery-management', function () {
 
-    $gallery = [
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/korean_exchange_2018_uzniyv.jpg",
-        ],
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009266/Events/screenshot_2023-02-27_at_2.06.34_pm_fy8v5q.png",
-        ],
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009265/Events/anya_sio_wk40m7.png",
-        ],
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009266/Events/u22one_ca7avl.png",
-        ],
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/75553007_3075258059169919_6957732511396921344_n_omfcvd.jpg",
-        ],
-        [
-            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702009264/Events/285044597_5810654732296891_407084135500207517_n_euosbb.jpg",
-        ],
-    ];
+//  REMOVE BEFORE COMMITING
+Route::get('/test', function () {
+    return view('test');
+});
 
-    return view(
-        'admin/gallery/gallery-management',
-        ['gallery' => $gallery]
-    );
-})->name('gallery-management.index');
 
-Route::get('/add-photo', function () {
-    return view('admin/gallery/add-photo');
-})->name('add-photo.index');
+// About us Editor
+Route::get('/about-us-editor', function () {
+    return view('admin/info-pages/about-us-editor');
+});
 
-Route::get('/photo-editor', function () {
-    return view('admin/gallery/photo-editor');
-})->name('photo-editor.index');
+//  Coach Management
+Route::get('/coaches-management', function () {
+    return view('admin/info-pages/coaches-management');
+});
+
+//  Contact Us Editor
+Route::get('/contact-us-editor', function () {
+    return view('admin/info-pages/contact-us-editor');
+});
