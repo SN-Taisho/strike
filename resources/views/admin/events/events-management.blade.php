@@ -93,14 +93,9 @@
                     </tr>
                 </thead>
                 <tbody>
-
-                    @php
-                        $i = 0;
-                    @endphp
-
                     @foreach ($events as $event)
                         <tr>
-                            <td data-label="No.">{{ $i + 1 }}</td>
+                            <td data-label="No.">{{ $loop->index + 1 }}</td>
                             <td data-label="Event">Event Title</td>
                             <td data-label="Image" class="table-photo">
                                 <div class="image-wrapper">
@@ -142,9 +137,6 @@
                                     </svg>&nbsp;Delete</button>
                             </td>
                         </tr>
-                        @php
-                            $i++;
-                        @endphp
                     @endforeach
                 </tbody>
             </table>
