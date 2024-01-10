@@ -396,7 +396,7 @@ Route::get('/add-programme', function () {
     return view('admin/programmes/add-programme');
 })->name('add-programme.index');
 
-Route::get('/edit-programme-details', function () {
+Route::get('/programme-details-editor', function () {
     return view('admin/programmes/programme-details-editor');
 })->name('programme-details-editor.index');
 
@@ -470,7 +470,11 @@ Route::get('/about-us-editor', function () {
 
 //  Coach Management
 Route::get('/coaches-management', function () {
-    return view('admin/info-pages/coaches-management');
+    return view('admin/info-pages/coaches/coaches-management');
+});
+
+Route::get('/coach-details-editor', function () {
+    return view('admin/info-pages/coaches/coach-details-editor');
 });
 
 //  Contact Us Editor
