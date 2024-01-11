@@ -1234,13 +1234,13 @@ section#coaches-section {
     z-index: 3;
 }
 .coach-profile h3 {
-    color: var(--bgDark);
+    color: var(--primary);
     font-family: var(--pFont);
     font-size: var(--fSize3);
     letter-spacing: 1px;
 }
 .coach-profile p {
-    color: var(--bgDark);
+    color: var(--secondary);
     font-family: var(--sFont);
     font-size: var(--fSize2);
 }

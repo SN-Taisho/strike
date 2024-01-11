@@ -198,24 +198,24 @@ Route::get('/testimonials', function () {
         ],
     ];
 
-    $success = [
-        [
-            'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012409/Success/tinywow_350836209_969512447531209_9199530780059439315_n_42492430_e7bmue.webp",
-        ],
-        [
-            'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012409/Success/tinywow_352566663_736265191839503_2841598766576262019_n_42492471_otgrft.webp",
-        ],
-        [
-            'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012408/Success/tinywow_317091173_574277038038320_421155333759101358_n_42492195_fjbaqg.webp",
-        ],
-        [
-            'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012408/Success/tinywow_333582917_581848167198369_4679074505696420480_n_42492330_rxfqdb.webp",
-        ],
-    ];
+    // $success = [
+    //     [
+    //         'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012409/Success/tinywow_350836209_969512447531209_9199530780059439315_n_42492430_e7bmue.webp",
+    //     ],
+    //     [
+    //         'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012409/Success/tinywow_352566663_736265191839503_2841598766576262019_n_42492471_otgrft.webp",
+    //     ],
+    //     [
+    //         'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012408/Success/tinywow_317091173_574277038038320_421155333759101358_n_42492195_fjbaqg.webp",
+    //     ],
+    //     [
+    //         'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012408/Success/tinywow_333582917_581848167198369_4679074505696420480_n_42492330_rxfqdb.webp",
+    //     ],
+    // ];
 
     return view('testimonials/testimonials', [
         'testimonials' => $testimonials,
-        'success' => $success
+        // 'success' => $success
     ]);
 });
 
@@ -443,7 +443,40 @@ Route::get('event-details-editor', function () {
 })->name('event-details-editor.index');
 
 
-// Calendar Editor
+//  Testimonials Management
+Route::get('/testimonials-management', function () {
+
+    $testimonials = [
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702011837/Testimonials/tinywow_79350280_3137254119636979_4560698172439003136_n_1__42492023_wxp3sd.webp",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702011836/Testimonials/tinywow_179166983_4549252985103745_3418069252889582571_n_1__42491869_psanmv.webp",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702011835/Testimonials/jeremy-kwok-BTYyOhExaHA-unsplash_1_mtkczf.webp",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702011834/Testimonials/375260947_797851579014197_1843889591040674101_n_z0uksc.webp",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702011833/Testimonials/350644698_781488820023895_6700239987926652771_n_1_qskogi.webp",
+        ],
+        [
+            "image" => "https://res.cloudinary.com/test-strike/image/upload/v1702011825/Testimonials/296612625_468131725319519_266821404830095123_n_1_d3tk8n.webp",
+        ],
+    ];
+
+    return view(
+        'admin/testimonials/testimonials-management',
+        [
+            'testimonials' => $testimonials
+        ]
+    );
+});
+
+
+// Calendar Management
 Route::get('/calendar-management', function () {
     return view('admin/calendar/calendar-management');
 })->name('calendar-editor.index');
@@ -467,12 +500,15 @@ Route::get('/about-us-editor', function () {
 Route::get('/coaches-management', function () {
     return view('admin/info-pages/coaches/coaches-management');
 });
+Route::get('/add-coach', function () {
+    return view('admin/info-pages/coaches/add-coach');
+});
 Route::get('/coach-details-editor', function () {
     return view('admin/info-pages/coaches/coach-details-editor');
 });
 
 
-//  Important Policies Editor
+//  Important Policies Management
 Route::get('/important-policies-management', function () {
     return view('admin/info-pages/important-policies/important-policies-management');
 });

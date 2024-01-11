@@ -25,10 +25,7 @@
         </div>
     </section>
 
-    <a href="/add-important-policy" class="action-btn alt text-deco-none"
-        style="margin: 2rem auto 1rem;">Add New
-        Calendar
-        Event</a>
+    <a href="/add-important-policy" class="action-btn alt text-deco-none" style="margin: 2rem auto 1rem;">Add New Policy</a>
 
     <div class="table-limiter" style="max-width: 1024px;">
         <table class="res-table limited">
@@ -63,9 +60,10 @@
                                     Show</label>
                             </div>
                             <button type="button" class="action-btn edit icon"
-                                onclick="window.location.href='/important-policy-editor'"><svg width="24" height="24"
-                                    fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                onclick="window.location.href='/important-policy-editor'"><svg width="24"
+                                    height="24" fill="none" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path d="M21 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7"></path>
                                     <path d="M7 13.36V17h3.659L21 6.654 17.348 3 7 13.36Z"></path>
                                 </svg> &nbsp;Edit</button>
@@ -91,7 +89,8 @@
     </div>
 
     <div class="justify-evenly flex-wrap">
-        <button type="button" class="cancel-btn trans-ease-in-out" onclick="window.locaiton.href='/importnat-policy-management'">Cancel</button>
+        <button type="button" class="cancel-btn trans-ease-in-out"
+            onclick="window.locaiton.href='/importnat-policy-management'">Cancel</button>
         <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
     </div>
 

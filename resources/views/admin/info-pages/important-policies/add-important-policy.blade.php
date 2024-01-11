@@ -30,7 +30,6 @@
         </div>
     </form>
 
-
 </main>
 
 @include('components.footer')
