@@ -2,7 +2,7 @@
 
 @include('admin.components.admin-header')
 
-<main style="background-color: var(--softwhite);">
+<main>
 
     <form class="edit-form width-limiter">
         <h3 class="section-heading">Events Management</h3>
@@ -12,7 +12,7 @@
             <div class="input-group fill">
                 <textarea required="" type="text" name="brief_desc" autocomplete="off" id="briefDescriptionInput" class="input"
                     rows="5"></textarea>
-                <label class="label">Write Here</label>
+                <label class="label" style="background-color: var(--bgLight)">Write Here</label>
             </div>
         </section>
 
@@ -143,7 +143,7 @@
         </div>
 
         <div class="justify-evenly flex-wrap">
-            <button type="submit" class="cancel-btn trans-ease-in-out">Cancel</button>
+            <button type="button" class="cancel-btn trans-ease-in-out" onclick="window.location.href='/events-management'">Cancel</button>
             <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
     </form>

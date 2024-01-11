@@ -67,7 +67,7 @@
             <a href="/events-management">Events</a>
         </li>
         <li>
-            <a href="/calendar-editor">Calendar</a>
+            <a href="/calendar-management">Calendar</a>
         </li>
         <li>
             <a href="/bowlers-achievement-management">Bowlers Achievement</a>
@@ -79,7 +79,7 @@
             <a href="/testimonials-management">Testimonials</a>
         </li>
         <li>
-            <a href="/important-policies-editor">Important Policies</a>
+            <a href="/important-policies-management">Important Policies</a>
         </li>
         <li>
             <a href="/contact-us-editor">Contact Us</a>
@@ -101,7 +101,7 @@
                 <a href="/events-management">Events</a>
             </li>
             <li>
-                <a href="/calendar-editor">Calendar</a>
+                <a href="/calendar-management">Calendar</a>
             </li>
             <li class="dropdown">
                 <a href="javascript:void(0);">
@@ -139,7 +139,7 @@
                         <a href="/coaches-management">Our Coaches</a>
                     </li>
                     <li>
-                        <a href="/important-policies-editor">Important Policies</a>
+                        <a href="/important-policies-management">Important Policies</a>
                     </li>
                     <li>
                         <a href="/contact-us-editor">Contact Us</a>

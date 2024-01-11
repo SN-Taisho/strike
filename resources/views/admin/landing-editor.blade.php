@@ -2,7 +2,7 @@
 
 @include('admin.components.admin-header')
 
-<main style="background-color: var(--softwhite);">
+<main>
 
     <form class="edit-form width-limiter">
         <h3 class="section-heading">Landing Editor</h3>
@@ -12,7 +12,7 @@
             <div class="input-group fill">
                 <textarea required="" type="text" name="landing_heading" autocomplete="off" id="landingHeadingInput" class="input"
                     rows="3"></textarea>
-                <label class="label">Write Here</label>
+                <label class="label" style="background-color: var(--bgLight)">Write Here</label>
             </div>
         </section>
 
@@ -21,7 +21,7 @@
             <div class="input-group fill">
                 <textarea required="" type="text" name="landing_paragraph" autocomplete="off" id="landingParagraphInput"
                     class="input" rows="5"></textarea>
-                <label class="label">Write Here</label>
+                <label class="label" style="background-color: var(--bgLight)">Write Here</label>
             </div>
         </section>
 
@@ -93,12 +93,12 @@
         <section class="form-section" style="justify-content: center">
             <div class="input-group">
                 <input required="" type="text" name="" autocomplete="off" id="stat1Input" class="input">
-                <label class="label">Stat 1</label>
+                <label class="label" style="background-color: var(--bgLight)">Stat 1</label>
             </div>
             <div class="input-group">
                 <input required="" type="text" name="" autocomplete="off" id="stat1TextInput"
                     class="input">
-                <label class="label">Stat 1 Text</label>
+                <label class="label" style="background-color: var(--bgLight)">Stat 1 Text</label>
             </div>
         </section>
 
@@ -112,12 +112,12 @@
         <section class="form-section" style="justify-content: center">
             <div class="input-group">
                 <input required="" type="text" name="" autocomplete="off" id="stat2Input" class="input">
-                <label class="label">Stat 2</label>
+                <label class="label" style="background-color: var(--bgLight)">Stat 2</label>
             </div>
             <div class="input-group">
                 <input required="" type="text" name="" autocomplete="off" id="stat2TextInput"
                     class="input">
-                <label class="label">Stat 2 Text</label>
+                <label class="label" style="background-color: var(--bgLight)">Stat 2 Text</label>
             </div>
         </section>
 
@@ -133,12 +133,12 @@
             <div class="input-group">
                 <input required="" type="text" name="" autocomplete="off" id="stat3Input"
                     class="input">
-                <label class="label">Stat 3</label>
+                <label class="label" style="background-color: var(--bgLight)">Stat 3</label>
             </div>
             <div class="input-group">
                 <input required="" type="text" name="" autocomplete="off" id="stat3TextInput"
                     class="input">
-                <label class="label">Stat 3 Text</label>
+                <label class="label" style="background-color: var(--bgLight)">Stat 3 Text</label>
             </div>
         </section>
 
@@ -146,8 +146,9 @@
             <div class="width-limiter justify-evenly flex-wrap" style="gap: 2rem">
                 <div class="stat-card align-center justify-center flex-col">
                     <div class="flex align-center justify-center" style="gap: 1rem">
-                        <img id="svg1" src="{{ asset('assets/icons/bachelor-cap.svg') }}" alt="stat" width="98" height="98">
-                       
+                        <img id="svg1" src="{{ asset('assets/icons/bachelor-cap.svg') }}" alt="stat"
+                            width="98" height="98">
+
                         <h3 id="stat1" class="pFont">7000</h3>
                     </div>
                     <p id="stat1Text" class="sFont text-align-center">happy bowlers taught</p>
@@ -155,7 +156,8 @@
 
                 <div class="stat-card align-center justify-center flex-col">
                     <div class="flex align-center justify-center" style="gap: 1rem">
-                        <img id="svg2" src="{{ asset('assets/icons/bowling.svg') }}" alt="stat" width="98" height="98">
+                        <img id="svg2" src="{{ asset('assets/icons/bowling.svg') }}" alt="stat"
+                            width="98" height="98">
 
                         <h3 id="stat2" class="pFont">67%</h3>
                     </div>
@@ -165,7 +167,8 @@
 
                 <div class="stat-card align-center justify-center flex-col">
                     <div class="flex align-center justify-center" style="gap: 1rem">
-                            <img id="svg3" src="{{ asset('assets/icons/trophy.svg') }}" alt="stat" width="98" height="98">
+                        <img id="svg3" src="{{ asset('assets/icons/trophy.svg') }}" alt="stat"
+                            width="98" height="98">
                         <h3 id="stat3" class="pFont">900</h3>
                     </div>
                     <p id="stat3Text" class="sFont text-align-center">Champions Made</p>

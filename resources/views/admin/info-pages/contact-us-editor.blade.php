@@ -131,7 +131,7 @@
 
         <div class="justify-evenly flex-wrap" style="margin-bottom: 3rem">
             <button type="button" class="cancel-btn trans-ease-in-out"
-                onclick="window.location.href='/landing-editor'">Cancel</button>
+                onclick="window.location.href='/contact-us-editor'">Cancel</button>
             <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
     </form>

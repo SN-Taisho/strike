@@ -444,8 +444,8 @@ Route::get('event-details-editor', function () {
 
 
 // Calendar Editor
-Route::get('/calendar-editor', function () {
-    return view('admin/calendar/calendar-editor');
+Route::get('/calendar-management', function () {
+    return view('admin/calendar/calendar-management');
 })->name('calendar-editor.index');
 
 Route::get('/add-calendar-event', function () {
@@ -457,25 +457,32 @@ Route::get('/calendar-event-editor', function () {
 })->name('calendar-event-editor.index');
 
 
-//  REMOVE BEFORE COMMITING
-Route::get('/test', function () {
-    return view('test');
-});
-
-
 // About us Editor
 Route::get('/about-us-editor', function () {
     return view('admin/info-pages/about-us-editor');
 });
 
+
 //  Coach Management
 Route::get('/coaches-management', function () {
     return view('admin/info-pages/coaches/coaches-management');
 });
-
 Route::get('/coach-details-editor', function () {
     return view('admin/info-pages/coaches/coach-details-editor');
 });
+
+
+//  Important Policies Editor
+Route::get('/important-policies-management', function () {
+    return view('admin/info-pages/important-policies/important-policies-management');
+});
+Route::get('/add-important-policy', function () {
+    return view('admin/info-pages/important-policies/add-important-policy');
+});
+Route::get('/important-policy-editor', function () {
+    return view('admin/info-pages/important-policies/important-policy-editor');
+});
+
 
 //  Contact Us Editor
 Route::get('/contact-us-editor', function () {
