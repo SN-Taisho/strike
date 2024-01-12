@@ -284,6 +284,10 @@ Route::get('/product-details', function () {
 
 
 //  Administrators
+Route::get('/login', function () {  
+    return view('admin/login');
+});
+
 Route::get('/unauthorized', function () {
     return View('errors/unauthorized');
 });
@@ -473,6 +477,12 @@ Route::get('/testimonials-management', function () {
             'testimonials' => $testimonials
         ]
     );
+});
+Route::get('/add-testimonial', function() {
+    return view('admin/testimonials/add-testimonial');
+});
+Route::get('/testimonial-editor', function() {
+    return view('admin/testimonials/testimonial-editor');
 });
 
 

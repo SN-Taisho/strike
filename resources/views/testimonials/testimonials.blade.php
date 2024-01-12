@@ -6,9 +6,8 @@
     <section class="community-banner">
         <div class="width-limiter">
             <div class="banner-content">
-                <h1>Testimonials &<br>Case Study</h1>
-                <p>Explore our collection of testimonials and case studies to witness the transformative impact of our
-                    work. Discover how we've helped individuals and businesses achieve remarkable outcomes, fueled by
+                <h1>Testimonials</h1>
+                <p>Discover how we've helped individuals and businesses achieve remarkable outcomes, fueled by
                     innovation and a commitment to excellence.</p>
             </div>
             <div class="banner-shape"></div>
@@ -35,7 +34,7 @@
 
     <section class="community-content">
 
-        <h2 class="section-heading">Quotes from our community</h2>
+        <h2 class="section-heading">Testimonies from our community</h2>
         <div class="width-limiter justify-evenly flex-wrap">
 
             @foreach ($testimonials as $testimonial)
@@ -68,7 +67,7 @@
     </section>
 
 
-    <section class="community-content">
+    {{-- <section class="community-content">
 
         <h2 class="section-heading">Success stories</h2>
         <div class="width-limiter justify-evenly flex-wrap">
@@ -92,7 +91,7 @@
             @endforeach
 
         </div>
-    </section>
+    </section> --}}
 
 </main>
 
