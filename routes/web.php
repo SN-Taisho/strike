@@ -295,6 +295,12 @@ Route::get('/unauthorized', function () {
 Route::get('/dashboard', function () {
     return view('admin/dashboard');
 });
+Route::get('/add-admin', function () {
+    return view('admin/add-admin');
+});
+Route::get('/admin-details-editor', function () {
+    return view('admin/admin-details-editor');
+});
 
 Route::get('/landing-editor', function () {
 
