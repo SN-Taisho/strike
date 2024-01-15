@@ -141,7 +141,7 @@
                     </section>
 
                     <section class="form-section flex-col" style="align-items: flex-start">
-                        <p>Stakeholder List (Separate using " , ")</p>
+                        <p>Stakeholder List<br>(Separate by entering a new line)</p>
                         <div class="input-group fill">
                             <textarea required="true" type="text" name="stakeholder_paragraph" autocomplete="off" id="listInput"
                                 class="input" rows="3"></textarea>
