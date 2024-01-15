@@ -68,7 +68,7 @@ Route::get('/', function () {
     return view(
         'landing',
         [
-             'events' => $events,
+            'events' => $events,
             'testimonials' => $testimonials
         ]
     );
@@ -248,7 +248,7 @@ Route::get('/bowlers-achievement', function () {
     );
 });
 
-Route::get('/bowlers-achievement-details', function() {
+Route::get('/bowlers-achievement-details', function () {
     return view('bowlers-achievement/bowlers-achievement-details');
 });
 
@@ -284,7 +284,7 @@ Route::get('/product-details', function () {
 
 
 //  Administrators
-Route::get('/login', function () {  
+Route::get('/login', function () {
     return view('admin/login');
 });
 
@@ -484,11 +484,42 @@ Route::get('/testimonials-management', function () {
         ]
     );
 });
-Route::get('/add-testimonial', function() {
+Route::get('/add-testimonial', function () {
     return view('admin/testimonials/add-testimonial');
 });
-Route::get('/testimonial-editor', function() {
+Route::get('/testimonial-editor', function () {
     return view('admin/testimonials/testimonial-editor');
+});
+
+
+//  Bowler's Achievement Management 
+Route::get('/bowlers-achievement-management', function () {
+
+    $achievements = [
+        [
+            'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012409/Success/tinywow_350836209_969512447531209_9199530780059439315_n_42492430_e7bmue.webp",
+        ],
+        [
+            'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012409/Success/tinywow_352566663_736265191839503_2841598766576262019_n_42492471_otgrft.webp",
+        ],
+        [
+            'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012408/Success/tinywow_317091173_574277038038320_421155333759101358_n_42492195_fjbaqg.webp",
+        ],
+        [
+            'image' => "https://res.cloudinary.com/test-strike/image/upload/v1702012408/Success/tinywow_333582917_581848167198369_4679074505696420480_n_42492330_rxfqdb.webp",
+        ],
+    ];
+
+    return view(
+        'admin/bowlers-achievement/bowlers-achievement-management',
+        ['achievements' => $achievements]
+    );
+});
+Route::get('/add-bowlers-achievement', function () {
+    return view('admin/bowlers-achievement/add-bowlers-achievement');
+});
+Route::get('/bowlers-achievement-details-editor', function () {
+    return view('admin/bowlers-achievement/bowlers-achievement-editor');
 });
 
 
