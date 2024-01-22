@@ -515,7 +515,6 @@ footer {
     color: var(--bgLight);
 }
 
-
 /*----------  STRIKE Stats  ----------*/
 #stats {
     background-color: var(--bgLight);
@@ -627,9 +626,8 @@ section#featured-testimonials {
     top: 0.5rem;
 }
 
-
 /*----------  Carousel  ----------*/
- .carousel {
+.carousel {
     width: fit-content;
     margin: 0 auto;
     position: relative;
@@ -680,7 +678,7 @@ section#featured-testimonials {
         opacity: 0.5;
     }
     100% {
-        opacity: 1
+        opacity: 1;
     }
 }
 
@@ -1453,7 +1451,7 @@ section#coaches-section {
     text-align: justify;
 }
 
-.article-card ul li{
+.article-card ul li {
     color: var(--bgLight);
     padding: 0rem 0.5rem;
 }
@@ -1585,7 +1583,7 @@ article.article {
     margin-bottom: 3rem;
     padding: 2rem 0rem;
 }
-form .section-subheading {
+.section-subheading {
     color: var(--bgDark);
     font-family: var(--pFont);
     font-size: var(--fSize4);
@@ -1658,6 +1656,14 @@ input.input[type="text"]:valid ~ label {
     color: var(--secondary);
     padding: 8px;
     transform: translateY(-50%) scale(0.9);
+}
+
+.input-group.alt > input {
+    border: 3px solid var(--softwhite);
+    color: var(--bgLight);
+}
+.input-group.alt > label {
+    color: var(--bgLight);
 }
 
 /* Textarea */
@@ -1898,6 +1904,40 @@ input.input[type="file"]:valid {
     user-select: none;
 }
 /*=====  End of Forms  ======*/
+
+
+/*=============================================
+=            Modal            =
+=============================================*/
+.modal {
+    background-color: var(--bgMedium);
+    border-radius: 10px;
+    border: 3px solid var(--secondary);
+    left: 50%;
+    max-height: 90%;
+    overflow: auto;
+    padding: 1rem;
+    position: fixed; 
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    width: clamp(240px, 80%, 480px); 
+}
+
+.modal-close {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+    float: right;
+}
+.modal-close svg {
+    color: var(--danger);
+}
+.modal-close:hover {
+    transform: scale(1.05);
+}
+/*=====  End of Modal  ======*/
+
 
 /*=============================================
 =            Markerplace            =
