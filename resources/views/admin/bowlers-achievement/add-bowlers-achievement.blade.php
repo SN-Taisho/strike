@@ -35,14 +35,6 @@
                 src="https://res.cloudinary.com/test-strike/image/upload/v1702010311/Events/persnickety-prints-rrHl2zGZ9E4-unsplash_qcpfo1.jpg">
         </div>
 
-        <section class="form-section">
-            <p>Tournament Placements<br>(Press enter to add new bullet)</p>
-            <div class="input-group fill">
-                <textarea required="" type="text" name="text" autocomplete="off" id="listInput" class="input"
-                    rows="2"></textarea>
-                <label class="label">Write here</label>
-            </div>
-        </section>
         {{-- Placement hidden input --}}
         <input id="listOutput" type="text" type="hidden" style="display: none;">
 
@@ -55,6 +47,10 @@
             </div>
         </section>
 
+        <section class="form-section">
+            <p>Tournament Placements can be added after the initial bowler's achievement is created</p>
+        </section>
+
         <div class="justify-evenly flex-wrap">
             <button type="button" class="cancel-btn trans-ease-in-out"
                 onclick="window.location.href='/bowlers-achievement-management'">Cancel</button>
@@ -65,8 +61,8 @@
     <h2 class="section-heading">Page Preview</h2>
 
     <div class="banner-image width-limiter">
-        <img id="image2" src="https://placehold.co/1280x720"
-            alt="Achievement banner" style="height: inherit; width: 100%; object-fit: cover;">
+        <img id="image2" src="https://placehold.co/1280x720" alt="Achievement banner"
+            style="height: inherit; width: 100%; object-fit: cover;">
     </div>
 
     <article class="article">
@@ -82,7 +78,8 @@
                 <li>4th Place Lorem</li>
             </ul>
 
-            <p id="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci, animi sunt recusandae similique
+            <p id="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci, animi sunt
+                recusandae similique
                 molestiae rem voluptate. Sit eum repellat esse dolores quis quas, excepturi, odit earum quasi quo ullam?
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nesciunt totam illum architecto
                 perferendis rerum, eum voluptatum eligendi quos voluptates! Dignissimos incidunt voluptatum fuga enim
@@ -141,8 +138,8 @@
     });
 
 
-     // Placement List Preview
-     const listInput = document.getElementById("listInput");
+    // Placement List Preview
+    const listInput = document.getElementById("listInput");
     const list = document.getElementById("list");
 
     // Function to create the list

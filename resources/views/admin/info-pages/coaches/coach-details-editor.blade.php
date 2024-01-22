@@ -133,7 +133,7 @@
                 <path d="m14.829 9.172-5.657 5.657"></path>
                 <path d="m9.172 9.172 5.656 5.657"></path>
             </svg></button>
-        <h2 class="section-subheading" style="color: var(--bgLight); margin-bottom: 1rem">Add Coach Attribute</h2>
+        <h2 class="section-subheading text-align-center" style="color: var(--bgLight); margin-bottom: 1rem">Add Coach Attribute</h2>
         <form class="align-center flex-col" method="" action="">
 
             <div class="input-group alt">
@@ -141,7 +141,7 @@
                 <label class="label" style="background-color: var(--bgMedium)">Coach Attribute</label>
             </div>
 
-            <button class="submit-btn" type="submit">Add</button>
+            <button class="submit-btn" type="submit">Add Attribute</button>
         </form>
     </dialog>
 
@@ -189,7 +189,7 @@
                                         <path d="m14.829 9.172-5.657 5.657"></path>
                                         <path d="m9.172 9.172 5.656 5.657"></path>
                                     </svg></button>
-                                <h2 class="section-subheading" style="color: var(--bgLight); margin-bottom: 1rem">Edit
+                                <h2 class="section-subheading text-align-center" style="color: var(--bgLight); margin-bottom: 1rem">Edit
                                     Coach Attribute</h2>
                                 <form class="align-center flex-col" method="" action="">
 
