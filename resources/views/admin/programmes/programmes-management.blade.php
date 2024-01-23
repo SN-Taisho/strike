@@ -93,7 +93,7 @@
 
                 <div class="schedule">
                     <table>
-                        <caption class="section-heading">Upcomeming Events</caption>
+                        <caption class="section-heading">Upcoming Events</caption>
                         <thead class="pFont">
                             <tr>
                                 <th>Date</th>
