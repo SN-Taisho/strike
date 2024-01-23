@@ -1,4 +1,4 @@
-@include('admin.components.admin-head', ['title' => 'Events Management'])
+@include('admin.components.admin-head', ['title' => 'Admin Login'])
 
 @include('admin.components.admin-header')
 

@@ -1,4 +1,4 @@
-@include('admin.components.admin-head', ['title' => 'Important Policies Editor'])
+@include('admin.components.admin-head', ['title' => 'Important Policies Management'])
 
 @include('admin.components.admin-header')
 

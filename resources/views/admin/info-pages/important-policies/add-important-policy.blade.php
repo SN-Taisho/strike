@@ -1,4 +1,4 @@
-@include('admin.components.admin-head', ['title' => 'Add Calendar Event'])
+@include('admin.components.admin-head', ['title' => 'Add Important Policy'])
 
 @include('admin.components.admin-header')
 

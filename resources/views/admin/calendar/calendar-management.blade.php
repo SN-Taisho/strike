@@ -1,4 +1,4 @@
-@include('admin.components.admin-head', ['title' => 'Calendar of Events Editor'])
+@include('admin.components.admin-head', ['title' => 'Calendar Management'])
 
 @include('admin.components.admin-header')
 

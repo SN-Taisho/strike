@@ -1,4 +1,4 @@
-@include('admin.components.admin-head', ['title' => 'Coeaches Management'])
+@include('admin.components.admin-head', ['title' => 'Add Coach'])
 
 @include('admin.components.admin-header')
 

@@ -1,4 +1,4 @@
-@include('admin.components.admin-head', ['title' => 'Edit Admin'])
+@include('admin.components.admin-head', ['title' => 'Admin Details Editor'])
 
 @include('admin.components.admin-header')
 
