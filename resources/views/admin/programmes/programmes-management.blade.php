@@ -115,7 +115,8 @@
         </section>
 
         <div class="justify-evenly flex-wrap">
-            <button type="button" class="cancel-btn trans-ease-in-out" onclick="window.location.href='/programmes-management'">Cancel</button>
+            <button type="button" class="cancel-btn trans-ease-in-out"
+                onclick="window.location.href='/programmes-management'">Cancel</button>
             <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
     </form>

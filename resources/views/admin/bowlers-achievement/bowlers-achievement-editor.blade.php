@@ -35,6 +35,17 @@
                 src="https://res.cloudinary.com/test-strike/image/upload/v1702010311/Events/persnickety-prints-rrHl2zGZ9E4-unsplash_qcpfo1.jpg">
         </div>
 
+        <section class="form-section flex-col">
+            <p>Stakeholder List<br>(Separate by entering a new line)</p>
+            <div class="input-group fill">
+                <textarea required="true" type="text" name="" autocomplete="off" id="listInput"
+                    class="input" rows="3"></textarea>
+                <label class="label" style="background-color: var(--softwhite)">Write Here</label>
+            </div>
+        </section>
+        {{-- Placement hidden input --}}
+        <input id="listOutput" type="text" type="hidden" style="display: none;">
+
         <section class="form-section" style="max-width: 720px; margin: auto;">
             <p>Main Content of Bowler's
                 Achievement
@@ -52,123 +63,6 @@
             <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
     </form>
-
-    <h1 class="section-heading">Manage Tournament Placement</h1>
-
-    <dialog id="add-placement" class="modal">
-        <button class="modal-close trans-ease-out" type="button"
-            onclick="document.querySelector('#add-placement').close()"><svg width="48" height="48" fill="none"
-                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"></path>
-                <path d="m14.829 9.172-5.657 5.657"></path>
-                <path d="m9.172 9.172 5.656 5.657"></path>
-            </svg></button>
-        <h2 class="section-subheading text-align-center" style="color: var(--bgLight); margin-bottom: 1rem">Add
-            Tournament Placement
-        </h2>
-        <form id="add" class="align-center flex-col" method="" action="" style="gap: 1rem">
-
-            <div class="input-group alt">
-                <input required="true" type="text" name=""autocomplete="off" class="input">
-                <label class="label" style="background-color: var(--bgMedium)">Placement</label>
-            </div>
-            <div class="input-group alt">
-                <input required="true" type="text" name=""autocomplete="off" class="input">
-                <label class="label" style="background-color: var(--bgMedium)">Bowler's Name</label>
-            </div>
-            <button class="submit-btn" type="submit">Add Placement</button>
-        </form>
-    </dialog>
-
-    <button type="button" class="action-btn alt text-deco-none" style="margin: auto"
-        onclick="document.querySelector('#add-placement').showModal()">Add Tournament Placement</button>
-
-    <div class="table-limiter" style="max-width: 720px">
-        <table class="res-table small">
-            <thead>
-                <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Placement</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                @for ($i = 0; $i < 4; $i++)
-                    <tr>
-                        <td data-label="No.">{{ $i + 1 }}</td>
-                        <td data-label="Placement">nth</td>
-                        <td data-label="Name">
-                            <p class="limit-text">Lorem ipsum, dolor sit amet
-                            </p>
-                        </td>
-                        <td class="actions" data-label="Action">
-                            <button type="button" class="action-btn edit icon"
-                                onclick="document.querySelector('#edit-modal{{ $i + 1 }}').showModal()"><svg
-                                    width="24" height="24" fill="none" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M21 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7"></path>
-                                    <path d="M7 13.36V17h3.659L21 6.654 17.348 3 7 13.36Z"></path>
-                                </svg> &nbsp;Edit</button>
-
-                            {{-- Edit Modal --}}
-                            <dialog id="edit-modal{{ $i + 1 }}" class="modal">
-                                <button class="modal-close trans-ease-out" type="button"
-                                    onclick="document.querySelector('#edit-modal{{ $i + 1 }}').close()"><svg
-                                        width="48" height="48" fill="none" stroke="currentColor"
-                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z">
-                                        </path>
-                                        <path d="m14.829 9.172-5.657 5.657"></path>
-                                        <path d="m9.172 9.172 5.656 5.657"></path>
-                                    </svg></button>
-                                <h2 class="section-subheading"
-                                    style="color: var(--bgLight); margin-bottom: 1rem; text-align: center">
-                                    Edit
-                                    Tournament Placement</h2>
-                                <form class="align-center flex-col" method="" action=""
-                                    style="gap: 1rem;">
-
-                                    <div class="input-group alt">
-                                        <input required="true" type="text" name=""autocomplete="off"
-                                            class="input">
-                                        <label class="label"
-                                            style="background-color: var(--bgMedium)">Placement</label>
-                                    </div>
-                                    <div class="input-group alt">
-                                        <input required="true" type="text" name=""autocomplete="off"
-                                            class="input">
-                                        <label class="label" style="background-color: var(--bgMedium)">Bowler's
-                                            Name</label>
-                                    </div>
-
-                                    <button class="submit-btn" type="submit" style="margin-top: 1rem">Save</button>
-                                </form>
-                            </dialog>
-
-                            <button type="button" class="action-btn delete icon"
-                                onclick="window.location.href='/delete_attribute'">
-                                <svg width="24" height="24" fill="none" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.5 5v17h15V5h-15Z"></path>
-                                    <path d="M10 10v6.5"></path>
-                                    <path d="M14 10v6.5"></path>
-                                    <path d="M2 5h20"></path>
-                                    <path d="m8 5 1.645-3h4.744L16 5H8Z"></path>
-                                </svg>&nbsp;Delete</button>
-
-                        </td>
-                    </tr>
-                @endfor
-            </tbody>
-        </table>
-    </div>
 
     <h2 class="section-heading">Page Preview</h2>
 
@@ -249,6 +143,28 @@
 
         reader.readAsDataURL(file);
     });
+
+
+        // Placement List Preview
+        const listInput = document.getElementById("listInput");
+    const list = document.getElementById("list");
+
+    // Function to create the list
+    function createList() {
+        const items = listInput.value.split(/\r?\n/); // Split on newline characters
+        list.innerHTML = ""; // Clear any existing list items
+
+        items.forEach(item => {
+            const listItem = document.createElement("li");
+            listItem.textContent = item.trim(); // Trim any leading/trailing spaces
+            list.appendChild(listItem);
+        });
+
+        const commaSeparatedItems = items.join(","); // Join with commas
+        document.getElementById("listOutput").value = commaSeparatedItems;
+    }
+
+    listInput.addEventListener("input", createList);
 </script>
 
 @include('components.footer')

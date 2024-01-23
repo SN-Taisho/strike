@@ -55,7 +55,7 @@
                 <div class="c-push"></div>
 
                 <div class="coach-details">
-                    <ul>
+                    <ul id="list">
                         <li>Lorem</li>
                         <li>Lorem</li>
                         <li>Lorem</li>
@@ -76,6 +76,16 @@
             </div>
 
         </div>
+
+        <section class="form-section flex-col">
+            <p>Coach Attribute List<br>(Separate by entering a new line)</p>
+            <div class="input-group fill">
+                <textarea required="true" type="text" name="" autocomplete="off" id="listInput" class="input" rows="3"></textarea>
+                <label class="label" style="background-color: var(--bgLight)">Write Here</label>
+            </div>
+        </section>
+        {{-- Placement hidden input --}}
+        <input id="listOutput" type="text" type="hidden" style="display: none;">
 
         <script>
             const inputElements = {
@@ -113,6 +123,27 @@
 
                 reader.readAsDataURL(file);
             });
+
+            // Coach attribute List Preview
+            const listInput = document.getElementById("listInput");
+            const list = document.getElementById("list");
+
+            // Function to create the list
+            function createList() {
+                const items = listInput.value.split(/\r?\n/); // Split on newline characters
+                list.innerHTML = ""; // Clear any existing list items
+
+                items.forEach(item => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = item.trim(); // Trim any leading/trailing spaces
+                    list.appendChild(listItem);
+                });
+
+                const commaSeparatedItems = items.join(","); // Join with commas
+                document.getElementById("listOutput").value = commaSeparatedItems;
+            }
+
+            listInput.addEventListener("input", createList);
         </script>
 
         <div class="justify-evenly flex-wrap">

@@ -1922,6 +1922,9 @@ input.input[type="file"]:valid {
     transform: translate(-50%, -50%); 
     width: clamp(240px, 80%, 480px); 
 }
+.modal::backdrop {
+    background-color: var(--shadow);
+}
 
 .modal-close {
     background-color: transparent;

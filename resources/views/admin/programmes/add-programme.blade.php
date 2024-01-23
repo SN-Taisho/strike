@@ -44,23 +44,12 @@
             </div>
         </section>
 
-        <h2 class="section-subheading">Duration, Age, Price, and Skill Level</h2>
+        <h2 class="section-subheading">Age and Skill Level</h2>
         <section class="form-section">
-            <div class="input-group">
-                <input required="true" type="text" name="duration" autocomplete="off" id="durationInput"
-                    class="input">
-                <label class="label">Duration</label>
-            </div>
-
             <div class="input-group">
                 <input required="true" type="text" name="agerange" autocomplete="off" id="ageRangeInput"
                     class="input">
                 <label class="label">Age Range</label>
-            </div>
-
-            <div class="input-group">
-                <input required="true" type="text" name="price" autocomplete="off" id="priceInput" class="input">
-                <label class="label">Price</label>
             </div>
 
             <div class="input-group">
@@ -80,7 +69,8 @@
         </section>
 
         <div class="justify-evenly flex-wrap">
-            <button type="button" class="cancel-btn trans-ease-in-out" onclick="window.location.href='/programmes-management'">Cancel</button>
+            <button type="button" class="cancel-btn trans-ease-in-out"
+                onclick="window.location.href='/programmes-management'">Cancel</button>
             <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
     </form>
@@ -141,32 +131,12 @@
             <li>
                 <svg width="50" height="50" fill="none" stroke="currentColor" stroke-linecap="round"
                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z"></path>
-                    <path d="M15.5 2h-7"></path>
-                    <path d="m19 5-1.5 1.5"></path>
-                    <path d="M12 9v4.5"></path>
-                </svg>
-                <p id="duration">Duration</p>
-            </li>
-            <li>
-                <svg width="50" height="50" fill="none" stroke="currentColor" stroke-linecap="round"
-                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"></path>
                     <path
                         d="M3 20.4v.6h18v-.6c0-2.24 0-3.36-.436-4.216a4 4 0 0 0-1.748-1.748C17.96 14 16.84 14 14.6 14H9.4c-2.24 0-3.36 0-4.216.436a4 4 0 0 0-1.748 1.748C3 17.04 3 18.16 3 20.4Z">
                     </path>
                 </svg>
                 <p id="ageRange">6 - 17 years old</p>
-            </li>
-
-            <li>
-                <svg width="50" height="50" fill="none" stroke="currentColor" stroke-linecap="round"
-                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 1v22"></path>
-                    <path d="M17.5 3H10a4.5 4.5 0 1 0 0 9"></path>
-                    <path d="M6.5 21H14a4.5 4.5 0 1 0 0-9h-4"></path>
-                </svg>
-                <p id="price">programme price</p>
             </li>
             <li>
                 <svg width="50" height="50" fill="none" stroke="currentColor" stroke-linecap="round"
