@@ -173,7 +173,7 @@ header img {
 header .width-limiter div {
     gap: 2rem;
 }
-.itps-link {
+.ipts-link {
     background-color: transparent;
     color: var(--primary);
     display: block;
@@ -185,7 +185,7 @@ header .width-limiter div {
     outline: 3px solid var(--primary);
     padding: 0.5rem 1rem;
 }
-.itps-link:hover {
+.ipts-link:hover {
     background-color: var(--primary);
     color: var(--bgDark);
     outline-offset: 3px;
@@ -2264,7 +2264,7 @@ input.input[type="file"]:valid {
     header .width-limiter div {
         gap: 1rem;
     }
-    .itps-link {
+    .ipts-link {
         letter-spacing: 1px;
         padding: 5px 10px;
         text-align: center;

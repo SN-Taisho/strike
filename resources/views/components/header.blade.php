@@ -34,8 +34,8 @@
         <a href="/"><img src="{{ asset('assets/images/logo-alt.png') }}" alt="Logo.png" height="80" /></a>
 
         <div class="align-center">
-            <a class="itps-link text-deco-none pFont border-smooth trans-ease-out" href="/itps">
-                ITPS Portal
+            <a class="ipts-link text-deco-none pFont border-smooth trans-ease-out" href="/ipts">
+                IPTS Portal
             </a>
             <button id="nav-menu-toggle" onClick="toggleSideMenu()">
                 <svg width="32" height="32" fill="none" stroke="currentColor" strokeLinecap="round"

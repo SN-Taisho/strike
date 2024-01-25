@@ -34,7 +34,7 @@
         <a href="/dashboard"><img src="{{ asset('assets/images/logo-alt.png') }}" alt="Logo.png" height="80" /></a>
 
         <div class="align-center">
-            <a class="itps-link text-deco-none pFont border-smooth trans-ease-out" href="/dashboard">
+            <a class="ipts-link text-deco-none pFont border-smooth trans-ease-out" href="/dashboard">
                 Dashboard
             </a>
             <button id="nav-menu-toggle" onClick="toggleSideMenu()">
