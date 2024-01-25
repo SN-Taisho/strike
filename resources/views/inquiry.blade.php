@@ -103,6 +103,45 @@
             </div>
         </section>
 
+        {{-- Programme of Interest --}}
+        <section class="form-section">
+            <p>Programme of Interest</p>
+            <div class="radio-vertical">
+
+                {{-- Can be fore eached --}}
+                <label class="radio-button">
+                    <input type="radio" name="programme_interest" value="1">
+                    <div class="radio-circle"></div>
+                    <span class="radio-label">Foundation</span>
+                </label>
+
+                <label class="radio-button">
+                    <input type="radio" name="programme_interest" value="2">
+                    <div class="radio-circle"></div>
+                    <span class="radio-label">Performance</span>
+                </label>
+
+                <label class="radio-button">
+                    <input type="radio" name="programme_interest" value="3">
+                    <div class="radio-circle"></div>
+                    <span class="radio-label">Centre of Excellence</span>
+                </label>
+
+                <label class="radio-button">
+                    <input type="radio" name="programme_interest" value="3">
+                    <div class="radio-circle"></div>
+                    <span class="radio-label">Virtual Coaching</span>
+                </label>
+                </label>
+            </div>
+        </section>
+
+        {{-- Show  this  section if from contact us --}}
+        <section class="form-section flex-col">
+            <p class="text-align-center">Havent decided yet?</p>
+            <a href="/programmes">Click here to view our programmes</a>
+        </section>
+
         {{-- Objectives for joining this programme --}}
         <section class="form-section">
             <p>Objectives for joining this programme</p>
@@ -141,16 +180,18 @@
         <hr class="divider">
 
         <h2 class="section-subheading" style="text-decoration: underline">Important Notes</h2>
-        <section class="form-section" style="justify-content: flex-start">
+
+        <section class="form-section flex-col" style="align-items: flex-start">
             <p style="font-weight: bold">After submitting this form, you will receive a confirmation email
                 <br />
                 If you haven't received an email within a few minutes, please check your spam; otherwise, please contact
-                us at <a href="/mailto:admin@strikeacademy.com"
-                    style="color: var(--secondary)">admin@stikeacademy.com</a>
+                us at
             </p>
+            <a href="/mailto:admin@strikeacademy.com" style="color: var(--secondary)">admin@stikeacademy.com</a>
+            <p>Programme details will be sent to your email upon confirmation</p>
         </section>
 
-        <button type="submit" class="submit-btn trans-ease-in-out">Submit Inquiry</button>
+        <button type="submit" class="submit-btn trans-ease-in-out">Send Inquiry</button>
 
     </form>
 
