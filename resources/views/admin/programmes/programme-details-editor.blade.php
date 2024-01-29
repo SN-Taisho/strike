@@ -46,8 +46,14 @@
             </div>
         </section>
 
-        <h2 class="section-subheading">Age and Skill Level</h2>
+        <h2 class="section-subheading">Duration, Age, and Skill Level</h2>
         <section class="form-section">
+            <div class="input-group">
+                <input required="true" type="text" name="duration" autocomplete="off" id="durationInput"
+                    class="input">
+                <label class="label">Duration</label>
+            </div>
+
             <div class="input-group">
                 <input required="true" type="text" name="agerange" autocomplete="off" id="ageRangeInput"
                     class="input">
@@ -133,7 +139,19 @@
 
         <ul class="tags">
             <li>
-                <svg width="50" height="50" fill="none" stroke="currentColor" stroke-linecap="round"
+                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"></path>
+                    <path d="M14 2h-4"></path>
+                    <path d="M12 2v4"></path>
+                    <path d="M17.5 8 19 6.5"></path>
+                    <path d="M12 14v-3"></path>
+                    <path d="M12 14H9"></path>
+                </svg>
+                <p id="duration">Duration</p>
+            </li>
+            <li>
+                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"></path>
                     <path
@@ -144,13 +162,12 @@
             </li>
 
             <li>
-                <svg width="50" height="50" fill="none" stroke="currentColor" stroke-linecap="round"
+                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 1v22"></path>
-                    <path d="M17.5 3H10a4.5 4.5 0 1 0 0 9"></path>
-                    <path d="M6.5 21H14a4.5 4.5 0 1 0 0-9h-4"></path>
+                    <path d="M3 3v18h18"></path>
+                    <path d="m7 17 4-8 5 4.5L21 3"></path>
                 </svg>
-                <p id="price">programme price</p>
+                <p id="skillReq">Required skill level</p>
             </li>
         </ul>
     </div>
@@ -182,10 +199,6 @@
         ageRange: {
             input: document.getElementById('ageRangeInput'),
             output: document.getElementById('ageRange')
-        },
-        price: {
-            input: document.getElementById('priceInput'),
-            output: document.getElementById('price')
         },
         skillReq: {
             input: document.getElementById('skillReqInput'),

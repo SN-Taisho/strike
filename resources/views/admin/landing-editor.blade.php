@@ -2,7 +2,7 @@
 
 @include('admin.components.admin-header')
 
-<main>
+<main style="overflow: hidden">
 
     <form class="edit-form width-limiter">
         <h3 class="section-heading">Landing Editor</h3>

@@ -10,7 +10,8 @@
             </div>
 
             <div class="i-section-right">
-                <p style="margin-bottom: 1rem;">At STRIKE Bowling Academy, we are committed to providing our students with the best possible coaching
+                <p style="margin-bottom: 1rem;">At STRIKE Bowling Academy, we are committed to providing our students
+                    with the best possible coaching
                     experience. Our team of experienced and qualified coaches is passionate about bowling and dedicated
                     to helping our students reach their full potential. Whether you are a beginner or a seasoned bowler,
                     our coaches will provide you with the personalized instruction you need to improve your game. We are
@@ -37,7 +38,13 @@
 
             @for ($i = 0; $i < 5; $i++)
                 <div class="coach-card">
-                    <img src="https://placehold.co/300x300.webp" alt="Coach">
+
+                    @if ($i === 3)
+                        <img src="https://placehold.co/300x400.webp" alt="Coach">
+                    @else
+                        <img src="https://placehold.co/300x300.webp" alt="Coach">
+                    @endif
+
                     <div class="coach-profile">
                         <h3>Coach Name</h3>
                         <p>Coach Position</p>
@@ -69,7 +76,7 @@
 
         </div>
 
-        <h2>Part-Time Coaches</h2>
+        <h2>Contract Coaches</h2>
         <div class="width-limiter">
 
             @for ($i = 0; $i < 10; $i++)

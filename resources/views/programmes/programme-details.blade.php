@@ -48,7 +48,19 @@
 
         <ul class="tags">
             <li>
-                <svg width="50" height="50" fill="none" stroke="currentColor" stroke-linecap="round"
+                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"></path>
+                    <path d="M14 2h-4"></path>
+                    <path d="M12 2v4"></path>
+                    <path d="M17.5 8 19 6.5"></path>
+                    <path d="M12 14v-3"></path>
+                    <path d="M12 14H9"></path>
+                </svg>
+                <p>Duration</p>
+            </li>
+            <li>
+                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"></path>
                     <path
@@ -58,7 +70,7 @@
                 <p>6 - 17 years old</p>
             </li>
             <li>
-                <svg width="50" height="50" fill="none" stroke="currentColor" stroke-linecap="round"
+                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 3v18h18"></path>
                     <path d="m7 17 4-8 5 4.5L21 3"></path>

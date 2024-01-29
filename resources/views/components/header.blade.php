@@ -75,8 +75,25 @@
             <li>
                 <a href="/programmes">Programmes</a>
             </li>
-            <li>
-                <a href="/events">Events</a>
+            <li class="dropdown">
+                <a href="javascript:void(0);">
+                    Events
+                    <svg width="32" height="32" fill="none" stroke="currentColor" stroke-linejoin="round"
+                        stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m18 9.5-6 6-6-6h12Z"></path>
+                    </svg>
+                </a>
+                <ul class="dropdown-content">
+                    <li>
+                        <a href="/events">All Events</a>
+                    </li>
+                    <li>
+                        <a href="/events?category=strike-events">Strike Events</a>
+                    </li>
+                    <li>
+                        <a href="/events?category=tournaments">Tournaments</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="/calendar">Calendar</a>

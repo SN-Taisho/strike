@@ -435,6 +435,7 @@ footer {
     color: var(--white);
     font-size: var(--fSize6);
     font-weight: bold;
+    word-wrap: break-word;
 }
 #landing-content h1 span {
     color: var(--primary);
@@ -575,6 +576,18 @@ section#featured-events {
 }
 .featured-events-link:hover {
     transform: scale(1.025);
+}
+
+.featured-events-link.more h2 {
+    color: var(--bgLight);
+    font-size: var(--fSize5);
+    left: 50%;
+    outline-offset: 4rem;
+    outline: 2px solid var(--primary);
+    position: absolute;
+    text-transform: capitalize;
+    top: 50%;
+    transform: translate(-50%, -50%); 
 }
 
 /*----------  Featured Testimonials  ----------*/
@@ -1264,13 +1277,14 @@ section#coaches-section {
 }
 
 .coach-card:hover {
+    width: 350px;
     transform: scale(1.1);
     z-index: 4;
 }
 
 .coach-card:hover .coach-details {
     top: 234px;
-    transition: ease-in 0.3s 0.3s;
+    transition: ease-in 0.3s;
     transform: scaleY(1);
 }
 /*=====  End of Info Pages  ======*/
@@ -1352,6 +1366,43 @@ section#coaches-section {
     width: 120px;
     z-index: 5;
 }
+
+
+/*----------  Categories  ----------*/
+.categories {
+    position: sticky;
+}
+.categories ul {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style: none;
+    margin: auto;
+    padding: 1.5rem;
+}
+.categories a {
+    border-radius: 3px;
+    color: var(--primary);
+    font-family: var(--sFont);
+    font-size: var(--fSize3);
+    font-weight: bold;
+    outline-offset: -0.5rem;
+    outline: 2px solid transparent;
+    padding: 0.7rem 0.5rem;
+    text-decoration: none;
+    transition: 0.3s ease-out;
+}
+.categories a:hover {
+    outline-offset: 0rem;
+    outline: 2px solid var(--primary);
+}
+
+.categories a.selected {
+    background-color: var(--primary);
+    color: var(--bgDark);
+}
+
 
 /*----------  Search bar  ----------*/
 .search-form {

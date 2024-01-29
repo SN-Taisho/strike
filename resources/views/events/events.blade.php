@@ -17,6 +17,14 @@
         </div>
     </section>
 
+    <div class="categories" style="background-color: var(--bgDark);">
+        <ul class="width-limiter">
+            <li><a href="/events" class="selected">All Events</a></li>
+            <li><a href="/events?category=strike-events">Strike Events</a></li>
+            <li><a href="/events?category=tournaments">Tournaments</a></li>
+        </ul>
+    </div>
+
     <div class="width-limiter">
         <form action="" class="search-form align-center">
             <input type="text" placeholder="Search" class="border-smooth trans-ease-in-out">

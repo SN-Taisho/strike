@@ -77,16 +77,22 @@
     </section>
 
     <section id="featured-events">
-        <h2 class="section-heading alt">Upcoming Events</h2>
+        <h2 class="section-heading alt">Events</h2>
         <div class="carousel">
             <div class="carousel-inner">
                 @foreach ($events as $event)
-                    <a href="/events"
+                    <a href="/event-details"
                         class="featured-events-link trans-ease-in-out carousel-item {{ $loop->first ? 'active' : '' }} ci-1">
                         <img src="https://placehold.co/700x400" alt="event.webp" width="700" height="400" />
                         <h3 class="pFont">Lorem ipsum dolor {{ $loop->index }}</h3>
                     </a>
                 @endforeach
+                <a href="/events"
+                    class="featured-events-link more trans-ease-in-out carousel-item ci-1">
+                    <img src="https://placehold.co/700x400" alt="event.webp" width="700" height="400" style="opacity: 0;"/>
+                    <h2 class="pFont">View more events</h2>
+                </a>
+
             </div>
             <a id="prev1" class="prev">&#10094;</a>
             <a id="next1" class="next">&#10095;</a>
