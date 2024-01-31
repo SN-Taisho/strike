@@ -1,0 +1,9 @@
+   <svg width="98" height="98" fill="none" stroke="#89c53c"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 15c3.314 0 6-2.765 6-6.176V2H6v6.824C6 12.234 8.686 15 12 15Z"></path>
+                                <path d="M6 10.5v-5H2c0 3.333 2 5 4 5Z" clip-rule="evenodd"></path>
+                                <path d="M18 10.5v-5h4c0 3.333-2 5-4 5Z" clip-rule="evenodd"></path>
+                                <path d="M12 15v3"></path>
+                                <path d="m7.5 21 1.845-3h5.176l1.979 3h-9Z"></path>
+                            </svg>
