@@ -1716,7 +1716,7 @@ input.input[type="text"]:valid ~ label {
     transform: translateY(-50%) scale(0.9);
 }
 
-.input-group.alt > input {
+.input-group.alt > .input {
     border: 3px solid var(--softwhite);
     color: var(--bgLight);
 }
@@ -1744,6 +1744,20 @@ textarea.input {
     box-sizing: border-box;
     resize: none;
     width: 300px;
+}
+
+/*  Select Input */
+select.input {
+    color: var(--bgMedium);
+    cursor: pointer;
+    font-family: var(--sFont);
+    font-size: var(--fSize2);
+    font-weight: bold;
+}
+select.input option {
+    color: var(--bgMedium);
+    font-family: var(--sFont);
+    font-size: var(--fSize2);
 }
 
 /* File Input */

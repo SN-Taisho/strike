@@ -14,6 +14,19 @@
             </div>
         </section>
 
+        <section class="form-section" style="justify-content: center">
+            <div class="input-group">
+                <select name="" id="select" class="input">
+                    <option value="">Strike Events</option>
+                    <option value="">Tournament</option>
+                </select>
+            </div>
+
+        {{-- Modal Open --}}
+            <button type="button" class="action-btn alt text-deco-none"
+                onclick="document.querySelector('#add-category').showModal()">Add Category</button>
+        </section>
+
         <section class="form-section">
             <div class="input-group file">
                 <label class="filelabel">Event Image (3:4 or 16:9)</label>
@@ -54,6 +67,37 @@
             <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
     </form>
+
+       {{-- Modal Here --}}
+       <dialog id="add-category" class="modal">
+
+        <button class="modal-close trans-ease-out" type="button"
+            onclick="document.querySelector('#add-category').close()"><svg width="48" height="48" fill="none"
+                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"></path>
+                <path d="m14.829 9.172-5.657 5.657"></path>
+                <path d="m9.172 9.172 5.656 5.657"></path>
+            </svg></button>
+        <h2 class="section-subheading text-align-center" style="color: var(--bgLight); margin-bottom: 1rem">Create New Category
+        </h2>
+
+        <form id="add" class="align-center flex-col" method="" action="" style="gap: 1rem">
+
+            <div class="input-group alt" style="width: fit-content">
+                <input required="true" type="text" name=""autocomplete="off" class="input">
+                <label class="label" style="background-color: var(--bgMedium)">Category Name</label>
+            </div>
+
+            <div class="input-group alt" style="width: fit-content">
+                <textarea class="input" name="" rows="3"></textarea>
+                <label class="label" style="background-color: var(--bgMedium)">Category Description</label>
+            </div>
+
+            {{-- Modal Submit --}}
+            <button class="submit-btn" type="submit">Save Category</button>
+        </form>
+    </dialog>
 
     <h2 class="section-heading">Page Preview</h2>
 

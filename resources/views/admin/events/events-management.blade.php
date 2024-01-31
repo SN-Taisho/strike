@@ -15,6 +15,7 @@
                 <label class="label" style="background-color: var(--bgLight)">Write Here</label>
             </div>
         </section>
+        <input type="text" value="">
 
         <section class="form-section">
             <div class="input-group file">
@@ -75,9 +76,22 @@
 
                 reader.readAsDataURL(file);
             });
+
+            const typingInput = document.getElementById("myTypingInput");
+            function debouncedSaveText(callback, delay) {
+                let timeout;
+                return function() {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => callback(), delay);
+                };
+            }
+            const updateHiddenInput = debouncedSaveText(() => saveTextWithLineBreaks(typingInput, "myHiddenInput"), 200);
+
+            typingInput.addEventListener("input", updateHiddenInput);
         </script>
 
-        <a href="/add-event" class="action-btn alt text-deco-none" style="margin: 2rem auto 1rem auto;">Add New Event</a>
+        <a href="/add-event" class="action-btn alt text-deco-none" style="margin: 2rem auto 1rem auto;">Add New
+            Event</a>
 
         <div class="table-limiter">
             <table class="res-table wide limited" style="max-width: 1440px;">
@@ -143,7 +157,8 @@
         </div>
 
         <div class="justify-evenly flex-wrap">
-            <button type="button" class="cancel-btn trans-ease-in-out" onclick="window.location.href='/events-management'">Cancel</button>
+            <button type="button" class="cancel-btn trans-ease-in-out"
+                onclick="window.location.href='/events-management'">Cancel</button>
             <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
     </form>
