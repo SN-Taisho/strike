@@ -22,7 +22,7 @@
                 </select>
             </div>
 
-        {{-- Modal Open --}}
+            {{-- Modal Open --}}
             <button type="button" class="action-btn alt text-deco-none"
                 onclick="document.querySelector('#add-category').showModal()">Add Category</button>
         </section>
@@ -63,13 +63,14 @@
         </section>
 
         <div class="justify-evenly flex-wrap">
-            <button type="button" class="cancel-btn trans-ease-in-out" onclick="window.location.href='/events-management'">Cancel</button>
+            <button type="button" class="cancel-btn trans-ease-in-out"
+                onclick="window.location.href='/events-management'">Cancel</button>
             <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
     </form>
 
-       {{-- Modal Here --}}
-       <dialog id="add-category" class="modal">
+    {{-- Modal Here --}}
+    <dialog id="add-category" class="modal">
 
         <button class="modal-close trans-ease-out" type="button"
             onclick="document.querySelector('#add-category').close()"><svg width="48" height="48" fill="none"
@@ -79,7 +80,8 @@
                 <path d="m14.829 9.172-5.657 5.657"></path>
                 <path d="m9.172 9.172 5.656 5.657"></path>
             </svg></button>
-        <h2 class="section-subheading text-align-center" style="color: var(--bgLight); margin-bottom: 1rem">Create New Category
+        <h2 class="section-subheading text-align-center" style="color: var(--bgLight); margin-bottom: 1rem">Create New
+            Category
         </h2>
 
         <form id="add" class="align-center flex-col" method="" action="" style="gap: 1rem">
@@ -98,6 +100,48 @@
             <button class="submit-btn" type="submit">Save Category</button>
         </form>
     </dialog>
+
+    <div class="table-limiter" style="max-width: 720px;">
+        <table class="res-table small limited">
+            <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Result</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @php
+                    $year = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                    $i = 0;
+                @endphp
+
+                @foreach ($year as $month)
+                    <tr>
+                        <td data-label="No.">{{ $i + 1 }}</td>
+                        <td data-label="Result">Result Title</td>
+                        <td data-label="Description">
+                            <p class="limit-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Reprehenderit est aliquam vel necessitatibus quae in soluta odit impedit ab quaerat
+                                nesciunt error repellendus tempora, ea odio velit iste explicabo possimus.</p>
+                        </td>
+                        <td class="actions" data-label="Action">
+                            <div class="check-box-container">
+                                <label class="cyberpunk-checkbox-label" style="color: var(--secondary)">
+                                    <input type="checkbox" class="cyberpunk-checkbox">
+                                    Link</label>
+                            </div>
+                        </td>
+                    </tr>
+                    @php
+                        $i++;
+                    @endphp
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 
     <h2 class="section-heading">Page Preview</h2>
 
