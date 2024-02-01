@@ -1529,6 +1529,7 @@ article.article {
 }
 .article span {
     color: var(--secondary);
+    display: block;
     font-size: var(--fSize3);
     padding: 0.5rem 1rem;
 }
@@ -1541,10 +1542,21 @@ article.article {
 }
 
 .article a {
-    color: var(--secondary);
+    background-color: var(--primary);
+    border-radius: 3px;
+    color: var(--bgMedium);
+    display: block;
     font-size: var(--fSize2);
+    font-weight: bold;
+    letter-spacing: 1px;
     line-height: calc(var(--fSize2) * 1.5);
+    margin: 1.5rem 1rem;
     padding: 0.5rem 1rem;
+    text-decoration: none;
+    width: fit-content;
+}
+.article a:hover {
+    transform: scale(1.05);
 }
 
 .article ul {
