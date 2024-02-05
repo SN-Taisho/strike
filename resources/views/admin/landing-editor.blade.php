@@ -25,6 +25,32 @@
             </div>
         </section>
 
+        <input type="text" id="landingParagraphHidden">
+
+        <script>
+            const inputFieldsAndIds = [{
+                inputFieldId: 'landingParagraphInput',
+                hiddenInputId: 'landingParagraphHidden',
+            }, ];
+
+            function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
+                inputFieldsAndIds.forEach(({
+                    inputFieldId,
+                    hiddenInputId
+                }) => {
+                    const inputField = document.getElementById(inputFieldId);
+                    const hiddenInput = document.getElementById(hiddenInputId);
+
+                    inputField.addEventListener('input', () => {
+                        const textWithEntities = inputField.value.replace(/\n/g, '<br>');
+                        hiddenInput.value = textWithEntities;
+                    });
+                });
+            }
+
+            saveLineBreaksToHiddenInputs(inputFieldsAndIds);
+        </script>
+
         <section class="form-section">
             <div class="input-group file">
                 <label class="filelabel">Landing Banner</label>
@@ -69,7 +95,7 @@
                     const parts = text.split('*');
                     landingHeading.innerHTML = `${parts[0]}<br /><span>${parts[1] || ''}</span>`;
                 } else if (event.target === landingParagraphInput) {
-                    landingParagraph.textContent = event.target.value;
+                    landingParagraph.innerHTML = event.target.value.replace(/\n/g, '<br>');
                 }
             });
 
