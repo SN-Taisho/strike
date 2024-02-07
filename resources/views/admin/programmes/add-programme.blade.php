@@ -38,14 +38,22 @@
         <section class="form-section">
             <p>Main Description of Programme</p>
             <div class="input-group fill">
-                <textarea required="" type="text" name="text" autocomplete="off" id="mainDescriptionInput" class="input"
+                <textarea required="" type="text" name="" autocomplete="off" id="mainDescriptionInput" class="input"
                     rows="5"></textarea>
-                <label class="label">Description of Condition</label>
+                <label class="label">Write Here</label>
             </div>
         </section>
 
-        <h2 class="section-subheading">Age and Skill Level</h2>
+        <input type="text" id="mainDescriptionHidden" autocomplete="off" hidden>
+
+        <h2 class="section-subheading">Duration, Age, and Skill Level</h2>
         <section class="form-section">
+            <div class="input-group">
+                <input required="true" type="text" name="duration" autocomplete="off" id="durationInput"
+                    class="input">
+                <label class="label">Duration</label>
+            </div>
+
             <div class="input-group">
                 <input required="true" type="text" name="agerange" autocomplete="off" id="ageRangeInput"
                     class="input">
@@ -67,6 +75,8 @@
                 <label class="label">Write Here</label>
             </div>
         </section>
+
+        <input type="text" id="otherInfoHidden" hidden>
 
         <div class="justify-evenly flex-wrap">
             <button type="button" class="cancel-btn trans-ease-in-out"
@@ -129,7 +139,19 @@
 
         <ul class="tags">
             <li>
-                <svg width="50" height="50" fill="none" stroke="currentColor" stroke-linecap="round"
+                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"></path>
+                    <path d="M14 2h-4"></path>
+                    <path d="M12 2v4"></path>
+                    <path d="M17.5 8 19 6.5"></path>
+                    <path d="M12 14v-3"></path>
+                    <path d="M12 14H9"></path>
+                </svg>
+                <p id="duration">Duration</p>
+            </li>
+            <li>
+                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"></path>
                     <path
@@ -138,8 +160,9 @@
                 </svg>
                 <p id="ageRange">6 - 17 years old</p>
             </li>
+
             <li>
-                <svg width="50" height="50" fill="none" stroke="currentColor" stroke-linecap="round"
+                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 3v18h18"></path>
                     <path d="m7 17 4-8 5 4.5L21 3"></path>
@@ -177,10 +200,6 @@
             input: document.getElementById('ageRangeInput'),
             output: document.getElementById('ageRange')
         },
-        price: {
-            input: document.getElementById('priceInput'),
-            output: document.getElementById('price')
-        },
         skillReq: {
             input: document.getElementById('skillReqInput'),
             output: document.getElementById('skillReq')
@@ -195,7 +214,7 @@
     // Generic function to handle input updates
     function updateContent(element) {
         element.input.addEventListener('input', () => {
-            element.output.textContent = element.input.value;
+            element.output.innerHTML = element.input.value.replace(/\n/g, "<br>");
         });
     }
 
@@ -216,6 +235,34 @@
 
         reader.readAsDataURL(file);
     });
+
+    // LIne break save
+    const inputFieldsAndIds = [{
+            inputFieldId: 'mainDescriptionInput',
+            hiddenInputId: 'mainDescriptionHidden',
+        },
+        {
+            inputFieldId: 'otherInfoInput',
+            hiddenInputId: 'otherInfoHidden',
+        }
+    ];
+
+    function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
+        inputFieldsAndIds.forEach(({
+            inputFieldId,
+            hiddenInputId
+        }) => {
+            const inputField = document.getElementById(inputFieldId);
+            const hiddenInput = document.getElementById(hiddenInputId);
+
+            inputField.addEventListener('input', () => {
+                const textWithEntities = inputField.value.replace(/\n/g, '<br>');
+                hiddenInput.value = textWithEntities;
+            });
+        });
+    }
+
+    saveLineBreaksToHiddenInputs(inputFieldsAndIds);
 </script>
 
 @include('components.footer')

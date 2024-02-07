@@ -21,6 +21,9 @@
                             <label class="label">Write Here</label>
                         </div>
                     </section>
+
+                    <input type="text" id="briefDescriptionHidden" autocomplete="off" hidden>
+
                     <p id="briefDescription">Our calendar is brimming with engaging activities, from captivating
                         workshops
                         to exhilarating competitions. Whether you're seeking knowledge, entertainment, or camaraderie,
@@ -30,8 +33,51 @@
             </div>
         </section>
 
-        <a href="/add-calendar-event" class="action-btn alt text-deco-none"
-            style="margin: 2rem auto 1rem;">Add New
+        <script>
+            const inputElements = {
+                briefDescription: {
+                    input: document.getElementById('briefDescriptionInput'),
+                    output: document.getElementById('briefDescription')
+                },
+            };
+
+            const image = document.getElementById('image');
+
+            // Generic function to handle input updates
+            function updateContent(element) {
+                element.input.addEventListener('input', () => {
+                    element.output.innerHTML = element.input.value.replace(/\n/g, "<br>");
+                });
+            }
+
+            // Apply the update function to all elements in the inputElements object
+            Object.values(inputElements).forEach(updateContent);
+
+            // LIne break save
+            const inputFieldsAndIds = [{
+                inputFieldId: 'briefDescriptionInput',
+                hiddenInputId: 'briefDescriptionHidden',
+            }, ];
+
+            function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
+                inputFieldsAndIds.forEach(({
+                    inputFieldId,
+                    hiddenInputId
+                }) => {
+                    const inputField = document.getElementById(inputFieldId);
+                    const hiddenInput = document.getElementById(hiddenInputId);
+
+                    inputField.addEventListener('input', () => {
+                        const textWithEntities = inputField.value.replace(/\n/g, '<br>');
+                        hiddenInput.value = textWithEntities;
+                    });
+                });
+            }
+
+            saveLineBreaksToHiddenInputs(inputFieldsAndIds);
+        </script>
+
+        <a href="/add-calendar-event" class="action-btn alt text-deco-none" style="margin: 2rem auto 1rem;">Add New
             Calendar
             Event</a>
 
@@ -99,30 +145,10 @@
         </div>
 
         <div class="justify-evenly flex-wrap">
-            <button type="button" class="cancel-btn trans-ease-in-out" onclick="window.location.href='/calendar-editor'">Cancel</button>
+            <button type="button" class="cancel-btn trans-ease-in-out"
+                onclick="window.location.href='/calendar-editor'">Cancel</button>
             <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
-
-        <script>
-            const inputElements = {
-                briefDescription: {
-                    input: document.getElementById('briefDescriptionInput'),
-                    output: document.getElementById('briefDescription')
-                },
-            };
-
-            const image = document.getElementById('image');
-
-            // Generic function to handle input updates
-            function updateContent(element) {
-                element.input.addEventListener('input', () => {
-                    element.output.textContent = element.input.value;
-                });
-            }
-
-            // Apply the update function to all elements in the inputElements object
-            Object.values(inputElements).forEach(updateContent);
-        </script>
 
         @php
             $year = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];

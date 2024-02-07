@@ -15,9 +15,9 @@
         </section>
 
         <section class="form-section">
-            <p>Event Date</p>
             <div class="input-group">
-                <input required="true" type="date" name="date" autocomplete="off" class="input">
+                <input required="true" type="date" name="date" autocomplete="off" id="dateInput" class="input">
+                <label class="label" style="background-color: var(--bgLight);">Calendar Event Date</label>
             </div>
         </section>
 

@@ -15,7 +15,7 @@
                 <label class="label" style="background-color: var(--bgLight)">Write Here</label>
             </div>
         </section>
-        <input type="text" value="" hidden>
+        <input type="text" id="briefDescriptionHidden" hidden>
 
         <section class="form-section">
             <div class="input-group file">
@@ -119,7 +119,7 @@
             // Generic function to handle input updates
             function updateContent(element) {
                 element.input.addEventListener('input', () => {
-                    element.output.textContent = element.input.value;
+                    element.output.innerHTML = element.input.value.replace(/\n/g, "<br>");
                 });
             }
 
@@ -138,6 +138,34 @@
 
                 reader.readAsDataURL(file);
             });
+
+                // LIne break save
+    const inputFieldsAndIds = [{
+            inputFieldId: 'briefDescriptionInput',
+            hiddenInputId: 'briefDescriptionHidden',
+        },
+        {
+            inputFieldId: 'otherInfoInput',
+            hiddenInputId: 'otherInfoHidden',
+        }
+    ];
+
+    function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
+        inputFieldsAndIds.forEach(({
+            inputFieldId,
+            hiddenInputId
+        }) => {
+            const inputField = document.getElementById(inputFieldId);
+            const hiddenInput = document.getElementById(hiddenInputId);
+
+            inputField.addEventListener('input', () => {
+                const textWithEntities = inputField.value.replace(/\n/g, '<br>');
+                hiddenInput.value = textWithEntities;
+            });
+        });
+    }
+
+    saveLineBreaksToHiddenInputs(inputFieldsAndIds);
         </script>
 
         <a href="/add-event" class="action-btn alt text-deco-none" style="margin: 2rem auto 1rem auto;">Add New

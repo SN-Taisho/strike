@@ -25,31 +25,7 @@
             </div>
         </section>
 
-        <input type="text" id="landingParagraphHidden">
-
-        <script>
-            const inputFieldsAndIds = [{
-                inputFieldId: 'landingParagraphInput',
-                hiddenInputId: 'landingParagraphHidden',
-            }, ];
-
-            function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
-                inputFieldsAndIds.forEach(({
-                    inputFieldId,
-                    hiddenInputId
-                }) => {
-                    const inputField = document.getElementById(inputFieldId);
-                    const hiddenInput = document.getElementById(hiddenInputId);
-
-                    inputField.addEventListener('input', () => {
-                        const textWithEntities = inputField.value.replace(/\n/g, '<br>');
-                        hiddenInput.value = textWithEntities;
-                    });
-                });
-            }
-
-            saveLineBreaksToHiddenInputs(inputFieldsAndIds);
-        </script>
+        <input type="text" id="landingParagraphHidden" hidden>
 
         <section class="form-section">
             <div class="input-group file">
@@ -105,6 +81,28 @@
                 reader.onload = () => landingBannerImage.src = reader.result;
                 reader.readAsDataURL(file);
             });
+
+            const inputFieldsAndIds = [{
+                inputFieldId: 'landingParagraphInput',
+                hiddenInputId: 'landingParagraphHidden',
+            }, ];
+
+            function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
+                inputFieldsAndIds.forEach(({
+                    inputFieldId,
+                    hiddenInputId
+                }) => {
+                    const inputField = document.getElementById(inputFieldId);
+                    const hiddenInput = document.getElementById(hiddenInputId);
+
+                    inputField.addEventListener('input', () => {
+                        const textWithEntities = inputField.value.replace(/\n/g, '<br>');
+                        hiddenInput.value = textWithEntities;
+                    });
+                });
+            }
+
+            saveLineBreaksToHiddenInputs(inputFieldsAndIds);
         </script>
 
         <hr class="divider">

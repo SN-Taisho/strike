@@ -40,11 +40,13 @@
         <section class="form-section">
             <p>Main Description of Programme</p>
             <div class="input-group fill">
-                <textarea required="" type="text" name="text" autocomplete="off" id="mainDescriptionInput" class="input"
+                <textarea required="" type="text" name="" autocomplete="off" id="mainDescriptionInput" class="input"
                     rows="5"></textarea>
-                <label class="label">Description of Condition</label>
+                <label class="label">Write Here</label>
             </div>
         </section>
+
+        <input type="text" id="mainDescriptionHidden" hidden>
 
         <h2 class="section-subheading">Duration, Age, and Skill Level</h2>
         <section class="form-section">
@@ -75,6 +77,8 @@
                 <label class="label">Write Here</label>
             </div>
         </section>
+
+        <input type="text" id="otherInfoHidden" autocomplete="off"hidden>
 
         <div class="justify-evenly flex-wrap">
             <button type="button" class="cancel-btn trans-ease-in-out"
@@ -214,7 +218,7 @@
     // Generic function to handle input updates
     function updateContent(element) {
         element.input.addEventListener('input', () => {
-            element.output.textContent = element.input.value;
+            element.output.innerHTML = element.input.value.replace(/\n/g, "<br>");
         });
     }
 
@@ -235,6 +239,30 @@
 
         reader.readAsDataURL(file);
     });
+
+    // LIne break save
+    const inputFieldsAndIds = [{
+            inputFieldId: 'mainDescriptionInput',
+            hiddenInputId: 'mainDescriptionHidden',
+        },
+    ];
+
+    function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
+        inputFieldsAndIds.forEach(({
+            inputFieldId,
+            hiddenInputId
+        }) => {
+            const inputField = document.getElementById(inputFieldId);
+            const hiddenInput = document.getElementById(hiddenInputId);
+
+            inputField.addEventListener('input', () => {
+                const textWithEntities = inputField.value.replace(/\n/g, '<br>');
+                hiddenInput.value = textWithEntities;
+            });
+        });
+    }
+
+    saveLineBreaksToHiddenInputs(inputFieldsAndIds);
 </script>
 
 @include('components.footer')

@@ -1533,6 +1533,9 @@ article.article {
     font-size: var(--fSize3);
     padding: 0.5rem 1rem;
 }
+.article span.date {
+    color: var(--softwhite);
+}
 
 .article p {
     color: var(--softwhite);
@@ -1756,6 +1759,14 @@ textarea.input {
     box-sizing: border-box;
     resize: none;
     width: 300px;
+}
+
+/* Date Input */
+.input[type="date"] ~ label {
+    background-color: var(--softwhite);
+    color: var(--bgMedium);
+    padding: 8px;
+    transform: translateY(-50%) scale(0.9);
 }
 
 /*  Select Input */

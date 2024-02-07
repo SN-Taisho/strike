@@ -16,10 +16,10 @@
 
         <section class="form-section" style="justify-content: center">
             <div class="input-group">
-                <select name="" id="select" class="input">
+                <select name="" id="categorySelect" class="input">
                     <option selected>Select Category</option>
-                    <option value="">Strike Events</option>
-                    <option value="">Tournament</option>
+                    <option value="Strike Events">Strike Events</option>
+                    <option value="Tournaments">Tournament</option>
                 </select>
             </div>
 
@@ -29,7 +29,7 @@
         </section>
 
         <script>
-            document.getElementById("select").addEventListener("change", function() {
+            document.getElementById("categorySelect").addEventListener("change", function() {
                 this.querySelector('option[selected]').remove();
             });
         </script>
@@ -47,18 +47,21 @@
         </div>
 
         <section class="form-section">
-            <p>Main Description of Programme</p>
+            <p>Event Content</p>
             <div class="input-group fill">
                 <textarea required="" type="text" name="text" autocomplete="off" id="contentInput" class="input"
                     rows="5"></textarea>
-                <label class="label">Event content</label>
+                <label class="label">Write Here</label>
             </div>
         </section>
+
+        <input type="text" id="contentInputHidden" autocomplete="off" hidden>
 
         <h2 class="section-subheading">Date and Location</h2>
         <section class="form-section">
             <div class="input-group">
                 <input required="true" type="date" name="duration" autocomplete="off" id="dateInput" class="input">
+                <label class="label" style="background-color: var(--softwhite)">Date of Event</label>
             </div>
 
             <div class="input-group">
@@ -107,8 +110,12 @@
         </form>
     </dialog>
 
+    <div class="form-section">
+        <h2 class="section-subheading">Link Tournament Results</h2>
+    </div>
+
     <div class="table-limiter" style="max-width: 720px;">
-        <table class="res-table small limited" >
+        <table class="res-table small limited">
             <thead>
                 <tr>
                     <th scope="col">No.</th>
@@ -160,7 +167,9 @@
         <div class="width-limiter sFont">
 
             <h1 id="title" class="pFont">Event Title</h1>
-            <span><span id="date">Date</span> - <span id="location">Location</span></span>
+            <span id="category">Event Category</span>
+            <span id="location">Location</span>
+            <span id="date" class="date">Date</span>
 
             <p id="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci, animi sunt
                 recusandae similique
@@ -171,6 +180,7 @@
                 nam sunt, eos maxime vero a mollitia reiciendis perspiciatis eligendi error, natus eaque quae ullam
                 expedita ex quos aut! Illum?</p>
 
+            <a href="/bowlers-achievement-details" class="trans-ease-out">View Results - Tournament Name</a>
         </div>
     </article>
 </main>
@@ -203,7 +213,7 @@
     // Generic function to handle input updates
     function updateContent(element) {
         element.input.addEventListener('input', () => {
-            element.output.textContent = element.input.value;
+            element.output.innerHTML = element.input.value.replace(/\n/g, "<br>");
         });
     }
 
@@ -224,6 +234,48 @@
 
         reader.readAsDataURL(file);
     });
+
+    // LIne break save
+    const inputFieldsAndIds = [{
+        inputFieldId: 'contentInput',
+        hiddenInputId: 'contentInputHidden',
+    }, ];
+
+    function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
+        inputFieldsAndIds.forEach(({
+            inputFieldId,
+            hiddenInputId
+        }) => {
+            const inputField = document.getElementById(inputFieldId);
+            const hiddenInput = document.getElementById(hiddenInputId);
+
+            inputField.addEventListener('input', () => {
+                const textWithEntities = inputField.value.replace(/\n/g, '<br>');
+                hiddenInput.value = textWithEntities;
+            });
+        });
+    }
+
+    saveLineBreaksToHiddenInputs(inputFieldsAndIds);
+
+    const selectFields = {
+        category: {
+            selectElement: document.getElementById('categorySelect'),
+            targetElement: document.getElementById('category')
+        }
+    }
+
+    function updateTextFromOption({
+        selectElement,
+        targetElement
+    }) {
+        selectElement.addEventListener('change', function() {
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            targetElement.textContent = selectedOption.value;
+        });
+    }
+
+    Object.values(selectFields).forEach(updateTextFromOption);
 </script>
 
 @include('components.footer')
