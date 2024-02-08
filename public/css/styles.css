@@ -300,16 +300,17 @@ nav#navbar {
     background-color: var(--bgDark);
     border-radius: 5px;
     display: block;
+    height: fit-content;
     left: 0px;
     list-style: none;
     min-width: 175px;
+    opacity: 0;
+    padding-top: 10px;
     position: absolute;
     top: -300px;
     transition: ease-in-out 0.4s;
     width: 100%;
-    padding-top: 10px;
     z-index: 9;
-    height: fit-content;
 }
 
 .dropdown-content a {
@@ -320,6 +321,7 @@ nav#navbar {
 }
 
 .dropdown:hover .dropdown-content {
+    opacity: 1;
     top: 46px;
 }
 /*=====  End of Header  ======*/
@@ -1569,6 +1571,59 @@ article.article {
 }
 .article li {
     padding: 4px 0rem;
+}
+
+.placements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1.5rem;
+    row-gap: 3.5rem;
+}
+
+.placement-card:hover {
+    transform: scale(1.1);
+}
+
+.placement-card{
+    align-items: center;
+    aspect-ratio: 1/1;
+    background-color: var(--bgLight);
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    transition: ease-out 0.3s;
+    width: clamp(250px, 95%, 280px);
+}
+.placement-card div {
+    background-color: var(--bgLight);
+    border-radius: 5px;
+    bottom: -2rem;
+    color: var(--secondary);
+    font-weight: bold;
+    height: fit-content;
+    left: -1rem;
+    padding: 1rem 0rem 0.5rem;
+    position: absolute;
+    width: 80%;
+}
+.placement-card h2 {
+    font-size: var(--fSize3);
+    padding: 0rem 1rem;
+    word-wrap: break-word;
+}
+.placement-card div p {
+    color: var(--bgMedium);
+    font-size: var(--fSize3);
+    font-weight: bold;
+}
+
+.placement-card img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
 }
 
 /* Gallery */

@@ -120,7 +120,7 @@
             </li>
             <li class="dropdown">
                 <a href="javascript:void(0);">
-                    About Strike
+                    About
                     <svg width="32" height="32" fill="none" stroke="currentColor" stroke-linejoin="round"
                         stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="m18 9.5-6 6-6-6h12Z"></path>
