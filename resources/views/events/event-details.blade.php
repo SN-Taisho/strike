@@ -13,7 +13,8 @@
 
             <h1 class="pFont">Event Title</h1>
             <span>Event Category</span>
-            <span>Event Date - Location</span>
+            <span>Location</span>
+            <span class="date">Date</span>
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci, animi sunt recusandae similique
                 molestiae rem voluptate. Sit eum repellat esse dolores quis quas, excepturi, odit earum quasi quo ullam?
