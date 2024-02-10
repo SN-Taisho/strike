@@ -73,7 +73,6 @@
                                         <path d="M2 5h20"></path>
                                         <path d="m8 5 1.645-3h4.744L16 5H8Z"></path>
                                     </svg>&nbsp;Delete</button>
-
                             </td>
                         </tr>
                     @endfor
@@ -138,10 +137,6 @@
                     inputFieldId: 'briefDescriptionInput',
                     hiddenInputId: 'briefDescriptionHidden',
                 },
-                {
-                    inputFieldId: 'otherInfoInput',
-                    hiddenInputId: 'otherInfoHidden',
-                }
             ];
 
             function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {

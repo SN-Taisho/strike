@@ -35,17 +35,6 @@
                 src="https://res.cloudinary.com/test-strike/image/upload/v1702010311/Events/persnickety-prints-rrHl2zGZ9E4-unsplash_qcpfo1.jpg">
         </div>
 
-        <section class="form-section flex-col">
-            <p>Stakeholder List<br>(Separate by entering a new line)</p>
-            <div class="input-group fill">
-                <textarea required="true" type="text" name="" autocomplete="off" id="listInput"
-                    class="input" rows="3"></textarea>
-                <label class="label" style="background-color: var(--softwhite)">Write Here</label>
-            </div>
-        </section>
-        {{-- Placement hidden input --}}
-        <input id="listOutput" type="text" type="hidden" style="display: none;">
-
         <section class="form-section">
             <p>Main Description of Programme</p>
             <div class="input-group fill">
@@ -55,12 +44,93 @@
             </div>
         </section>
 
+        <section class="form-section">
+            {{-- Modal Open --}}
+            <button type="button" class="action-btn alt text-deco-none"
+                onclick="document.querySelector('#add-placement').showModal()">Add Placement</button>
+        </section>
+
+        <div class="justify-center flex-wrap" style="gap: 1rem; padding: 2rem;">
+
+            @for ($i = 0; $i < 3; $i++)
+                <div class="form-section border-smooth" style="border: 3px solid var(--bgMedium); max-width: 420px">
+
+                    <div class="input-group" style="width: fit-content;">
+                        <input required="true" type="text" name=""autocomplete="off" class="input">
+                        <label class="label">Placement</label>
+                    </div>
+
+                    <div class="input-group" style="width: fit-content">
+                        <input required="true" type="text" name=""autocomplete="off" class="input">
+                        <label class="label">Name</label>
+                    </div>
+
+                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                        alt="Bowler Photo" style="object-fit: cover; aspect-ratio: 1/1; width: 280px">
+
+                    <div class="input-group fill">
+                        <textarea required="" type="text" name="text" autocomplete="off" id="contentInput" class="input"
+                            rows="5"></textarea>
+                        <label class="label">Description</label>
+                    </div>
+
+                    <button type="button" class="cancel-btn trans-ease-in-out"
+                        onclick="window.location.href='/delete_placement'">Remove</button>
+
+                </div>
+            @endfor
+        </div>
+
         <div class="justify-evenly flex-wrap">
             <button type="button" class="cancel-btn trans-ease-in-out"
                 onclick="window.location.href='/bowlers-achievement-management'">Cancel</button>
             <button type="submit" class="submit-btn trans-ease-in-out">Save Bowlers Achievement</button>
         </div>
     </form>
+
+    {{-- Modal Here --}}
+    <dialog id="add-placement" class="modal">
+
+        <button class="modal-close trans-ease-out" type="button"
+            onclick="document.querySelector('#add-placement').close()"><svg width="48" height="48" fill="none"
+                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"></path>
+                <path d="m14.829 9.172-5.657 5.657"></path>
+                <path d="m9.172 9.172 5.656 5.657"></path>
+            </svg></button>
+        <h2 class="section-subheading text-align-center" style="color: var(--bgLight); margin-bottom: 1rem">Add
+            Placement
+        </h2>
+
+        <form id="add" class="align-center flex-col" method="" action="" style="gap: 1rem">
+
+            <div class="input-group alt" style="width: fit-content">
+                <input required="true" type="text" name=""autocomplete="off" class="input">
+                <label class="label" style="background-color: var(--bgMedium)">Placement</label>
+            </div>
+
+            <div class="input-group alt" style="width: fit-content">
+                <input required="true" type="text" name=""autocomplete="off" class="input">
+                <label class="label" style="background-color: var(--bgMedium)">Name</label>
+            </div>
+
+            <div class="input-group alt file">
+                <label class="filelabel">Bowler Photo (1:1)</label>
+                <input required="" type="file" name="imageInput" autocomplete="off" id="imageInput"
+                    class="input">
+            </div>
+
+            <div class="input-group alt">
+                <textarea required="" type="text" name="text" autocomplete="off" id="contentInput" class="input"
+                    rows="5"></textarea>
+                <label class="label" style="background-color: var(--bgMedium)">Description</label>
+            </div>
+
+            {{-- Modal Submit --}}
+            <button class="submit-btn" type="submit">Save Placement</button>
+        </form>
+    </dialog>
 
     <h2 class="section-heading">Page Preview</h2>
 
@@ -75,12 +145,34 @@
             <h1 id="title" class="pFont">Tournament Name</h1>
             <span id="category">Tournament Category</span>
 
-            <ul id="list">
-                <li>1st Place Lorem</li>
-                <li>2nd Place Lorem</li>
-                <li>3rd Place Lorem</li>
-                <li>4th Place Lorem</li>
-            </ul>
+            <div class="placements">
+                <div class="placement-card">
+                    <div>
+                        <h2>Champion</h2>
+                        <p>Lorem Ipsum</p>
+                    </div>
+                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                        alt="Student Photo">
+                </div>
+
+                <div class="placement-card">
+                    <div>
+                        <h2>1st Runner-up</h2>
+                        <p>Lorem ipsum dolor</p>
+                    </div>
+                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                        alt="Student Photo">
+                </div>
+
+                <div class="placement-card">
+                    <div>
+                        <h2>1st</h2>
+                        <p>Lorem ipsum</p>
+                    </div>
+                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                        alt="Student Photo">
+                </div>
+            </div>
 
             <p id="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci, animi sunt
                 recusandae similique

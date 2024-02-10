@@ -21,7 +21,8 @@
                         <h2>Champion</h2>
                         <p>Lorem Ipsum</p>
                     </div>
-                    <img src="https://placehold.co/400x400" alt="Student Photo">
+                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                        alt="Bowler's Photo">
                 </div>
 
                 <div class="placement-card">
@@ -29,7 +30,8 @@
                         <h2>1st Runner-up</h2>
                         <p>Lorem ipsum dolor</p>
                     </div>
-                    <img src="https://placehold.co/400x400" alt="Student Photo">
+                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                        alt="Bowler's Photo">
                 </div>
 
                 <div class="placement-card">
@@ -37,7 +39,8 @@
                         <h2>1st</h2>
                         <p>Lorem ipsum</p>
                     </div>
-                    <img src="https://placehold.co/400x400" alt="Student Photo">
+                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                        alt="Bowler's Photo">
                 </div>
             </div>
 

@@ -1773,7 +1773,8 @@ article.article {
 
 .input:focus,
 input.input[type="text"]:valid,
-textarea.input[type="text"]:valid {
+textarea.input[type="text"]:valid,
+input.input-group.alt > input.input:valid {
     border: 3px solid var(--primary);
     outline: none;
 }
@@ -1790,6 +1791,7 @@ input.input[type="text"]:valid ~ label {
     border: 3px solid var(--softwhite);
     color: var(--bgLight);
 }
+
 .input-group.alt > label {
     color: var(--bgLight);
 }
