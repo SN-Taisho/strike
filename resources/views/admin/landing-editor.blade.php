@@ -4,6 +4,8 @@
 
 <main style="overflow: hidden">
 
+    @include('components.popups.success', ['type' => 0, 'message' => 'Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aspernatur quae tempora, eum consequatur vitae et fugit optio ipsam aliquam soluta provident, porro nulla incidunt? Magnam animi quo ad deleniti!'])
+
     <form class="edit-form width-limiter">
         <h3 class="section-heading">Landing Editor</h3>
 

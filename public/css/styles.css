@@ -589,7 +589,7 @@ section#featured-events {
     position: absolute;
     text-transform: capitalize;
     top: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
 }
 
 /*----------  Featured Testimonials  ----------*/
@@ -1369,7 +1369,6 @@ section#coaches-section {
     z-index: 5;
 }
 
-
 /*----------  Categories  ----------*/
 .categories {
     position: sticky;
@@ -1404,7 +1403,6 @@ section#coaches-section {
     background-color: var(--primary);
     color: var(--bgDark);
 }
-
 
 /*----------  Search bar  ----------*/
 .search-form {
@@ -1587,7 +1585,7 @@ article.article {
     transform: scale(1.1);
 }
 
-.placement-card{
+.placement-card {
     align-items: center;
     aspect-ratio: 1/1;
     background-color: var(--bgLight);
@@ -2055,8 +2053,85 @@ input.input[type="file"]:valid {
     font-size: var(--fSize2);
     user-select: none;
 }
-/*=====  End of Forms  ======*/
 
+/*----------  Popup Messages  ----------*/
+
+/* Success */
+.dual-popup {
+    background-color: var(--bgLight);
+    border-radius: 5px;
+    box-shadow: 0px 0px 1rem var(--shadow);
+    height: fit-content;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(250px, 95%, 400px);
+    z-index: 9;
+}
+
+.dual-popup svg {
+    border-radius: 50%;
+    color: var(--bgLight);
+    height: 64px;
+    left: 50%;
+    padding: 2rem;
+    position: absolute;
+    top: 0px;
+    transform: translate(-50%, -50%);
+    width: 64px;
+}
+.dual-popup svg.success {
+    background-color: var(--primary);
+}
+.dual-popup svg.error {
+    background-color: var(--danger);
+}
+
+.dual-popup h3 {
+    font-family: var(--pFont);
+    font-size: var(--fSize5);
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 5rem;
+    text-align: center;
+}
+.dual-popup h3.success {
+    color: var(--primary);
+}
+.dual-popup h3.error {
+    color: var(--danger);
+}
+
+.dual-popup p {
+    color: var(--bgDark);
+    font-family: var(--sFont);
+    font-size: var(--fSize2);
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    padding: 0rem 0.5rem;
+    text-align: center;
+}
+
+.dual-popup button {
+    background-color: var(--bgMedium);
+    border-radius: 10px;
+    border: none;
+    color: var(--bgLight);
+    cursor: pointer;
+    display: block;
+    font-family: var(--sFont);
+    font-size: var(--fSize2);
+    font-weight: bold;
+    margin: 1rem auto;
+    padding: 0.7rem 1rem;
+    transition: 0.2s ease-in-out;
+}
+.dual-popup button:hover {
+    opacity: 0.90;
+}
+
+/*=====  End of Forms  ======*/
 
 /*=============================================
 =            Modal            =
@@ -2069,10 +2144,10 @@ input.input[type="file"]:valid {
     max-height: 90%;
     overflow: auto;
     padding: 1rem;
-    position: fixed; 
+    position: fixed;
     top: 50%;
-    transform: translate(-50%, -50%); 
-    width: clamp(240px, 80%, 480px); 
+    transform: translate(-50%, -50%);
+    width: clamp(240px, 80%, 480px);
 }
 .modal::backdrop {
     background-color: var(--shadow);
@@ -2092,7 +2167,6 @@ input.input[type="file"]:valid {
     transform: scale(1.05);
 }
 /*=====  End of Modal  ======*/
-
 
 /*=============================================
 =            Markerplace            =
