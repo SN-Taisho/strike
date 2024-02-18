@@ -4,78 +4,20 @@
 
 <main>
 
-    <form class="edit-form width-limiter" style="padding-top: 0rem">
+    <form class="edit-form width-limiter" style="padding-top: 3rem">
 
-        <section class="info-section" style="background-color: var(--softwhite);">
-            <div class="width-limiter">
-                <div class="i-section-left">
-                    <h1 class=>Calendar of Events</h1>
-                </div>
+        <h3 class="section-heading">Calendar of Events Management</h3>
 
-                <div class="i-section-right">
-                    <section class="form-section flex-col" style="align-items: flex-start">
-                        <p>Brief Description of the Calendar of Events page</p>
-                        <div class="input-group fill">
-                            <textarea required="" type="text" name="brief_desc" autocomplete="off" id="briefDescriptionInput" class="input"
-                                rows="5"></textarea>
-                            <label class="label">Write Here</label>
-                        </div>
-                    </section>
-
-                    <input type="text" id="briefDescriptionHidden" autocomplete="off" hidden>
-
-                    <p id="briefDescription">Our calendar is brimming with engaging activities, from captivating
-                        workshops
-                        to exhilarating competitions. Whether you're seeking knowledge, entertainment, or camaraderie,
-                        our
-                        events promise to enrich your experience.</p>
-                </div>
+        <section class="form-section flex-col">
+            <p>Brief Description of the Calendar of Events page</p>
+            <div class="input-group fill">
+                <textarea required="" type="text" name="brief_desc" autocomplete="off" id="briefDescriptionInput" class="input"
+                    rows="5"></textarea>
+                <label class="label">Write Here</label>
             </div>
         </section>
 
-        <script>
-            const inputElements = {
-                briefDescription: {
-                    input: document.getElementById('briefDescriptionInput'),
-                    output: document.getElementById('briefDescription')
-                },
-            };
-
-            const image = document.getElementById('image');
-
-            // Generic function to handle input updates
-            function updateContent(element) {
-                element.input.addEventListener('input', () => {
-                    element.output.innerHTML = element.input.value.replace(/\n/g, "<br>");
-                });
-            }
-
-            // Apply the update function to all elements in the inputElements object
-            Object.values(inputElements).forEach(updateContent);
-
-            // LIne break save
-            const inputFieldsAndIds = [{
-                inputFieldId: 'briefDescriptionInput',
-                hiddenInputId: 'briefDescriptionHidden',
-            }, ];
-
-            function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
-                inputFieldsAndIds.forEach(({
-                    inputFieldId,
-                    hiddenInputId
-                }) => {
-                    const inputField = document.getElementById(inputFieldId);
-                    const hiddenInput = document.getElementById(hiddenInputId);
-
-                    inputField.addEventListener('input', () => {
-                        const textWithEntities = inputField.value.replace(/\n/g, '<br>');
-                        hiddenInput.value = textWithEntities;
-                    });
-                });
-            }
-
-            saveLineBreaksToHiddenInputs(inputFieldsAndIds);
-        </script>
+        <input type="text" id="briefDescriptionHidden" autocomplete="off" hidden>
 
         <a href="/add-calendar-event" class="action-btn alt text-deco-none" style="margin: 2rem auto 1rem;">Add New
             Calendar
@@ -150,6 +92,23 @@
             <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
 
+
+        <section class="info-section" style="background-color: var(--softwhite);">
+            <div class="width-limiter">
+                <div class="i-section-left">
+                    <h1 class=>Calendar of Events</h1>
+                </div>
+
+                <div class="i-section-right">
+                    <p id="briefDescription">Our calendar is brimming with engaging activities, from captivating
+                        workshops
+                        to exhilarating competitions. Whether you're seeking knowledge, entertainment, or camaraderie,
+                        our
+                        events promise to enrich your experience.</p>
+                </div>
+            </div>
+        </section>
+
         @php
             $year = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         @endphp
@@ -178,5 +137,47 @@
     </form>
 
 </main>
+<script>
+    const inputElements = {
+        briefDescription: {
+            input: document.getElementById('briefDescriptionInput'),
+            output: document.getElementById('briefDescription')
+        },
+    };
 
+    const image = document.getElementById('image');
+
+    // Generic function to handle input updates
+    function updateContent(element) {
+        element.input.addEventListener('input', () => {
+            element.output.innerHTML = element.input.value.replace(/\n/g, "<br>");
+        });
+    }
+
+    // Apply the update function to all elements in the inputElements object
+    Object.values(inputElements).forEach(updateContent);
+
+    // LIne break save
+    const inputFieldsAndIds = [{
+        inputFieldId: 'briefDescriptionInput',
+        hiddenInputId: 'briefDescriptionHidden',
+    }, ];
+
+    function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
+        inputFieldsAndIds.forEach(({
+            inputFieldId,
+            hiddenInputId
+        }) => {
+            const inputField = document.getElementById(inputFieldId);
+            const hiddenInput = document.getElementById(hiddenInputId);
+
+            inputField.addEventListener('input', () => {
+                const textWithEntities = inputField.value.replace(/\n/g, '<br>');
+                hiddenInput.value = textWithEntities;
+            });
+        });
+    }
+
+    saveLineBreaksToHiddenInputs(inputFieldsAndIds);
+</script>
 @include('components.footer')

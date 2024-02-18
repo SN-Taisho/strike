@@ -4,10 +4,10 @@
 
 <main style="overflow: hidden">
 
-    @include('components.popups.success', ['type' => 0, 'message' => 'Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aspernatur quae tempora, eum consequatur vitae et fugit optio ipsam aliquam soluta provident, porro nulla incidunt? Magnam animi quo ad deleniti!'])
+    {{-- @include('components.popups.variable-popup', ['type' => 0, 'message' => 'Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aspernatur quae tempora, eum consequatur vitae et fugit optio ipsam aliquam soluta provident, porro nulla incidunt? Magnam animi quo ad deleniti!']) --}}
 
     <form class="edit-form width-limiter">
-        <h3 class="section-heading">Landing Editor</h3>
+        <h3 class="section-heading" >Landing Editor</h3>
 
         <section class="form-section flex-col">
             <p>Landing Heading<br>(Adding * line-breaks and highlights the following characters)</p>
@@ -36,76 +36,6 @@
                     class="input" id="landingBannerInput">
             </div>
         </section>
-
-        <div id="landing-banner" class="flex">
-            <img id="landingBannerImage" src="{{ asset('assets/images/landing.jpg') }}" alt="landing-banner.png" />
-            <div class="width-limiter flex">
-                <div id="landing-content">
-                    <h1 id="landingHeading" class="pFont">
-                        Don't call it a Dream, <br />
-                        <span>Call it a Plan.</span>
-                    </h1>
-                    <p id="landingParagraph" class="sFont">
-                        STRIKE believe sports provide a great platform to develop desirable character traits.
-                        STRIKE&apos;s progressive pedagogy harness the experience of parents with successful
-                        children, coaches with proven track records, innovation provided by evolving technologies,
-                        and consultation with domain experts.
-                    </p>
-                    <button id="learn-more">
-                        <span>Learn More</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            const landingHeadingInput = document.getElementById('landingHeadingInput');
-            const landingParagraphInput = document.getElementById('landingParagraphInput');
-            const landingHeading = document.querySelector('#landingHeading');
-            const landingParagraph = document.querySelector('#landingParagraph');
-            const landingBannerInput = document.getElementById('landingBannerInput');
-            const landingBannerImage = document.getElementById('landingBannerImage');
-
-            // Single event listener for both heading and paragraph inputs
-            document.addEventListener('input', (event) => {
-                if (event.target === landingHeadingInput) {
-                    const text = event.target.value;
-                    const parts = text.split('*');
-                    landingHeading.innerHTML = `${parts[0]}<br /><span>${parts[1] || ''}</span>`;
-                } else if (event.target === landingParagraphInput) {
-                    landingParagraph.innerHTML = event.target.value.replace(/\n/g, '<br>');
-                }
-            });
-
-            landingBannerInput.addEventListener('change', (event) => {
-                const file = event.target.files[0];
-                const reader = new FileReader();
-                reader.onload = () => landingBannerImage.src = reader.result;
-                reader.readAsDataURL(file);
-            });
-
-            const inputFieldsAndIds = [{
-                inputFieldId: 'landingParagraphInput',
-                hiddenInputId: 'landingParagraphHidden',
-            }, ];
-
-            function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
-                inputFieldsAndIds.forEach(({
-                    inputFieldId,
-                    hiddenInputId
-                }) => {
-                    const inputField = document.getElementById(inputFieldId);
-                    const hiddenInput = document.getElementById(hiddenInputId);
-
-                    inputField.addEventListener('input', () => {
-                        const textWithEntities = inputField.value.replace(/\n/g, '<br>');
-                        hiddenInput.value = textWithEntities;
-                    });
-                });
-            }
-
-            saveLineBreaksToHiddenInputs(inputFieldsAndIds);
-        </script>
 
         <hr class="divider">
 
@@ -150,8 +80,7 @@
         <section class="form-section">
             <div class="input-group">
                 <p>SVG for Stat<br>(98px x 98px size)</p>
-                <input required="" type="file" name="" autocomplete="off" id="svg3Input"
-                    class="input">
+                <input required="" type="file" name="" autocomplete="off" id="svg3Input" class="input">
             </div>
         </section>
 
@@ -167,109 +96,6 @@
                 <label class="label" style="background-color: var(--bgLight)">Stat 3 Text</label>
             </div>
         </section>
-
-        <section id="stats">
-            <div class="width-limiter justify-evenly flex-wrap" style="gap: 2rem">
-                <div class="stat-card align-center justify-center flex-col">
-                    <div class="flex align-center justify-center" style="gap: 1rem">
-                        <img id="svg1" src="{{ asset('assets/icons/bachelor-cap.svg') }}" alt="stat"
-                            width="98" height="98">
-
-                        <h3 id="stat1" class="pFont">7000</h3>
-                    </div>
-                    <p id="stat1Text" class="sFont text-align-center">happy bowlers taught</p>
-                </div>
-
-                <div class="stat-card align-center justify-center flex-col">
-                    <div class="flex align-center justify-center" style="gap: 1rem">
-                        <img id="svg2" src="{{ asset('assets/icons/bowling.svg') }}" alt="stat"
-                            width="98" height="98">
-
-                        <h3 id="stat2" class="pFont">67%</h3>
-                    </div>
-                    <p id="stat2Text" class="sFont text-align-center">accuracy boost by using I.P.T.S. for 70% of
-                        students</p>
-                </div>
-
-                <div class="stat-card align-center justify-center flex-col">
-                    <div class="flex align-center justify-center" style="gap: 1rem">
-                        <img id="svg3" src="{{ asset('assets/icons/trophy.svg') }}" alt="stat"
-                            width="98" height="98">
-                        <h3 id="stat3" class="pFont">900</h3>
-                    </div>
-                    <p id="stat3Text" class="sFont text-align-center">Champions Made</p>
-                </div>
-            </div>
-        </section>
-
-        <script>
-            const inputElements = {
-                stat1: {
-                    input: document.getElementById('stat1Input'),
-                    output: document.getElementById('stat1')
-                },
-                stat2: {
-                    input: document.getElementById('stat2Input'),
-                    output: document.getElementById('stat2')
-                },
-                stat3: {
-                    input: document.getElementById('stat3Input'),
-                    output: document.getElementById('stat3')
-                },
-
-                stat1Text: {
-                    input: document.getElementById('stat1TextInput'),
-                    output: document.getElementById('stat1Text')
-                },
-                stat2Text: {
-                    input: document.getElementById('stat2TextInput'),
-                    output: document.getElementById('stat2Text')
-                },
-                stat3Text: {
-                    input: document.getElementById('stat3TextInput'),
-                    output: document.getElementById('stat3Text')
-                }
-            };
-
-            // Generic function to handle input updates
-            function updateContent(element) {
-                element.input.addEventListener('input', () => {
-                    element.output.textContent = element.input.value;
-                });
-            }
-
-            const svgs = {
-                svg1: {
-                    input: document.getElementById('svg1Input'),
-                    output: document.getElementById('svg1')
-                },
-                svg2: {
-                    input: document.getElementById('svg2Input'),
-                    output: document.getElementById('svg2')
-                },
-                svg3: {
-                    input: document.getElementById('svg3Input'),
-                    output: document.getElementById('svg3')
-                }
-            }
-
-            for (const svgId in svgs) {
-                const svg = svgs[svgId];
-                svg.input.addEventListener('change', (event) => {
-                    const file = event.target.files[0];
-                    if (file) {
-                        const reader = new FileReader();
-                        reader.onload = (event) => {
-                            svg.output.src = event.target.result;
-                        };
-                        reader.readAsDataURL(file); // Read the file as a data URL
-                    }
-                });
-            }
-
-            // Apply the update function to all elements in the inputElements object
-            Object.values(inputElements).forEach(updateContent);
-        </script>
 
         <hr class="divider">
 
@@ -305,50 +131,6 @@
             </table>
         </div>
 
-        <section id="featured-events">
-            <h2 class="section-heading alt">Upcoming Events</h2>
-            <div class="carousel">
-                <div class="carousel-inner">
-                    @foreach ($events as $event)
-                        <a href="/events"
-                            class="featured-events-link trans-ease-in-out carousel-item {{ $loop->first ? 'active' : '' }} ci-1">
-                            <img src="https://placehold.co/700x400" alt="event.webp" width="700"
-                                height="400" />
-                            <h3 class="pFont">Lorem ipsum dolor {{ $loop->index }}</h3>
-                        </a>
-                    @endforeach
-                </div>
-                <a id="prev1" class="prev">&#10094;</a>
-                <a id="next1" class="next">&#10095;</a>
-            </div>
-        </section>
-
-        <script>
-            const carouselItems1 = document.querySelectorAll('.ci-1');
-            const prevButton1 = document.querySelector('#prev1');
-            const nextButton1 = document.querySelector('#next1');
-            let currentSlide1 = 0;
-
-            function showSlide1(n) {
-                carouselItems1.forEach((item) => {
-                    item.classList.remove('active');
-                });
-                carouselItems1[n].classList.add('active');
-
-                currentSlide1 = n;
-            }
-
-            showSlide1(0); // Show the first slide initially
-
-            prevButton1.addEventListener('click', () => {
-                showSlide1((currentSlide1 - 1 + carouselItems1.length) % carouselItems1.length);
-            });
-
-            nextButton1.addEventListener('click', () => {
-                showSlide1((currentSlide1 + 1) % carouselItems1.length);
-            });
-        </script>
-
         <hr class="divider">
 
         <h2 class="section-heading">Select Featured Testimonies</h2>
@@ -383,6 +165,76 @@
             </table>
         </div>
 
+        <div id="landing-banner" class="flex">
+            <img id="landingBannerImage" src="{{ asset('assets/images/landing.jpg') }}" alt="landing-banner.png" />
+            <div class="width-limiter flex">
+                <div id="landing-content">
+                    <h1 id="landingHeading" class="pFont">
+                        Don't call it a Dream, <br />
+                        <span>Call it a Plan.</span>
+                    </h1>
+                    <p id="landingParagraph" class="sFont">
+                        STRIKE believe sports provide a great platform to develop desirable character traits.
+                        STRIKE&apos;s progressive pedagogy harness the experience of parents with successful
+                        children, coaches with proven track records, innovation provided by evolving technologies,
+                        and consultation with domain experts.
+                    </p>
+                    <button id="learn-more">
+                        <span>Learn More</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <section id="stats">
+            <div class="width-limiter justify-evenly flex-wrap" style="gap: 2rem">
+                <div class="stat-card align-center justify-center flex-col">
+                    <div class="flex align-center justify-center" style="gap: 1rem">
+                        <img id="svg1" src="{{ asset('assets/icons/bachelor-cap.svg') }}" alt="stat"
+                            width="98" height="98">
+
+                        <h3 id="stat1" class="pFont">7000</h3>
+                    </div>
+                    <p id="stat1Text" class="sFont text-align-center">happy bowlers taught</p>
+                </div>
+
+                <div class="stat-card align-center justify-center flex-col">
+                    <div class="flex align-center justify-center" style="gap: 1rem">
+                        <img id="svg2" src="{{ asset('assets/icons/bowling.svg') }}" alt="stat"
+                            width="98" height="98">
+
+                        <h3 id="stat2" class="pFont">67%</h3>
+                    </div>
+                    <p id="stat2Text" class="sFont text-align-center">accuracy boost by using I.P.T.S. for 70% of
+                        students</p>
+                </div>
+
+                <div class="stat-card align-center justify-center flex-col">
+                    <div class="flex align-center justify-center" style="gap: 1rem">
+                        <img id="svg3" src="{{ asset('assets/icons/trophy.svg') }}" alt="stat"
+                            width="98" height="98">
+                        <h3 id="stat3" class="pFont">900</h3>
+                    </div>
+                    <p id="stat3Text" class="sFont text-align-center">Champions Made</p>
+                </div>
+            </div>
+        </section>
+        <section id="featured-events">
+            <h2 class="section-heading alt">Upcoming Events</h2>
+            <div class="carousel">
+                <div class="carousel-inner">
+                    @foreach ($events as $event)
+                        <a href="/events"
+                            class="featured-events-link trans-ease-in-out carousel-item {{ $loop->first ? 'active' : '' }} ci-1">
+                            <img src="https://placehold.co/700x400" alt="event.webp" width="700"
+                                height="400" />
+                            <h3 class="pFont">Lorem ipsum dolor {{ $loop->index }}</h3>
+                        </a>
+                    @endforeach
+                </div>
+                <a id="prev1" class="prev">&#10094;</a>
+                <a id="next1" class="next">&#10095;</a>
+            </div>
+        </section>
         <section id="featured-testimonials">
             <h2 class="section-heading">What our community has to say</h2>
             <div class="carousel" style="max-width: 700px">
@@ -421,32 +273,6 @@
             </div>
         </section>
 
-        <script>
-            const carouselItems2 = document.querySelectorAll('.ci-2');
-            const prevButton2 = document.querySelector('#prev2');
-            const nextButton2 = document.querySelector('#next2');
-            let currentSlide2 = 0;
-
-            function showSlide2(n) {
-                carouselItems2.forEach((item) => {
-                    item.classList.remove('active');
-                });
-                carouselItems2[n].classList.add('active');
-
-                currentSlide2 = n;
-            }
-
-            showSlide2(0); // Show the first slide initially
-
-            prevButton2.addEventListener('click', () => {
-                showSlide2((currentSlide2 - 1 + carouselItems2.length) % carouselItems2.length);
-            });
-
-            nextButton2.addEventListener('click', () => {
-                showSlide2((currentSlide2 + 1) % carouselItems2.length);
-            });
-        </script>
-
         <div class="justify-evenly flex-wrap">
             <button type="button" class="cancel-btn trans-ease-in-out"
                 onclick="window.location.href='/landing-editor'">Cancel</button>
@@ -455,5 +281,171 @@
     </form>
 
 </main>
+<script>
+    const landingHeadingInput = document.getElementById('landingHeadingInput');
+    const landingParagraphInput = document.getElementById('landingParagraphInput');
+    const landingHeading = document.querySelector('#landingHeading');
+    const landingParagraph = document.querySelector('#landingParagraph');
+    const landingBannerInput = document.getElementById('landingBannerInput');
+    const landingBannerImage = document.getElementById('landingBannerImage');
+
+    // Single event listener for both heading and paragraph inputs
+    document.addEventListener('input', (event) => {
+        if (event.target === landingHeadingInput) {
+            const text = event.target.value;
+            const parts = text.split('*');
+            landingHeading.innerHTML = `${parts[0]}<br /><span>${parts[1] || ''}</span>`;
+        } else if (event.target === landingParagraphInput) {
+            landingParagraph.innerHTML = event.target.value.replace(/\n/g, '<br>');
+        }
+    });
+
+    landingBannerInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = () => landingBannerImage.src = reader.result;
+        reader.readAsDataURL(file);
+    });
+
+    const inputFieldsAndIds = [{
+        inputFieldId: 'landingParagraphInput',
+        hiddenInputId: 'landingParagraphHidden',
+    }, ];
+
+    function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
+        inputFieldsAndIds.forEach(({
+            inputFieldId,
+            hiddenInputId
+        }) => {
+            const inputField = document.getElementById(inputFieldId);
+            const hiddenInput = document.getElementById(hiddenInputId);
+
+            inputField.addEventListener('input', () => {
+                const textWithEntities = inputField.value.replace(/\n/g, '<br>');
+                hiddenInput.value = textWithEntities;
+            });
+        });
+    }
+
+    saveLineBreaksToHiddenInputs(inputFieldsAndIds);
+</script>
+<script>
+    const inputElements = {
+        stat1: {
+            input: document.getElementById('stat1Input'),
+            output: document.getElementById('stat1')
+        },
+        stat2: {
+            input: document.getElementById('stat2Input'),
+            output: document.getElementById('stat2')
+        },
+        stat3: {
+            input: document.getElementById('stat3Input'),
+            output: document.getElementById('stat3')
+        },
+
+        stat1Text: {
+            input: document.getElementById('stat1TextInput'),
+            output: document.getElementById('stat1Text')
+        },
+        stat2Text: {
+            input: document.getElementById('stat2TextInput'),
+            output: document.getElementById('stat2Text')
+        },
+        stat3Text: {
+            input: document.getElementById('stat3TextInput'),
+            output: document.getElementById('stat3Text')
+        }
+    };
+
+    // Generic function to handle input updates
+    function updateContent(element) {
+        element.input.addEventListener('input', () => {
+            element.output.textContent = element.input.value;
+        });
+    }
+
+    const svgs = {
+        svg1: {
+            input: document.getElementById('svg1Input'),
+            output: document.getElementById('svg1')
+        },
+        svg2: {
+            input: document.getElementById('svg2Input'),
+            output: document.getElementById('svg2')
+        },
+        svg3: {
+            input: document.getElementById('svg3Input'),
+            output: document.getElementById('svg3')
+        }
+    }
+
+    for (const svgId in svgs) {
+        const svg = svgs[svgId];
+        svg.input.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    svg.output.src = event.target.result;
+                };
+                reader.readAsDataURL(file); // Read the file as a data URL
+            }
+        });
+    }
+
+    // Apply the update function to all elements in the inputElements object
+    Object.values(inputElements).forEach(updateContent);
+</script>
+<script>
+    const carouselItems1 = document.querySelectorAll('.ci-1');
+    const prevButton1 = document.querySelector('#prev1');
+    const nextButton1 = document.querySelector('#next1');
+    let currentSlide1 = 0;
+
+    function showSlide1(n) {
+        carouselItems1.forEach((item) => {
+            item.classList.remove('active');
+        });
+        carouselItems1[n].classList.add('active');
+
+        currentSlide1 = n;
+    }
+
+    showSlide1(0); // Show the first slide initially
+
+    prevButton1.addEventListener('click', () => {
+        showSlide1((currentSlide1 - 1 + carouselItems1.length) % carouselItems1.length);
+    });
+
+    nextButton1.addEventListener('click', () => {
+        showSlide1((currentSlide1 + 1) % carouselItems1.length);
+    });
+</script>
+<script>
+    const carouselItems2 = document.querySelectorAll('.ci-2');
+    const prevButton2 = document.querySelector('#prev2');
+    const nextButton2 = document.querySelector('#next2');
+    let currentSlide2 = 0;
+
+    function showSlide2(n) {
+        carouselItems2.forEach((item) => {
+            item.classList.remove('active');
+        });
+        carouselItems2[n].classList.add('active');
+
+        currentSlide2 = n;
+    }
+
+    showSlide2(0); // Show the first slide initially
+
+    prevButton2.addEventListener('click', () => {
+        showSlide2((currentSlide2 - 1 + carouselItems2.length) % carouselItems2.length);
+    });
+
+    nextButton2.addEventListener('click', () => {
+        showSlide2((currentSlide2 + 1) % carouselItems2.length);
+    });
+</script>
 
 @include('components.footer')

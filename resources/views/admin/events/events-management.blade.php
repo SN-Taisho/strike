@@ -80,83 +80,6 @@
             </table>
         </div>
 
-        <section class="community-banner">
-            <div class="width-limiter">
-                <div class="banner-content">
-                    <h1>Events</h1>
-                    <p id="briefDescription">From cosmic bowling to family fun nights and competitive tournaments, our
-                        calendar is packed with
-                        fun
-                        for all ages.</p>
-                </div>
-                <div class="banner-shape"></div>
-                <div class="banner-img-container">
-                    <div></div>
-                    <img id="image"
-                        src="https://res.cloudinary.com/test-strike/image/upload/v1702010311/Events/persnickety-prints-rrHl2zGZ9E4-unsplash_qcpfo1.jpg"
-                        alt="Banner image">
-                </div>
-            </div>
-        </section>
-
-        <script>
-            const inputElements = {
-                briefDescription: {
-                    input: document.getElementById('briefDescriptionInput'),
-                    output: document.getElementById('briefDescription')
-                },
-            };
-
-            const image = document.getElementById('image');
-
-            // Generic function to handle input updates
-            function updateContent(element) {
-                element.input.addEventListener('input', () => {
-                    element.output.innerHTML = element.input.value.replace(/\n/g, "<br>");
-                });
-            }
-
-            // Apply the update function to all elements in the inputElements object
-            Object.values(inputElements).forEach(updateContent);
-
-            // Handle image update efficiently
-            const imageInput = document.getElementById('imageInput');
-            imageInput.addEventListener('change', (event) => {
-                const file = event.target.files[0];
-                const reader = new FileReader();
-
-                reader.onload = (event) => {
-                    image.src = event.target.result;
-                };
-
-                reader.readAsDataURL(file);
-            });
-
-            // LIne break save
-            const inputFieldsAndIds = [{
-                    inputFieldId: 'briefDescriptionInput',
-                    hiddenInputId: 'briefDescriptionHidden',
-                },
-            ];
-
-            function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
-                inputFieldsAndIds.forEach(({
-                    inputFieldId,
-                    hiddenInputId
-                }) => {
-                    const inputField = document.getElementById(inputFieldId);
-                    const hiddenInput = document.getElementById(hiddenInputId);
-
-                    inputField.addEventListener('input', () => {
-                        const textWithEntities = inputField.value.replace(/\n/g, '<br>');
-                        hiddenInput.value = textWithEntities;
-                    });
-                });
-            }
-
-            saveLineBreaksToHiddenInputs(inputFieldsAndIds);
-        </script>
-
         <a href="/add-event" class="action-btn alt text-deco-none" style="margin: 2rem auto 1rem auto;">Add New
             Event</a>
 
@@ -303,6 +226,25 @@
 
     <h2 class="section-heading">Events Preview</h2>
 
+    <section class="community-banner">
+        <div class="width-limiter">
+            <div class="banner-content">
+                <h1>Events</h1>
+                <p id="briefDescription">From cosmic bowling to family fun nights and competitive tournaments, our
+                    calendar is packed with
+                    fun
+                    for all ages.</p>
+            </div>
+            <div class="banner-shape"></div>
+            <div class="banner-img-container">
+                <div></div>
+                <img id="image"
+                    src="https://res.cloudinary.com/test-strike/image/upload/v1702010311/Events/persnickety-prints-rrHl2zGZ9E4-unsplash_qcpfo1.jpg"
+                    alt="Banner image">
+            </div>
+        </div>
+    </section>
+
     <div class="width-limiter">
         <form action="" class="search-form align-center">
             <input type="text" placeholder="Search" class="border-smooth trans-ease-in-out">
@@ -343,5 +285,60 @@
     </section>
 
 </main>
+<script>
+    const inputElements = {
+        briefDescription: {
+            input: document.getElementById('briefDescriptionInput'),
+            output: document.getElementById('briefDescription')
+        },
+    };
 
+    const image = document.getElementById('image');
+
+    // Generic function to handle input updates
+    function updateContent(element) {
+        element.input.addEventListener('input', () => {
+            element.output.innerHTML = element.input.value.replace(/\n/g, "<br>");
+        });
+    }
+
+    // Apply the update function to all elements in the inputElements object
+    Object.values(inputElements).forEach(updateContent);
+
+    // Handle image update efficiently
+    const imageInput = document.getElementById('imageInput');
+    imageInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = (event) => {
+            image.src = event.target.result;
+        };
+
+        reader.readAsDataURL(file);
+    });
+
+    // LIne break save
+    const inputFieldsAndIds = [{
+        inputFieldId: 'briefDescriptionInput',
+        hiddenInputId: 'briefDescriptionHidden',
+    }, ];
+
+    function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
+        inputFieldsAndIds.forEach(({
+            inputFieldId,
+            hiddenInputId
+        }) => {
+            const inputField = document.getElementById(inputFieldId);
+            const hiddenInput = document.getElementById(hiddenInputId);
+
+            inputField.addEventListener('input', () => {
+                const textWithEntities = inputField.value.replace(/\n/g, '<br>');
+                hiddenInput.value = textWithEntities;
+            });
+        });
+    }
+
+    saveLineBreaksToHiddenInputs(inputFieldsAndIds);
+</script>
 @include('components.footer')

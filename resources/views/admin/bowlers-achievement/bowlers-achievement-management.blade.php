@@ -43,12 +43,7 @@
                 </thead>
                 <tbody>
 
-                    @php
-                        $year = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-                        $i = 0;
-                    @endphp
-
-                    @foreach ($year as $month)
+                    @for ($i = 0; $i < 10; $i++)
                         <tr>
                             <td data-label="No.">{{ $i + 1 }}</td>
                             <td data-label="Category Title">Category Title</td>
@@ -79,87 +74,10 @@
                                     </svg>&nbsp;Delete</button>
                             </td>
                         </tr>
-                        @php
-                            $i++;
-                        @endphp
-                    @endforeach
+                    @endfor
                 </tbody>
             </table>
         </div>
-
-        <section class="community-banner">
-            <div class="width-limiter">
-                <div class="banner-content">
-                    <h1>Bowlers Achievement</h1>
-                    <p id="briefDescription">Celebrate champions forged in fire, track
-                        rivalries, and relive epic throws. This is where legends rise, one pin at a time.</p>
-                </div>
-                <div class="banner-shape"></div>
-                <div class="banner-img-container">
-                    <div></div>
-                    <img id="image"
-                        src="https://images.squarespace-cdn.com/content/v1/5b67aa09f8370a88da5aadeb/1537222299164-W5S365ZL9G62VLWCKWGX/League+Bowling+and+Tournament"
-                        alt="Banner image">
-                </div>
-            </div>
-        </section>
-
-        <script>
-            const inputElements = {
-                briefDescription: {
-                    input: document.getElementById('briefDescriptionInput'),
-                    output: document.getElementById('briefDescription')
-                },
-            };
-
-            const image = document.getElementById('image');
-
-            // Generic function to handle input updates
-            function updateContent(element) {
-                element.input.addEventListener('input', () => {
-                    element.output.textContent = element.input.value;
-                });
-            }
-
-            // Apply the update function to all elements in the inputElements object
-            Object.values(inputElements).forEach(updateContent);
-
-            // Handle image update efficiently
-            const imageInput = document.getElementById('imageInput');
-            imageInput.addEventListener('change', (event) => {
-                const file = event.target.files[0];
-                const reader = new FileReader();
-
-                reader.onload = (event) => {
-                    image.src = event.target.result;
-                };
-
-                reader.readAsDataURL(file);
-            });
-
-            // LIne break save
-            const inputFieldsAndIds = [{
-                inputFieldId: 'briefDescriptionInput',
-                hiddenInputId: 'briefDescriptionHidden',
-            }, ];
-
-            function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
-                inputFieldsAndIds.forEach(({
-                    inputFieldId,
-                    hiddenInputId
-                }) => {
-                    const inputField = document.getElementById(inputFieldId);
-                    const hiddenInput = document.getElementById(hiddenInputId);
-
-                    inputField.addEventListener('input', () => {
-                        const textWithEntities = inputField.value.replace(/\n/g, '<br>');
-                        hiddenInput.value = textWithEntities;
-                    });
-                });
-            }
-
-            saveLineBreaksToHiddenInputs(inputFieldsAndIds);
-        </script>
 
         <a href="/add-bowlers-achievement" class="action-btn alt text-deco-none"
             style="margin: 2rem auto 1rem auto;">Add New
@@ -309,6 +227,23 @@
 
     <h2 class="section-heading">Bowlers Achievement Preview</h2>
 
+    <section class="community-banner">
+        <div class="width-limiter">
+            <div class="banner-content">
+                <h1>Bowlers Achievement</h1>
+                <p id="briefDescription">Celebrate champions forged in fire, track
+                    rivalries, and relive epic throws. This is where legends rise, one pin at a time.</p>
+            </div>
+            <div class="banner-shape"></div>
+            <div class="banner-img-container">
+                <div></div>
+                <img id="image"
+                    src="https://images.squarespace-cdn.com/content/v1/5b67aa09f8370a88da5aadeb/1537222299164-W5S365ZL9G62VLWCKWGX/League+Bowling+and+Tournament"
+                    alt="Banner image">
+            </div>
+        </div>
+    </section>
+    
     <div class="width-limiter">
         <form action="" class="search-form align-center">
             <input type="text" placeholder="Search" class="border-smooth trans-ease-in-out">
@@ -349,5 +284,60 @@
     </section>
 
 </main>
+<script>
+    const inputElements = {
+        briefDescription: {
+            input: document.getElementById('briefDescriptionInput'),
+            output: document.getElementById('briefDescription')
+        },
+    };
 
+    const image = document.getElementById('image');
+
+    // Generic function to handle input updates
+    function updateContent(element) {
+        element.input.addEventListener('input', () => {
+            element.output.textContent = element.input.value;
+        });
+    }
+
+    // Apply the update function to all elements in the inputElements object
+    Object.values(inputElements).forEach(updateContent);
+
+    // Handle image update efficiently
+    const imageInput = document.getElementById('imageInput');
+    imageInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = (event) => {
+            image.src = event.target.result;
+        };
+
+        reader.readAsDataURL(file);
+    });
+
+    // LIne break save
+    const inputFieldsAndIds = [{
+        inputFieldId: 'briefDescriptionInput',
+        hiddenInputId: 'briefDescriptionHidden',
+    }, ];
+
+    function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
+        inputFieldsAndIds.forEach(({
+            inputFieldId,
+            hiddenInputId
+        }) => {
+            const inputField = document.getElementById(inputFieldId);
+            const hiddenInput = document.getElementById(hiddenInputId);
+
+            inputField.addEventListener('input', () => {
+                const textWithEntities = inputField.value.replace(/\n/g, '<br>');
+                hiddenInput.value = textWithEntities;
+            });
+        });
+    }
+
+    saveLineBreaksToHiddenInputs(inputFieldsAndIds);
+</script>
 @include('components.footer')

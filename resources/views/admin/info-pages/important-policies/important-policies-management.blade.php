@@ -3,6 +3,93 @@
 @include('admin.components.admin-header')
 
 <main>
+    <form action="">
+
+        <h3 class="section-heading" style="margin-top: 3rem">Important Policies Mangement</h3>
+
+        <section class="form-section flex-col" style="margin: auto;">
+            <p>Important Policies Paragraph</p>
+            <div class="input-group fill">
+                <textarea required="" type="text" name="landing_heading" autocomplete="off" id="contactParagInput" class="input"
+                    rows="3"></textarea>
+                <label class="label" style="background-color: var(--bgLight);">Write Here</label>
+            </div>
+        </section>
+
+        <a href="/add-important-policy" class="action-btn alt text-deco-none" style="margin: 2rem auto 1rem;">Add New
+            Policy</a>
+
+        <div class="table-limiter" style="max-width: 1024px;">
+            <table class="res-table limited">
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @php
+                        $year = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                        $i = 0;
+                    @endphp
+
+                    @foreach ($year as $month)
+                        <tr>
+                            <td data-label="No.">{{ $i + 1 }}</td>
+                            <td data-label="Category">Lorem Ipsum dolor</td>
+                            <td data-label="Description">
+                                <p class="limit-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti
+                                    hic
+                                    soluta quam sequi voluptate, blanditiis, animi minus itaque accusamus id, nesciunt
+                                    ad
+                                    numquam labore fugiat culpa rem optio sunt qui.</p>
+                            </td>
+                            <td class="actions" data-label="Action">
+                                <div class="check-box-container">
+                                    <label class="cyberpunk-checkbox-label" style="color: var(--secondary)">
+                                        <input type="checkbox" class="cyberpunk-checkbox">
+                                        Show</label>
+                                </div>
+                                <button type="button" class="action-btn edit icon"
+                                    onclick="window.location.href='/important-policy-editor'"><svg width="24"
+                                        height="24" fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7"></path>
+                                        <path d="M7 13.36V17h3.659L21 6.654 17.348 3 7 13.36Z"></path>
+                                    </svg> &nbsp;Edit</button>
+                                <button type="button" class="action-btn delete icon"
+                                    onclick="window.location.href='/delete_important_policy'">
+                                    <svg width="24" height="24" fill="none" stroke="currentColor"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.5 5v17h15V5h-15Z"></path>
+                                        <path d="M10 10v6.5"></path>
+                                        <path d="M14 10v6.5"></path>
+                                        <path d="M2 5h20"></path>
+                                        <path d="m8 5 1.645-3h4.744L16 5H8Z"></path>
+                                    </svg>&nbsp;Delete</button>
+                            </td>
+                        </tr>
+                        @php
+                            $i++;
+                        @endphp
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        <div class="justify-evenly flex-wrap">
+            <button type="button" class="cancel-btn trans-ease-in-out"
+                onclick="window.locaiton.href='/importnat-policy-management'">Cancel</button>
+            <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
+        </div>
+
+    </form>
+
     <section class="info-section">
         <div class="width-limiter">
             <div class="i-section-left">
@@ -10,90 +97,14 @@
             </div>
 
             <div class="i-section-right">
-                <section class="form-section flex-col" style="align-items: flex-start;">
-                    <p>Important Policies Paragraph</p>
-                    <div class="input-group fill">
-                        <textarea required="" type="text" name="landing_heading" autocomplete="off" id="contactParagInput" class="input"
-                            rows="3"></textarea>
-                        <label class="label">Write Here</label>
-                    </div>
-                </section>
-                <p>This page outlines the policies and procedures governing the operations of STRIKE Bowling Academy.
+                <p>This page outlines the policies and procedures governing the operations of STRIKE Bowling
+                    Academy.
                     These policies are designed to ensure the safety, well-being, and enjoyment of all students and
                     parents. Please read these policies carefully to ensure compliance.</p>
             </div>
         </div>
     </section>
-
-    <a href="/add-important-policy" class="action-btn alt text-deco-none" style="margin: 2rem auto 1rem;">Add New Policy</a>
-
-    <div class="table-limiter" style="max-width: 1024px;">
-        <table class="res-table limited">
-            <thead>
-                <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                @php
-                    $year = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-                    $i = 0;
-                @endphp
-
-                @foreach ($year as $month)
-                    <tr>
-                        <td data-label="No.">{{ $i + 1 }}</td>
-                        <td data-label="Category">Lorem Ipsum dolor</td>
-                        <td data-label="Description">
-                            <p class="limit-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti hic
-                                soluta quam sequi voluptate, blanditiis, animi minus itaque accusamus id, nesciunt ad
-                                numquam labore fugiat culpa rem optio sunt qui.</p>
-                        </td>
-                        <td class="actions" data-label="Action">
-                            <div class="check-box-container">
-                                <label class="cyberpunk-checkbox-label" style="color: var(--secondary)">
-                                    <input type="checkbox" class="cyberpunk-checkbox">
-                                    Show</label>
-                            </div>
-                            <button type="button" class="action-btn edit icon"
-                                onclick="window.location.href='/important-policy-editor'"><svg width="24"
-                                    height="24" fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M21 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7"></path>
-                                    <path d="M7 13.36V17h3.659L21 6.654 17.348 3 7 13.36Z"></path>
-                                </svg> &nbsp;Edit</button>
-                            <button type="button" class="action-btn delete icon"
-                                onclick="window.location.href='/delete_important_policy'">
-                                <svg width="24" height="24" fill="none" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.5 5v17h15V5h-15Z"></path>
-                                    <path d="M10 10v6.5"></path>
-                                    <path d="M14 10v6.5"></path>
-                                    <path d="M2 5h20"></path>
-                                    <path d="m8 5 1.645-3h4.744L16 5H8Z"></path>
-                                </svg>&nbsp;Delete</button>
-                        </td>
-                    </tr>
-                    @php
-                        $i++;
-                    @endphp
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-
-    <div class="justify-evenly flex-wrap">
-        <button type="button" class="cancel-btn trans-ease-in-out"
-            onclick="window.locaiton.href='/importnat-policy-management'">Cancel</button>
-        <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
-    </div>
-
+    
     <section class="info-section">
         <div class="width-limiter">
             <div class="i-section-left">

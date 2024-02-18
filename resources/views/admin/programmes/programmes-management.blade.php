@@ -63,63 +63,63 @@
             </table>
         </div>
 
-        <h2 class="section-heading">Programmes Preview</h2>
-
-        <section id="programme-listing" style="margin-bottom: 3rem">
-            <div class="width-limiter">
-
-                <div class="programmes flex-col">
-
-                    @foreach ($programmes as $programme)
-                        <div class="programme-card">
-
-                            <div class="img-wrapper"><img src="{{ $programme['image'] }}" alt="Programme image"></div>
-
-                            <div class="content">
-                                <h2 class="card-heading">{{ $programme['title'] }}</h2>
-                                <span style="font-weight: bold; letter-spacing: 1px;">{{ $programme['agerange'] }} |
-                                    {{ $programme['suitable'] }}</span>
-                                <p>{{ $programme['desc'] }}</p>
-                                <div class="programme-links sFont">
-                                    <a href="javascript:void(0);" class="alt">Enroll</a>
-                                    <a href="javascript:void(0);">View Programme</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    @endforeach
-
-                </div>
-
-                <div class="schedule">
-                    <table>
-                        <caption class="section-heading">Upcoming Events</caption>
-                        <thead class="pFont">
-                            <tr>
-                                <th>Date</th>
-                                <th>Event</th>
-                            </tr>
-                        </thead>
-                        <tbody class="sFont">
-                            @for ($i = 1; $i < 9 + 1; $i++)
-                                <tr>
-                                    <td>text {{ $i }}</td>
-                                    <td>text {{ $i }} Lorem ipsum dolor sit</td>
-                                </tr>
-                            @endfor
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-        </section>
-
         <div class="justify-evenly flex-wrap">
             <button type="button" class="cancel-btn trans-ease-in-out"
                 onclick="window.location.href='/programmes-management'">Cancel</button>
             <button type="submit" class="submit-btn trans-ease-in-out">Save Changes</button>
         </div>
     </form>
+
+    <h2 class="section-heading">Programmes Preview</h2>
+
+    <section id="programme-listing" style="margin-bottom: 3rem">
+        <div class="width-limiter">
+
+            <div class="programmes flex-col">
+
+                @foreach ($programmes as $programme)
+                    <div class="programme-card">
+
+                        <div class="img-wrapper"><img src="{{ $programme['image'] }}" alt="Programme image"></div>
+
+                        <div class="content">
+                            <h2 class="card-heading">{{ $programme['title'] }}</h2>
+                            <span style="font-weight: bold; letter-spacing: 1px;">{{ $programme['agerange'] }} |
+                                {{ $programme['suitable'] }}</span>
+                            <p>{{ $programme['desc'] }}</p>
+                            <div class="programme-links sFont">
+                                <a href="javascript:void(0);" class="alt">Enroll</a>
+                                <a href="javascript:void(0);">View Programme</a>
+                            </div>
+                        </div>
+
+                    </div>
+                @endforeach
+
+            </div>
+
+            <div class="schedule">
+                <table>
+                    <caption class="section-heading">Upcoming Events</caption>
+                    <thead class="pFont">
+                        <tr>
+                            <th>Date</th>
+                            <th>Event</th>
+                        </tr>
+                    </thead>
+                    <tbody class="sFont">
+                        @for ($i = 1; $i < 9 + 1; $i++)
+                            <tr>
+                                <td>text {{ $i }}</td>
+                                <td>text {{ $i }} Lorem ipsum dolor sit</td>
+                            </tr>
+                        @endfor
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
 
 </main>
 
