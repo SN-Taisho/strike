@@ -14,13 +14,23 @@
             </div>
         </section>
 
-        <section class="form-section">
-            <p>Policy Description</p>
-            <div class="input-group fill">
-                <textarea required="" type="text" name="" autocomplete="off" class="input"
-                    rows="3"></textarea>
-                <label class="label" style="background-color: var(--bgLight)">Write Here</label>
-            </div>
+        <section class="form-section flex-col">
+            <p>Policy Content</p>
+            <textarea id="SNPolicyContent" name="" placeholder="Write Here"></textarea>
+            <script>
+                $('#SNPolicyContent').summernote({
+                    inheritPlaceholder: true,
+                    tabsize: 2,
+                    height: 200,
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['view', ['codeview', 'help']]
+                    ]
+                });
+            </script>
         </section>
 
         <div class="justify-evenly flex-wrap">

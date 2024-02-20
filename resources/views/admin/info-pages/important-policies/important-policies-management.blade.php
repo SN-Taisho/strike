@@ -7,13 +7,22 @@
 
         <h3 class="section-heading" style="margin-top: 3rem">Important Policies Mangement</h3>
 
-        <section class="form-section flex-col" style="margin: auto;">
-            <p>Important Policies Paragraph</p>
-            <div class="input-group fill">
-                <textarea required="" type="text" name="landing_heading" autocomplete="off" id="contactParagInput" class="input"
-                    rows="3"></textarea>
-                <label class="label" style="background-color: var(--bgLight);">Write Here</label>
-            </div>
+        <section class="form-section flex-col">
+            <p>Mission Paragraph</p>
+            <textarea id="SNPolicyDesc" name="" placeholder="Write Here"></textarea>
+            <script>
+                $('#SNPolicyDesc').summernote({
+                    inheritPlaceholder: true,
+                    tabsize: 2,
+                    height: 200,
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['view', ['codeview', 'help']]
+                    ]
+                });
+            </script>
         </section>
 
         <a href="/add-important-policy" class="action-btn alt text-deco-none" style="margin: 2rem auto 1rem;">Add New
@@ -24,7 +33,7 @@
                 <thead>
                     <tr>
                         <th scope="col">No.</th>
-                        <th scope="col">Category</th>
+                        <th scope="col">Content</th>
                         <th scope="col">Description</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -40,12 +49,12 @@
                         <tr>
                             <td data-label="No.">{{ $i + 1 }}</td>
                             <td data-label="Category">Lorem Ipsum dolor</td>
-                            <td data-label="Description">
+                            <td data-label="Content">
                                 <p class="limit-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti
                                     hic
                                     soluta quam sequi voluptate, blanditiis, animi minus itaque accusamus id, nesciunt
                                     ad
-                                    numquam labore fugiat culpa rem optio sunt qui.</p>
+                                    numquam labore fugiat culpa rem optio sunt qui. Lorem</p>
                             </td>
                             <td class="actions" data-label="Action">
                                 <div class="check-box-container">
@@ -104,7 +113,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="info-section">
         <div class="width-limiter">
             <div class="i-section-left">

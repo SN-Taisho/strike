@@ -12,37 +12,82 @@
             <div class="input-group">
                 <input required="" type="text" name="about_callout" autocomplete="off" id="calloutInput"
                     class="input">
-                <label class="label">Write Here</label>
+                <label class="label" style="background-color: var(--bgLight);">Write Here</label>
             </div>
         </section>
 
-        <section class="form-section flex-col" style="margin: auto;">
-            <p>About Paragraph</p>
-            <div class="input-group fill">
-                <textarea required="true" type="text" name="about_paragraph" autocomplete="off" id="aboutInput" class="input"
-                    rows="5"></textarea>
-                <label class="label">Write Here</label>
-            </div>
+        <section class="form-section flex-col">
+            <p>About Us Paragraph</p>
+            <textarea id="SNAbout" name="" placeholder="Write Here"></textarea>
+            <script>
+                $('#SNAbout').summernote({
+                    inheritPlaceholder: true,
+                    tabsize: 2,
+                    height: 200,
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['view', ['codeview', 'help']]
+                    ]
+                });
+            </script>
         </section>
 
-        <section class="form-section flex-col" style="margin: auto;">
+        <section class="form-section flex-col">
+            <p>Vision Paragraph</p>
+            <textarea id="SNVision" name="" placeholder="Write Here"></textarea>
+            <script>
+                $('#SNVision').summernote({
+                    inheritPlaceholder: true,
+                    tabsize: 2,
+                    height: 200,
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['view', ['codeview', 'help']]
+                    ]
+                });
+            </script>
+        </section>
+
+        <section class="form-section flex-col">
+            <p>Mission Paragraph</p>
+            <textarea id="SNMission" name="" placeholder="Write Here"></textarea>
+            <script>
+                $('#SNMission').summernote({
+                    inheritPlaceholder: true,
+                    tabsize: 2,
+                    height: 200,
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['view', ['codeview', 'help']]
+                    ]
+                });
+            </script>
+        </section>
+
+        {{-- <section class="form-section flex-col" style="margin: auto;">
             <p>Vision Paragraph</p>
             <div class="input-group fill">
                 <textarea required="true" type="text" name="vision_paragraph" autocomplete="off" id="visionInput" class="input"
                     rows="5"></textarea>
                 <label class="label" style="background-color: var(--bgLight)">Write Here</label>
             </div>
-        </section>
+        </section> --}}
 
-        <section class="form-section flex-col" style="margin: auto;">
+        {{-- <section class="form-section flex-col" style="margin: auto;">
             <div class="input-group file">
-                <label class="filelabel">Landing Banner</label>
+                <label class="filelabel">Vi Banner</label>
                 <input required="" type="file" autocomplete="disabled" name="Landing Banner"
                     accept="image/png, image/jpeg, image/webp" class="input" id="imageInput">
             </div>
-        </section>
+        </section> --}}
 
-        <section class="form-section flex-col" style="margin: auto;">
+        {{-- <section class="form-section flex-col" style="margin: auto;">
             <p>Mission Paragraph</p>
             <div class="input-group fill">
                 <textarea required="true" type="text" name="mission_paragraph" autocomplete="off" id="missionInput" class="input"
@@ -67,7 +112,7 @@
                     rows="3"></textarea>
                 <label class="label" style="background-color: var(--bgLight)">Write Here</label>
             </div>
-        </section>
+        </section> --}}
 
         <div class="justify-evenly flex-wrap" style="margin-bottom: 3rem">
             <button type="button" class="cancel-btn trans-ease-in-out"

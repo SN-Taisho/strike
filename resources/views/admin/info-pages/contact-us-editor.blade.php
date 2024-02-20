@@ -9,11 +9,20 @@
 
         <section class="form-section flex-col">
             <p>Contact Us Paragraph</p>
-            <div class="input-group fill">
-                <textarea required="" type="text" name="landing_heading" autocomplete="off" id="contactParagInput" class="input"
-                    rows="3"></textarea>
-                <label class="label" style="background-color: var(--bgLight);">Write Here</label>
-            </div>
+            <textarea id="SNMission" name="" placeholder="Write Here"></textarea>
+            <script>
+                $('#SNMission').summernote({
+                    inheritPlaceholder: true,
+                    tabsize: 2,
+                    height: 200,
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['view', ['codeview', 'help']]
+                    ]
+                });
+            </script>
         </section>
 
         <section class="form-section" style="max-width: 720px; margin: auto;">

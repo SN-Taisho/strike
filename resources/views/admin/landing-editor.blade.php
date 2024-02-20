@@ -7,25 +7,61 @@
     {{-- @include('components.popups.variable-popup', ['type' => 0, 'message' => 'Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aspernatur quae tempora, eum consequatur vitae et fugit optio ipsam aliquam soluta provident, porro nulla incidunt? Magnam animi quo ad deleniti!']) --}}
 
     <form class="edit-form width-limiter">
-        <h3 class="section-heading" >Landing Editor</h3>
+        <h3 class="section-heading">Landing Editor</h3>
 
         <section class="form-section flex-col">
+            <p>Landing Heading</p>
+            <textarea id="SNLandingHeading" name="RTLandingHeading" placeholder="Write Here"></textarea>
+            <script>
+                $('#SNLandingHeading').summernote({
+                    inheritPlaceholder: true,
+                    tabsize: 2,
+                    height: 200,
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['view', ['codeview', 'help']]
+                    ]
+                });
+            </script>
+        </section>
+
+        <section class="form-section flex-col">
+            <p>Landing Paragraph</p>
+            <textarea id="SNLandingParag" name="RTLandingParag" placeholder="Write Here"></textarea>
+            <script>
+                $('#SNLandingParag').summernote({
+                    inheritPlaceholder: true,
+                    tabsize: 2,
+                    height: 200,
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['view', ['codeview', 'help']]
+                    ]
+                });
+            </script>
+        </section>
+
+        {{-- <section class="form-section flex-col">
             <p>Landing Heading<br>(Adding * line-breaks and highlights the following characters)</p>
             <div class="input-group fill">
                 <textarea required="" type="text" name="landing_heading" autocomplete="off" id="landingHeadingInput" class="input"
                     rows="3"></textarea>
                 <label class="label" style="background-color: var(--bgLight)">Write Here</label>
             </div>
-        </section>
+        </section> --}}
 
-        <section class="form-section flex-col">
+        {{-- <section class="form-section flex-col">
             <p>Landing Paragraph</p>
             <div class="input-group fill">
                 <textarea required="" type="text" name="landing_paragraph" autocomplete="off" id="landingParagraphInput"
                     class="input" rows="5"></textarea>
                 <label class="label" style="background-color: var(--bgLight)">Write Here</label>
             </div>
-        </section>
+        </section> --}}
 
         <input type="text" id="landingParagraphHidden" hidden>
 
@@ -282,23 +318,23 @@
 
 </main>
 <script>
-    const landingHeadingInput = document.getElementById('landingHeadingInput');
-    const landingParagraphInput = document.getElementById('landingParagraphInput');
-    const landingHeading = document.querySelector('#landingHeading');
-    const landingParagraph = document.querySelector('#landingParagraph');
+    // const landingHeadingInput = document.getElementById('landingHeadingInput');
+    // const landingParagraphInput = document.getElementById('landingParagraphInput');
+    // const landingHeading = document.querySelector('#landingHeading');
+    // const landingParagraph = document.querySelector('#landingParagraph');
     const landingBannerInput = document.getElementById('landingBannerInput');
     const landingBannerImage = document.getElementById('landingBannerImage');
 
-    // Single event listener for both heading and paragraph inputs
-    document.addEventListener('input', (event) => {
-        if (event.target === landingHeadingInput) {
-            const text = event.target.value;
-            const parts = text.split('*');
-            landingHeading.innerHTML = `${parts[0]}<br /><span>${parts[1] || ''}</span>`;
-        } else if (event.target === landingParagraphInput) {
-            landingParagraph.innerHTML = event.target.value.replace(/\n/g, '<br>');
-        }
-    });
+    // // Single event listener for both heading and paragraph inputs
+    // document.addEventListener('input', (event) => {
+    //     if (event.target === landingHeadingInput) {
+    //         const text = event.target.value;
+    //         const parts = text.split('*');
+    //         landingHeading.innerHTML = `${parts[0]}<br /><span>${parts[1] || ''}</span>`;
+    //     } else if (event.target === landingParagraphInput) {
+    //         landingParagraph.innerHTML = event.target.value.replace(/\n/g, '<br>');
+    //     }
+    // });
 
     landingBannerInput.addEventListener('change', (event) => {
         const file = event.target.files[0];
@@ -307,27 +343,27 @@
         reader.readAsDataURL(file);
     });
 
-    const inputFieldsAndIds = [{
-        inputFieldId: 'landingParagraphInput',
-        hiddenInputId: 'landingParagraphHidden',
-    }, ];
+    // const inputFieldsAndIds = [{
+    //     inputFieldId: 'landingParagraphInput',
+    //     hiddenInputId: 'landingParagraphHidden',
+    // }, ];
 
-    function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
-        inputFieldsAndIds.forEach(({
-            inputFieldId,
-            hiddenInputId
-        }) => {
-            const inputField = document.getElementById(inputFieldId);
-            const hiddenInput = document.getElementById(hiddenInputId);
+    // function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
+    //     inputFieldsAndIds.forEach(({
+    //         inputFieldId,
+    //         hiddenInputId
+    //     }) => {
+    //         const inputField = document.getElementById(inputFieldId);
+    //         const hiddenInput = document.getElementById(hiddenInputId);
 
-            inputField.addEventListener('input', () => {
-                const textWithEntities = inputField.value.replace(/\n/g, '<br>');
-                hiddenInput.value = textWithEntities;
-            });
-        });
-    }
+    //         inputField.addEventListener('input', () => {
+    //             const textWithEntities = inputField.value.replace(/\n/g, '<br>');
+    //             hiddenInput.value = textWithEntities;
+    //         });
+    //     });
+    // }
 
-    saveLineBreaksToHiddenInputs(inputFieldsAndIds);
+    // saveLineBreaksToHiddenInputs(inputFieldsAndIds);
 </script>
 <script>
     const inputElements = {

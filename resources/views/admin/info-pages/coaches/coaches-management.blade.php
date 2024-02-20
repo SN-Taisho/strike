@@ -7,12 +7,22 @@
 
         <h3 class="section-heading" style="margin-top: 3rem">Coaches Mangement</h3>
 
-        <section class="form-section flex-col" style="margin: auto;">
-            <div class="input-group fill">
-                <textarea required="" type="text" name="" autocomplete="off" id="coachesParagInput" class="input"
-                    rows="5"></textarea>
-                <label class="label" style="background-color: var(--bgLight);">Description</label>
-            </div>
+        <section class="form-section flex-col">
+            <p>Coaches Description</p>
+            <textarea id="SNCoachesDesc" name="" placeholder="Write Here"></textarea>
+            <script>
+                $('#SNCoachesDesc').summernote({
+                    inheritPlaceholder: true,
+                    tabsize: 2,
+                    height: 200,
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['view', ['codeview', 'help']]
+                    ]
+                });
+            </script>
         </section>
 
         <div class="justify-evenly flex-wrap" style="margin-bottom: 3rem">
