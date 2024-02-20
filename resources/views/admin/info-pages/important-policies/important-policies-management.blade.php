@@ -8,19 +8,29 @@
         <h3 class="section-heading" style="margin-top: 3rem">Important Policies Mangement</h3>
 
         <section class="form-section flex-col">
-            <p>Mission Paragraph</p>
-            <textarea id="SNPolicyDesc" name="" placeholder="Write Here"></textarea>
+            <p>Importal Policies Description</p>
+            <textarea id="SNImpPolicyDesc" name="" placeholder="Write Here"></textarea>
             <script>
-                $('#SNPolicyDesc').summernote({
+                $('#SNImpPolicyDesc').summernote({
                     inheritPlaceholder: true,
                     tabsize: 2,
                     height: 200,
                     toolbar: [
-                        ['style', ['style']],
-                        ['font', ['bold', 'underline', 'clear']],
+                        ['style', ['p']],
+                        ['font', ['bold', 'underline']],
                         ['color', ['color']],
                         ['view', ['codeview', 'help']]
                     ]
+                });
+
+                $('#SNImpPolicyDesc').on('summernote.change', function(we, contents, $editable) {
+                    const SNImpPolicyDesc = $('#SNImpPolicyDesc').summernote('code');
+                    console.log(SNImpPolicyDesc);
+                    // Create a safe and sanitized version of the HTML content
+                    const sanitizedHtml = DOMPurify.sanitize(SNImpPolicyDesc);
+
+                    // Update the #test div with the sanitized content
+                    $('#impPolicyDesc').html(sanitizedHtml);
                 });
             </script>
         </section>
@@ -28,34 +38,21 @@
         <a href="/add-important-policy" class="action-btn alt text-deco-none" style="margin: 2rem auto 1rem;">Add New
             Policy</a>
 
-        <div class="table-limiter" style="max-width: 1024px;">
-            <table class="res-table limited">
+        <div class="table-limiter" style="max-width: 720px;">
+            <table class="res-table small limited">
                 <thead>
                     <tr>
                         <th scope="col">No.</th>
-                        <th scope="col">Content</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Category</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    @php
-                        $year = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-                        $i = 0;
-                    @endphp
-
-                    @foreach ($year as $month)
+                    @for ($i = 0; $i < 3; $i++)
                         <tr>
                             <td data-label="No.">{{ $i + 1 }}</td>
                             <td data-label="Category">Lorem Ipsum dolor</td>
-                            <td data-label="Content">
-                                <p class="limit-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti
-                                    hic
-                                    soluta quam sequi voluptate, blanditiis, animi minus itaque accusamus id, nesciunt
-                                    ad
-                                    numquam labore fugiat culpa rem optio sunt qui. Lorem</p>
-                            </td>
                             <td class="actions" data-label="Action">
                                 <div class="check-box-container">
                                     <label class="cyberpunk-checkbox-label" style="color: var(--secondary)">
@@ -83,10 +80,7 @@
                                     </svg>&nbsp;Delete</button>
                             </td>
                         </tr>
-                        @php
-                            $i++;
-                        @endphp
-                    @endforeach
+                    @endfor
                 </tbody>
             </table>
         </div>
@@ -99,6 +93,8 @@
 
     </form>
 
+    <h3 class="section-heading">Important Policies Preview</h3>
+
     <section class="info-section">
         <div class="width-limiter">
             <div class="i-section-left">
@@ -106,7 +102,7 @@
             </div>
 
             <div class="i-section-right">
-                <p>This page outlines the policies and procedures governing the operations of STRIKE Bowling
+                <p id="impPolicyDesc">This page outlines the policies and procedures governing the operations of STRIKE Bowling
                     Academy.
                     These policies are designed to ensure the safety, well-being, and enjoyment of all students and
                     parents. Please read these policies carefully to ensure compliance.</p>

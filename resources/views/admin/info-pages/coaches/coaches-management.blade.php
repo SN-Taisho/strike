@@ -16,11 +16,21 @@
                     tabsize: 2,
                     height: 200,
                     toolbar: [
-                        ['style', ['style']],
-                        ['font', ['bold', 'underline', 'clear']],
+                        ['style', ['p']],
+                        ['font', ['bold', 'underline']],
                         ['color', ['color']],
                         ['view', ['codeview', 'help']]
                     ]
+                });
+
+                $('#SNCoachesDesc').on('summernote.change', function(we, contents, $editable) {
+                    const SNCoachesDesc = $('#SNCoachesDesc').summernote('code');
+                    console.log(SNCoachesDesc);
+                    // Create a safe and sanitized version of the HTML content
+                    const sanitizedHtml = DOMPurify.sanitize(SNCoachesDesc);
+
+                    // Update the #test div with the sanitized content
+                    $('#coachesParag').html(sanitizedHtml);
                 });
             </script>
         </section>

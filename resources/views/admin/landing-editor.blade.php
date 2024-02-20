@@ -18,11 +18,21 @@
                     tabsize: 2,
                     height: 200,
                     toolbar: [
-                        ['style', ['style']],
-                        ['font', ['bold', 'underline', 'clear']],
+                        ['style', ['h1']],
+                        ['font', ['bold', 'italic', 'underline']],
                         ['color', ['color']],
                         ['view', ['codeview', 'help']]
                     ]
+                });
+
+                $('#SNLandingHeading').on('summernote.change', function(we, contents, $editable) {
+                    const SNLandingHeading = $('#SNLandingHeading').summernote('code');
+                    console.log(SNLandingHeading);
+                    // Create a safe and sanitized version of the HTML content
+                    const sanitizedHtml = DOMPurify.sanitize(SNLandingHeading);
+
+                    // Update the #test div with the sanitized content
+                    $('#landingHeading').html(sanitizedHtml);
                 });
             </script>
         </section>
@@ -36,11 +46,21 @@
                     tabsize: 2,
                     height: 200,
                     toolbar: [
-                        ['style', ['style']],
-                        ['font', ['bold', 'underline', 'clear']],
+                        ['style', ['p']],
+                        ['font', ['bold', 'italic', 'underline']],
                         ['color', ['color']],
                         ['view', ['codeview', 'help']]
                     ]
+                });
+
+                $('#SNLandingParag').on('summernote.change', function(we, contents, $editable) {
+                    const SNLandingParag = $('#SNLandingParag').summernote('code');
+                    console.log(SNLandingParag);
+                    // Create a safe and sanitized version of the HTML content
+                    const sanitizedHtml = DOMPurify.sanitize(SNLandingParag);
+
+                    // Update the #test div with the sanitized content
+                    $('#landingParagraph').html(sanitizedHtml);
                 });
             </script>
         </section>
@@ -122,8 +142,7 @@
 
         <section class="form-section" style="justify-content: center">
             <div class="input-group">
-                <input required="" type="text" name="" autocomplete="off" id="stat3Input"
-                    class="input">
+                <input required="" type="text" name="" autocomplete="off" id="stat3Input" class="input">
                 <label class="label" style="background-color: var(--bgLight)">Stat 3</label>
             </div>
             <div class="input-group">

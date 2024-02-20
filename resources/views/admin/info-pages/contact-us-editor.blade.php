@@ -9,18 +9,28 @@
 
         <section class="form-section flex-col">
             <p>Contact Us Paragraph</p>
-            <textarea id="SNMission" name="" placeholder="Write Here"></textarea>
+            <textarea id="SNContactParag" name="RTLandingParag" placeholder="Write Here"></textarea>
             <script>
-                $('#SNMission').summernote({
+                $('#SNContactParag').summernote({
                     inheritPlaceholder: true,
                     tabsize: 2,
                     height: 200,
                     toolbar: [
-                        ['style', ['style']],
-                        ['font', ['bold', 'underline', 'clear']],
+                        ['style', ['p']],
+                        ['font', ['bold', 'italic', 'underline']],
                         ['color', ['color']],
                         ['view', ['codeview', 'help']]
                     ]
+                });
+
+                $('#SNContactParag').on('summernote.change', function(we, contents, $editable) {
+                    const SNContactParag = $('#SNContactParag').summernote('code');
+                    console.log(SNContactParag);
+                    // Create a safe and sanitized version of the HTML content
+                    const sanitizedHtml = DOMPurify.sanitize(SNContactParag);
+
+                    // Update the #test div with the sanitized content
+                    $('#contactParag').html(sanitizedHtml);
                 });
             </script>
         </section>
@@ -42,8 +52,7 @@
             </div>
 
             <div class="input-group" style="margin-bottom: 1rem">
-                <input required="" type="text" name="" autocomplete="off" id="emailInput"
-                    class="input">
+                <input required="" type="text" name="" autocomplete="off" id="emailInput" class="input">
                 <label class="label" style="background-color: var(--bgLight);">Email</label>
             </div>
         </section>
@@ -158,10 +167,6 @@
 
 <script>
     const inputElements = {
-        contactParag: {
-            input: document.getElementById('contactParagInput'),
-            output: document.getElementById('contactParag')
-        },
         opening: {
             input: document.getElementById('openingInput'),
             output: document.getElementById('opening')

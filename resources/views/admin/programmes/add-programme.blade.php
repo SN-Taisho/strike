@@ -35,13 +35,41 @@
             <img id="image1" src="https://placehold.co/300x300/webp">
         </div>
 
-        <section class="form-section">
-            <p>Main Description of Programme</p>
-            <div class="input-group fill">
-                <textarea required="" type="text" name="" autocomplete="off" id="mainDescriptionInput" class="input"
-                    rows="5"></textarea>
-                <label class="label">Write Here</label>
-            </div>
+        <section class="form-section flex-col">
+            <p>Main description of programme</p>
+            <textarea id="SNMainDesc" name="" placeholder="Write Here"></textarea>
+            <script>
+                $('#SNMainDesc').summernote({
+                    inheritPlaceholder: true,
+                    tabsize: 2,
+                    height: 200,
+                    toolbar: [
+                        ['style', ['p']],
+                        ['font', ['bold', 'italic', 'underline']],
+                        ['color', ['color']],
+                        ['parag', ['ul', 'ol']],
+                        ['view', ['codeview', 'help']]
+                    ]
+                });
+
+                $('#SNMainDesc').on('summernote.change', function(we, contents, $editable) {
+                    const SNMainDesc = $('#SNMainDesc').summernote('code');
+                    console.log(SNMainDesc);
+
+                    // Create a safe and sanitized version of the HTML content
+                    const sanitizedHtml = DOMPurify.sanitize(SNMainDesc, {
+                        ALLOWED_TAGS: ['p', 'strong', 'em', 'ul', 'ol', 'li', 'br',
+                            'a'
+                        ], // Adjust allowed tags as needed
+                        ALLOWED_ATTRS: {
+                            'a': ['href', 'target'] // Allow specific attributes for <a> tag
+                        }
+                    });
+
+                    // Safely and selectively update content within #policyContent
+                    $('#mainDesc').empty().append(sanitizedHtml); // Replace or append based on your requirement
+                });
+            </script>
         </section>
 
         <input type="text" id="mainDescriptionHidden" autocomplete="off" hidden>
@@ -67,13 +95,41 @@
             </div>
         </section>
 
-        <section class="form-section">
-            <p>Provide other relevant information about the programme</p>
-            <div class="input-group fill">
-                <textarea required="" type="text" name="other_information" autocomplete="off" id="otherInfoInput" class="input"
-                    rows="3"></textarea>
-                <label class="label">Write Here</label>
-            </div>
+        <section class="form-section flex-col">
+            <p>Provide other relevant information for the programme</p>
+            <textarea id="SNOtherInfo" name="" placeholder="Write Here"></textarea>
+            <script>
+                $('#SNOtherInfo').summernote({
+                    inheritPlaceholder: true,
+                    tabsize: 2,
+                    height: 200,
+                    toolbar: [
+                        ['style', ['p']],
+                        ['font', ['bold', 'italic', 'underline']],
+                        ['color', ['color']],
+                        ['parag', ['ul', 'ol']],
+                        ['view', ['codeview', 'help']]
+                    ]
+                });
+
+                $('#SNMainDesc').on('summernote.change', function(we, contents, $editable) {
+                    const SNMainDesc = $('#SNMainDesc').summernote('code');
+                    console.log(SNMainDesc);
+
+                    // Create a safe and sanitized version of the HTML content
+                    const sanitizedHtml = DOMPurify.sanitize(SNMainDesc, {
+                        ALLOWED_TAGS: ['p', 'strong', 'em', 'ul', 'ol', 'li', 'br',
+                            'a'
+                        ], // Adjust allowed tags as needed
+                        ALLOWED_ATTRS: {
+                            'a': ['href', 'target'] // Allow specific attributes for <a> tag
+                        }
+                    });
+
+                    // Safely and selectively update content within #policyContent
+                    $('#mainDesc').empty().append(sanitizedHtml); // Replace or append based on your requirement
+                });
+            </script>
         </section>
 
         <input type="text" id="otherInfoHidden" hidden>
@@ -102,7 +158,7 @@
         </div>
 
         <div class="dh-btn">
-            <button class="sFont trans-ease-in-out" onclick="window.location.href='/enroll'"">Enroll Now!</button>
+            <button class="sFont trans-ease-in-out" onclick="window.location.href='/inquire'">Inquire Now!</button>
             <span class="sFont"><svg width="16" height="16" fill="none" stroke="currentColor"
                     stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -112,14 +168,14 @@
                     <path fill="currentColor" fill-rule="evenodd" stroke="none"
                         d="M12 18.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z" clip-rule="evenodd"></path>
                     <path d="M12 6v8"></path>
-                </svg>&nbsp;Make sure to read the programme details before enrolling</span>
+                </svg>&nbsp;Find out more by Contacting STRIKE</span>
         </div>
     </div>
 
     <div class="width-limiter details-content">
         <section class="sFont">
             <h2 class="pFont">About This Programme</h2>
-            <p id="mainDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo saepe nemo facere,
+            <p id="mainDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo saepe nemo facere,
                 exercitationem qui
                 optio
                 iste! Inventore, perspiciatis doloribus. Quod, quis vel quidem illo atque amet non magni fuga dolor.
@@ -134,7 +190,14 @@
                 vero
                 nulla laboriosam minus quas qui ipsum temporibus. Molestiae pariatur, neque voluptas odit quisquam
                 nulla
-                atque?</p>
+                atque?
+            </p>
+            {{-- <p id="otherInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, ex, pariatur ratione
+                dolores velit
+                vero
+                nulla laboriosam minus quas qui ipsum temporibus. Molestiae pariatur, neque voluptas odit quisquam
+                nulla
+                atque?</p> --}}
         </section>
 
         <ul class="tags">
@@ -184,14 +247,14 @@
             input: document.getElementById('briefDescriptionInput'),
             output: document.getElementById('briefDescription')
         },
-        mainDescription: {
-            input: document.getElementById('mainDescriptionInput'),
-            output: document.getElementById('mainDescription')
-        },
-        otherInfo: {
-            input: document.getElementById('otherInfoInput'),
-            output: document.getElementById('otherInfo')
-        },
+        // mainDescription: {
+        //     input: document.getElementById('SNMainDesc'),
+        //     output: document.getElementById('mainDescription')
+        // },
+        // otherInfo: {
+        //     input: document.getElementById('SNOtherInfo'),
+        //     output: document.getElementById('otherInfo')
+        // },
         duration: {
             input: document.getElementById('durationInput'),
             output: document.getElementById('duration')
@@ -214,9 +277,10 @@
     // Generic function to handle input updates
     function updateContent(element) {
         element.input.addEventListener('input', () => {
-            element.output.innerHTML = element.input.value.replace(/\n/g, "<br>");
+            element.output.textContent = element.input.value;
         });
     }
+
 
     // Apply the update function to all elements in the inputElements object
     Object.values(inputElements).forEach(updateContent);
@@ -235,34 +299,6 @@
 
         reader.readAsDataURL(file);
     });
-
-    // LIne break save
-    const inputFieldsAndIds = [{
-            inputFieldId: 'mainDescriptionInput',
-            hiddenInputId: 'mainDescriptionHidden',
-        },
-        {
-            inputFieldId: 'otherInfoInput',
-            hiddenInputId: 'otherInfoHidden',
-        }
-    ];
-
-    function saveLineBreaksToHiddenInputs(inputFieldsAndIds) {
-        inputFieldsAndIds.forEach(({
-            inputFieldId,
-            hiddenInputId
-        }) => {
-            const inputField = document.getElementById(inputFieldId);
-            const hiddenInput = document.getElementById(hiddenInputId);
-
-            inputField.addEventListener('input', () => {
-                const textWithEntities = inputField.value.replace(/\n/g, '<br>');
-                hiddenInput.value = textWithEntities;
-            });
-        });
-    }
-
-    saveLineBreaksToHiddenInputs(inputFieldsAndIds);
 </script>
 
 @include('components.footer')

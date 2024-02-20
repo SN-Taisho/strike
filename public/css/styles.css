@@ -935,11 +935,14 @@ main.soft {
     color: var(--bgDark);
     font-size: var(--fSize4);
 }
-.details-content section p {
+.details-content section p, .details-content section div {
     color: var(--bgDark);
     font-size: var(--fSize2);
     line-height: calc(var(--fSize2) * 1.5);
     margin-bottom: 1.5rem;
+}
+.details-content section li {
+    margin-left: 1rem;
 }
 
 .details-content .tags {
@@ -1019,7 +1022,8 @@ main.soft {
     margin-bottom: 0.5rem;
 }
 
-.i-section-right p {
+.i-section-right p, .i-section-left div {
+    font-family: var(--sFont);
     font-size: var(--fSize2);
     line-height: calc(var(--fSize2) * 1.5);
 }
