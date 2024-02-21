@@ -54,20 +54,18 @@
 
                 $('#SNMainDesc').on('summernote.change', function(we, contents, $editable) {
                     const SNMainDesc = $('#SNMainDesc').summernote('code');
-                    console.log(SNMainDesc);
 
                     // Create a safe and sanitized version of the HTML content
                     const sanitizedHtml = DOMPurify.sanitize(SNMainDesc, {
                         ALLOWED_TAGS: ['p', 'strong', 'em', 'ul', 'ol', 'li', 'br',
                             'a'
-                        ], // Adjust allowed tags as needed
+                        ],
                         ALLOWED_ATTRS: {
                             'a': ['href', 'target'] // Allow specific attributes for <a> tag
                         }
                     });
 
-                    // Safely and selectively update content within #policyContent
-                    $('#mainDesc').empty().append(sanitizedHtml); // Replace or append based on your requirement
+                    $('#mainDesc').empty().append(sanitizedHtml); 
                 });
             </script>
         </section>
@@ -114,20 +112,18 @@
 
                 $('#SNMainDesc').on('summernote.change', function(we, contents, $editable) {
                     const SNMainDesc = $('#SNMainDesc').summernote('code');
-                    console.log(SNMainDesc);
 
                     // Create a safe and sanitized version of the HTML content
                     const sanitizedHtml = DOMPurify.sanitize(SNMainDesc, {
                         ALLOWED_TAGS: ['p', 'strong', 'em', 'ul', 'ol', 'li', 'br',
                             'a'
-                        ], // Adjust allowed tags as needed
+                        ],
                         ALLOWED_ATTRS: {
                             'a': ['href', 'target'] // Allow specific attributes for <a> tag
                         }
                     });
 
-                    // Safely and selectively update content within #policyContent
-                    $('#mainDesc').empty().append(sanitizedHtml); // Replace or append based on your requirement
+                    $('#mainDesc').empty().append(sanitizedHtml); 
                 });
             </script>
         </section>
@@ -192,12 +188,6 @@
                 nulla
                 atque?
             </p>
-            {{-- <p id="otherInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, ex, pariatur ratione
-                dolores velit
-                vero
-                nulla laboriosam minus quas qui ipsum temporibus. Molestiae pariatur, neque voluptas odit quisquam
-                nulla
-                atque?</p> --}}
         </section>
 
         <ul class="tags">
@@ -247,14 +237,6 @@
             input: document.getElementById('briefDescriptionInput'),
             output: document.getElementById('briefDescription')
         },
-        // mainDescription: {
-        //     input: document.getElementById('SNMainDesc'),
-        //     output: document.getElementById('mainDescription')
-        // },
-        // otherInfo: {
-        //     input: document.getElementById('SNOtherInfo'),
-        //     output: document.getElementById('otherInfo')
-        // },
         duration: {
             input: document.getElementById('durationInput'),
             output: document.getElementById('duration')
@@ -280,7 +262,6 @@
             element.output.textContent = element.input.value;
         });
     }
-
 
     // Apply the update function to all elements in the inputElements object
     Object.values(inputElements).forEach(updateContent);

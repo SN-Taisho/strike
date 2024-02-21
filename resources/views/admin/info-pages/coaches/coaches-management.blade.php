@@ -25,11 +25,9 @@
 
                 $('#SNCoachesDesc').on('summernote.change', function(we, contents, $editable) {
                     const SNCoachesDesc = $('#SNCoachesDesc').summernote('code');
-                    console.log(SNCoachesDesc);
                     // Create a safe and sanitized version of the HTML content
                     const sanitizedHtml = DOMPurify.sanitize(SNCoachesDesc);
 
-                    // Update the #test div with the sanitized content
                     $('#coachesParag').html(sanitizedHtml);
                 });
             </script>

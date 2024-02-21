@@ -68,8 +68,7 @@
                         }
                     });
 
-                    // Safely and selectively update content within #policyContent
-                    $('#mainDesc').empty().append(sanitizedHtml); // Replace or append based on your requirement
+                    $('#mainDesc').empty().append(sanitizedHtml);
                 });
             </script>
         </section>
@@ -116,20 +115,18 @@
 
                 $('#SNMainDesc').on('summernote.change', function(we, contents, $editable) {
                     const SNMainDesc = $('#SNMainDesc').summernote('code');
-                    console.log(SNMainDesc);
 
                     // Create a safe and sanitized version of the HTML content
                     const sanitizedHtml = DOMPurify.sanitize(SNMainDesc, {
                         ALLOWED_TAGS: ['p', 'strong', 'em', 'ul', 'ol', 'li', 'br',
                             'a'
-                        ], // Adjust allowed tags as needed
+                        ],
                         ALLOWED_ATTRS: {
                             'a': ['href', 'target'] // Allow specific attributes for <a> tag
                         }
                     });
 
-                    // Safely and selectively update content within #policyContent
-                    $('#mainDesc').empty().append(sanitizedHtml); // Replace or append based on your requirement
+                    $('#mainDesc').empty().append(sanitizedHtml);
                 });
             </script>
         </section>

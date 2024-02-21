@@ -9,7 +9,7 @@
 
         <section class="form-section flex-col">
             <p>Contact Us Paragraph</p>
-            <textarea id="SNContactParag" name="RTLandingParag" placeholder="Write Here"></textarea>
+            <textarea id="SNContactParag" name="" placeholder="Write Here"></textarea>
             <script>
                 $('#SNContactParag').summernote({
                     inheritPlaceholder: true,
@@ -25,11 +25,9 @@
 
                 $('#SNContactParag').on('summernote.change', function(we, contents, $editable) {
                     const SNContactParag = $('#SNContactParag').summernote('code');
-                    console.log(SNContactParag);
                     // Create a safe and sanitized version of the HTML content
                     const sanitizedHtml = DOMPurify.sanitize(SNContactParag);
 
-                    // Update the #test div with the sanitized content
                     $('#contactParag').html(sanitizedHtml);
                 });
             </script>

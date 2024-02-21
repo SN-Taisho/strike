@@ -35,15 +35,40 @@
                 src="https://res.cloudinary.com/test-strike/image/upload/v1702010311/Events/persnickety-prints-rrHl2zGZ9E4-unsplash_qcpfo1.jpg">
         </div>
 
-        <section class="form-section" style="max-width: 720px; margin: auto;">
-            <p>Main Content of Bowler's
-                Achievement
-            </p>
-            <div class="input-group fill">
-                <textarea required="" type="text" name="text" autocomplete="off" id="contentInput" class="input"
-                    rows="5"></textarea>
-                <label class="label">Event content</label>
-            </div>
+        <section class="form-section flex-col">
+            <p>Bowlers Achievement Content</p>
+            <textarea id="SNBAContent" name="" placeholder="Write Here"></textarea>
+            <script>
+                $('#SNBAContent').summernote({
+                    inheritPlaceholder: true,
+                    tabsize: 2,
+                    height: 200,
+                    toolbar: [
+                        ['style', ['p']],
+                        ['font', ['bold', 'italic', 'underline']],
+                        ['color', ['color']],
+                        ['parag', ['ul', 'ol']],
+                        ['view', ['codeview', 'help']]
+                    ]
+                });
+
+                $('#SNBAContent').on('summernote.change', function(we, contents, $editable) {
+                    const SNBAContent = $('#SNBAContent').summernote('code');
+
+                    // Create a safe and sanitized version of the HTML content
+                    const sanitizedHtml = DOMPurify.sanitize(SNBAContent, {
+                        ALLOWED_TAGS: ['p', 'strong', 'em', 'ul', 'ol', 'li', 'br',
+                            'a'
+                        ],
+                        ALLOWED_ATTRS: {
+                            'a': ['href', 'target'] // Allow specific attributes for <a> tag
+                        }
+                    });
+
+                    // Safely and selectively update content within #policyContent
+                    $('#content').empty().append(sanitizedHtml); // Replace or append based on your requirement
+                });
+            </script>
         </section>
 
         <section class="form-section">
@@ -67,8 +92,8 @@
                         <label class="label">Name</label>
                     </div>
 
-                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg" alt="Bowler Photo"
-                        style="object-fit: cover; aspect-ratio: 1/1; width: 280px">
+                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                        alt="Bowler Photo" style="object-fit: cover; aspect-ratio: 1/1; width: 280px">
 
                     <div class="input-group fill">
                         <textarea required="" type="text" name="text" autocomplete="off" id="contentInput" class="input"
@@ -145,8 +170,8 @@
     <article class="article">
         <div class="width-limiter sFont">
 
-            <h1 class="pFont">Tournament Name</h1>
-            <span>Tournament Category</span>
+            <h1 id="title" class="pFont">Tournament Name</h1>
+            <span id="category">Tournament Category</span>
 
             <div class="placements">
                 <div class="placement-card">
@@ -154,7 +179,8 @@
                         <h2>Champion</h2>
                         <p>Lorem Ipsum</p>
                     </div>
-                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg" alt="Student Photo">
+                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                        alt="Student Photo">
                 </div>
 
                 <div class="placement-card">
@@ -162,7 +188,8 @@
                         <h2>1st Runner-up</h2>
                         <p>Lorem ipsum dolor</p>
                     </div>
-                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg" alt="Student Photo">
+                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                        alt="Student Photo">
                 </div>
 
                 <div class="placement-card">
@@ -170,18 +197,25 @@
                         <h2>1st</h2>
                         <p>Lorem ipsum</p>
                     </div>
-                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg" alt="Student Photo">
+                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                        alt="Student Photo">
                 </div>
             </div>
 
-            <p id="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci, animi sunt
-                recusandae similique
-                molestiae rem voluptate. Sit eum repellat esse dolores quis quas, excepturi, odit earum quasi quo ullam?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nesciunt totam illum architecto
-                perferendis rerum, eum voluptatum eligendi quos voluptates! Dignissimos incidunt voluptatum fuga enim
-                quae voluptas magni ut ipsam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident dicta
-                nam sunt, eos maxime vero a mollitia reiciendis perspiciatis eligendi error, natus eaque quae ullam
-                expedita ex quos aut! Illum?</p>
+            <div id="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci, animi sunt
+                    recusandae similique
+                    molestiae rem voluptate. Sit eum repellat esse dolores quis quas, excepturi, odit earum quasi quo
+                    ullam?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nesciunt totam illum
+                    architecto
+                    perferendis rerum, eum voluptatum eligendi quos voluptates! Dignissimos incidunt voluptatum fuga
+                    enim
+                    quae voluptas magni ut ipsam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+                    dicta
+                    nam sunt, eos maxime vero a mollitia reiciendis perspiciatis eligendi error, natus eaque quae ullam
+                    expedita ex quos aut! Illum?</p>
+            </div>
 
         </div>
     </article>
@@ -196,10 +230,6 @@
         category: {
             input: document.getElementById('categoryInput'),
             output: document.getElementById('category')
-        },
-        content: {
-            input: document.getElementById('contentInput'),
-            output: document.getElementById('content')
         },
     };
 

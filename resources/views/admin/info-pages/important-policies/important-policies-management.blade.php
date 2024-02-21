@@ -25,11 +25,9 @@
 
                 $('#SNImpPolicyDesc').on('summernote.change', function(we, contents, $editable) {
                     const SNImpPolicyDesc = $('#SNImpPolicyDesc').summernote('code');
-                    console.log(SNImpPolicyDesc);
                     // Create a safe and sanitized version of the HTML content
                     const sanitizedHtml = DOMPurify.sanitize(SNImpPolicyDesc);
 
-                    // Update the #test div with the sanitized content
                     $('#impPolicyDesc').html(sanitizedHtml);
                 });
             </script>

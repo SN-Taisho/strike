@@ -34,11 +34,9 @@
 
                 $('#SNAboutParag').on('summernote.change', function(we, contents, $editable) {
                     const SNAboutParag = $('#SNAboutParag').summernote('code');
-                    console.log(SNAboutParag);
                     // Create a safe and sanitized version of the HTML content
                     const sanitizedHtml = DOMPurify.sanitize(SNAboutParag);
 
-                    // Update the #test div with the sanitized content
                     $('#aboutParag').html(sanitizedHtml);
                 });
             </script>
@@ -62,11 +60,9 @@
 
                 $('#SNVisionParag').on('summernote.change', function(we, contents, $editable) {
                     const SNVisionParag = $('#SNVisionParag').summernote('code');
-                    console.log(SNVisionParag);
                     // Create a safe and sanitized version of the HTML content
                     const sanitizedHtml = DOMPurify.sanitize(SNVisionParag);
 
-                    // Update the #test div with the sanitized content
                     $('#vision').html(sanitizedHtml);
                 });
             </script>
@@ -90,11 +86,9 @@
 
                 $('#SNMissionParag').on('summernote.change', function(we, contents, $editable) {
                     const SNMissionParag = $('#SNMissionParag').summernote('code');
-                    console.log(SNMissionParag);
                     // Create a safe and sanitized version of the HTML content
                     const sanitizedHtml = DOMPurify.sanitize(SNMissionParag);
 
-                    // Update the #test div with the sanitized content
                     $('#mission').html(sanitizedHtml);
                 });
             </script>
@@ -127,20 +121,18 @@
 
                 $('#SNStakeholderParag').on('summernote.change', function(we, contents, $editable) {
                     const SNStakeholderParag = $('#SNStakeholderParag').summernote('code');
-                    console.log(SNStakeholderParag);
 
                     // Create a safe and sanitized version of the HTML content
                     const sanitizedHtml = DOMPurify.sanitize(SNStakeholderParag, {
                         ALLOWED_TAGS: ['p', 'strong', 'em', 'ul', 'ol', 'li', 'br',
                             'a'
-                        ], // Adjust allowed tags as needed
+                        ],
                         ALLOWED_ATTRS: {
                             'a': ['href', 'target'] // Allow specific attributes for <a> tag
                         }
                     });
 
-                    // Safely and selectively update content within #policyContent
-                    $('#stakeholders').empty().append(sanitizedHtml); // Replace or append based on your requirement
+                    $('#stakeholders').empty().append(sanitizedHtml);
                 });
             </script>
         </section>

@@ -1542,10 +1542,12 @@ article.article {
 }
 
 .article p {
+    padding: 0.5rem 1rem;
+}
+.article p, .article .width-limiter>div {
     color: var(--softwhite);
     font-size: var(--fSize2);
     line-height: calc(var(--fSize2) * 1.5);
-    padding: 0.5rem 1rem;
 }
 
 .article a {
@@ -2159,6 +2161,8 @@ input.input[type="file"]:valid {
 /*=============================================
 =            Modal            =
 =============================================*/
+
+/*----------  Regular Modal  ----------*/
 .modal {
     background-color: var(--bgMedium);
     border-radius: 10px;
@@ -2189,6 +2193,21 @@ input.input[type="file"]:valid {
 .modal-close:hover {
     transform: scale(1.05);
 }
+
+.modal .note-editable {
+    background-color: var(--softwhite);
+}
+
+/*----------  Large Modal  ----------*/
+.modal.large {
+    width: clamp(240px, 90%, 1024px) !important;
+}
+
+.modal.large .note-editor {
+    max-width: 1024px;
+    width: 90%;
+}
+
 /*=====  End of Modal  ======*/
 
 /*=============================================
@@ -2543,7 +2562,7 @@ input.input[type="file"]:valid {
         width: clamp(235px, 80%, 400px);
     }
 
-    .article p {
+    .article p, .article .width-limiter>div {
         text-align: justify;
     }
 

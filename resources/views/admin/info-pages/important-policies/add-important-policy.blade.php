@@ -33,20 +33,18 @@
 
                 $('#SNImpPolicyContent').on('summernote.change', function(we, contents, $editable) {
                     const SNImpPolicyContent = $('#SNImpPolicyContent').summernote('code');
-                    console.log(SNImpPolicyContent);
 
                     // Create a safe and sanitized version of the HTML content
                     const sanitizedHtml = DOMPurify.sanitize(SNImpPolicyContent, {
                         ALLOWED_TAGS: ['p', 'strong', 'em', 'ul', 'ol', 'li', 'br',
                             'a'
-                        ], // Adjust allowed tags as needed
+                        ], 
                         ALLOWED_ATTRS: {
                             'a': ['href', 'target'] // Allow specific attributes for <a> tag
                         }
                     });
 
-                    // Safely and selectively update content within #policyContent
-                    $('#policyContent').empty().append(sanitizedHtml); // Replace or append based on your requirement
+                    $('#policyContent').empty().append(sanitizedHtml);
                 });
             </script>
         </section>

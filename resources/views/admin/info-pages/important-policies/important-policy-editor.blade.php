@@ -33,7 +33,6 @@
 
                 $('#SNImpPolicyContent').on('summernote.change', function(we, contents, $editable) {
                     const SNImpPolicyContent = $('#SNImpPolicyContent').summernote('code');
-                    console.log(SNImpPolicyContent);
 
                     // Create a safe and sanitized version of the HTML content
                     const sanitizedHtml = DOMPurify.sanitize(SNImpPolicyContent, {
@@ -45,8 +44,7 @@
                         }
                     });
 
-                    // Safely and selectively update content within #policyContent
-                    $('#policyContent').empty().append(sanitizedHtml); // Replace or append based on your requirement
+                    $('#policyContent').empty().append(sanitizedHtml);
                 });
             </script>
         </section>
