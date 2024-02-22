@@ -7,20 +7,11 @@
     <form class="edit-form width-limiter">
         <h3 class="section-heading">Testimonials Management</h3>
 
-        <section class="form-section" style="max-width: 720px; margin: auto">
-            <p>Brief Description of the Testimonials page</p>
-            <div class="input-group fill">
-                <textarea required="" type="text" name="brief_desc" autocomplete="off" id="briefDescriptionInput" class="input"
-                    rows="5"></textarea>
-                <label class="label" style="background-color: var(--bgLight)">Write Here</label>
-            </div>
-        </section>
-
-        <section class="form-section">
-            <div class="input-group file">
-                <label class="filelabel">Testimonials Banner</label>
-                <input required="" type="file" name="" autocomplete="off" id="imageInput" class="input">
-            </div>
+        <section class="form-section flex-col">
+            {{-- Edit Banner --}}
+            <p>Make sure to save changes after editing the banner</p>
+            <button type="button" class="action-btn alt text-deco-none"
+                onclick="document.querySelector('#edit-banner').showModal()">Edit Testimonials Page Banner</button>
         </section>
 
         <a href="/add-testimonial" class="action-btn alt text-deco-none" style="margin: 2rem auto 1rem auto;">Add New
@@ -94,6 +85,63 @@
         </div>
     </form>
 
+     {{-- Edit Banner  Modal --}}
+     <dialog id="edit-banner" class="modal large">
+
+        <button class="modal-close trans-ease-out" type="button"
+            onclick="document.querySelector('#edit-banner').close()"><svg width="48" height="48"
+                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z">
+                </path>
+                <path d="m14.829 9.172-5.657 5.657"></path>
+                <path d="m9.172 9.172 5.656 5.657"></path>
+            </svg></button>
+        <h2 class="section-subheading text-align-center" style="color: var(--bgLight); margin-bottom: 1rem">Edit
+            Banner
+        </h2>
+
+        <form id="add" class="align-center flex-col" method="" action="" style="gap: 1rem">
+
+            <section class="form-section flex-col" style="width: 95%;">
+                <p style="color: var(--bgLight);">Testimonials Page Description</p>
+                <textarea id="SNBriefDesc" name="" placeholder="Write Here"></textarea>
+                <script>
+                    $('#SNBriefDesc').summernote({
+                        inheritPlaceholder: true,
+                        tabsize: 2,
+                        height: 200,
+                        toolbar: [
+                            ['style', ['p']],
+                            ['font', ['bold', 'italic', 'underline']],
+                            ['color', ['color']],
+                            ['view', ['codeview', 'help']]
+                        ]
+                    });
+
+                    $('#SNBriefDesc').on('summernote.change', function(we, contents, $editable) {
+                        const SNBriefDesc = $('#SNBriefDesc').summernote('code');
+                        // Create a safe and sanitized version of the HTML content
+                        const sanitizedHtml = DOMPurify.sanitize(SNBriefDesc);
+
+                        $('#briefDescription').html(sanitizedHtml);
+                    });
+                </script>
+            </section>
+
+            <section class="form-section">
+                <div class="input-group file alt">
+                    <label class="filelabel">Testimonials Page Banner</label>
+                    <input required="" type="file" name="Event Banner" autocomplete="off" id="imageInput"
+                        class="input">
+                </div>
+            </section>
+
+            {{-- Modal Submit --}}
+            <button class="submit-btn" type="submit">Save Banner</button>
+        </form>
+    </dialog>
+
     <h2 class="section-heading">Testimonials Preview</h2>
 
     <section class="community-banner">
@@ -162,24 +210,7 @@
 
 </main>
 <script>
-    const inputElements = {
-        briefDescription: {
-            input: document.getElementById('briefDescriptionInput'),
-            output: document.getElementById('briefDescription')
-        },
-    };
-
     const image = document.getElementById('image');
-
-    // Generic function to handle input updates
-    function updateContent(element) {
-        element.input.addEventListener('input', () => {
-            element.output.textContent = element.input.value;
-        });
-    }
-
-    // Apply the update function to all elements in the inputElements object
-    Object.values(inputElements).forEach(updateContent);
 
     // Handle image update efficiently
     const imageInput = document.getElementById('imageInput');

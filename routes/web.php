@@ -123,6 +123,18 @@ Route::get('/enroll', function () {
     return view('enroll');
 });
 
+//  Inquire
+Route::get('/inquire', function () {
+    return view('inquiry');
+});
+
+Route::get('/inquiry-management', function () {
+    return view('admin/inquiry/inquiry-management');
+});
+Route::get('/inquiry-details', function () {
+    return view('admin/inquiry/inquiry-details');
+});
+
 
 // Events
 Route::get('/events', function () {
@@ -275,6 +287,9 @@ Route::get('/calendar', function () {
 
 
 //  Marketplace
+Route::get('/marketplace', function () {
+    return view('marketplace/home');
+});
 Route::get('/products', function () {
     return View('marketplace/products');
 });

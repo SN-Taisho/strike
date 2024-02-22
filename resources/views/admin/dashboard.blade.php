@@ -6,7 +6,10 @@
 
     <h1 class="section-heading" style="margin: 1rem 0rem 2rem">Welcome to the Admin Dashboard</h1>
 
-    <a href="/add-admin" class="action-btn alt text-deco-none" style="margin: auto;">Add New Admin</a>
+    <div class="justify-center flex-wrap" style="marign: auto; gap: 1rem">
+        <a href="/add-admin" class="action-btn alt text-deco-none">Add New Admin</a>
+        <a href="/inquiry-management" class="action-btn alt text-deco-none">Manage Inquiries</a>
+    </div>
 
     <div class="table-limiter" style="max-width: 760px;">
         <table class="res-table small limited">
