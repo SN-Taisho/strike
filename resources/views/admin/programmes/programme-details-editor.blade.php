@@ -56,19 +56,10 @@
 
                 $('#SNMainDesc').on('summernote.change', function(we, contents, $editable) {
                     const SNMainDesc = $('#SNMainDesc').summernote('code');
-                    console.log(SNMainDesc);
-
                     // Create a safe and sanitized version of the HTML content
-                    const sanitizedHtml = DOMPurify.sanitize(SNMainDesc, {
-                        ALLOWED_TAGS: ['p', 'strong', 'em', 'ul', 'ol', 'li', 'br',
-                            'a'
-                        ], // Adjust allowed tags as needed
-                        ALLOWED_ATTRS: {
-                            'a': ['href', 'target'] // Allow specific attributes for <a> tag
-                        }
-                    });
+                    const sanitizedHtml = DOMPurify.sanitize(SNMainDesc);
 
-                    $('#mainDesc').empty().append(sanitizedHtml);
+                    $('#mainDesc').html(sanitizedHtml);
                 });
             </script>
         </section>
@@ -106,27 +97,19 @@
                     height: 200,
                     toolbar: [
                         ['style', ['p']],
-                        ['font', ['bold', 'italic', 'underline']],
+                        ['font', ['bold', 'underline']],
                         ['color', ['color']],
                         ['parag', ['ul', 'ol']],
                         ['view', ['codeview', 'help']]
                     ]
                 });
 
-                $('#SNMainDesc').on('summernote.change', function(we, contents, $editable) {
-                    const SNMainDesc = $('#SNMainDesc').summernote('code');
-
+                $('#SNOtherInfo').on('summernote.change', function(we, contents, $editable) {
+                    const SNOtherInfo = $('#SNOtherInfo').summernote('code');
                     // Create a safe and sanitized version of the HTML content
-                    const sanitizedHtml = DOMPurify.sanitize(SNMainDesc, {
-                        ALLOWED_TAGS: ['p', 'strong', 'em', 'ul', 'ol', 'li', 'br',
-                            'a'
-                        ],
-                        ALLOWED_ATTRS: {
-                            'a': ['href', 'target'] // Allow specific attributes for <a> tag
-                        }
-                    });
+                    const sanitizedHtml = DOMPurify.sanitize(SNOtherInfo);
 
-                    $('#mainDesc').empty().append(sanitizedHtml);
+                    $('#otherInfo').html(sanitizedHtml);
                 });
             </script>
         </section>
@@ -176,22 +159,26 @@
     <div class="width-limiter details-content">
         <section class="sFont">
             <h2 class="pFont">About This Programme</h2>
-            <p id="mainDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo saepe nemo facere,
-                exercitationem qui
-                optio
-                iste! Inventore, perspiciatis doloribus. Quod, quis vel quidem illo atque amet non magni fuga dolor.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ducimus porro praesentium at iure
-                ipsum
-                officia qui, ab eius aliquam asperiores voluptatibus, iusto voluptate quasi voluptates, enim quia
-                corrupti nostrum.</p>
+            <div id="mainDesc">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo saepe nemo facere,
+                    exercitationem qui
+                    optio
+                    iste! Inventore, perspiciatis doloribus. Quod, quis vel quidem illo atque amet non magni fuga dolor.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ducimus porro praesentium at iure
+                    ipsum
+                    officia qui, ab eius aliquam asperiores voluptatibus, iusto voluptate quasi voluptates, enim quia
+                    corrupti nostrum.</p>
+            </div>
 
             <h3 class="pFont">Other information</h3>
-            <p id="otherInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, ex, pariatur ratione
-                dolores velit
-                vero
-                nulla laboriosam minus quas qui ipsum temporibus. Molestiae pariatur, neque voluptas odit quisquam
-                nulla
-                atque?</p>
+            <div id="otherInfo">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, ex, pariatur ratione
+                    dolores velit
+                    vero
+                    nulla laboriosam minus quas qui ipsum temporibus. Molestiae pariatur, neque voluptas odit quisquam
+                    nulla
+                    atque?</p>
+            </div>
         </section>
 
         <ul class="tags">

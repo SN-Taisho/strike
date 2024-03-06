@@ -34,16 +34,26 @@
     <div class="width-limiter details-content">
         <section class="sFont">
             <h2 class="pFont">About This Programme</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo saepe nemo facere, exercitationem qui optio
-                iste! Inventore, perspiciatis doloribus. Quod, quis vel quidem illo atque amet non magni fuga dolor.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ducimus porro praesentium at iure ipsum
-                officia qui, ab eius aliquam asperiores voluptatibus, iusto voluptate quasi voluptates, enim quia
-                corrupti nostrum.</p>
+            <div id="mainDesc">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo saepe nemo facere,
+                    exercitationem qui
+                    optio
+                    iste! Inventore, perspiciatis doloribus. Quod, quis vel quidem illo atque amet non magni fuga dolor.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ducimus porro praesentium at iure
+                    ipsum
+                    officia qui, ab eius aliquam asperiores voluptatibus, iusto voluptate quasi voluptates, enim quia
+                    corrupti nostrum.</p>
+            </div>
 
             <h3 class="pFont">Other information</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, ex, pariatur ratione dolores velit vero
-                nulla laboriosam minus quas qui ipsum temporibus. Molestiae pariatur, neque voluptas odit quisquam nulla
-                atque?</p>
+            <div id="otherInfo">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, ex, pariatur ratione
+                    dolores velit
+                    vero
+                    nulla laboriosam minus quas qui ipsum temporibus. Molestiae pariatur, neque voluptas odit quisquam
+                    nulla
+                    atque?</p>
+            </div>
         </section>
 
         <ul class="tags">

@@ -940,8 +940,11 @@ main.soft {
     color: var(--bgDark);
     font-size: var(--fSize2);
     line-height: calc(var(--fSize2) * 1.5);
+}
+.details-content section div {
     margin-bottom: 1.5rem;
 }
+
 .details-content section li {
     margin-left: 1rem;
 }
